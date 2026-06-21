@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Profit Penthouse — A Community for Beginner Traders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black:   #0A0A0A;
+    --charcoal:#141414;
+    --card:    #1A1A1A;
+    --pink:    #E8185A;
+    --orange:  #E8693A;
+    --gold:    #D4A832;
+    --mint:    #4CAF82;
+    --cream:   #F5F0E8;
+    --muted:   #888888;
+    --border:  #2A2A2A;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 5%;
+    background: rgba(10,10,10,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    background: linear-gradient(90deg, var(--pink), var(--orange), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .nav-cta {
+    background: var(--pink);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #c0134c; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+    gap: 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(90deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(0deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 80px);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .hero-text { position: relative; z-index: 2; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--mint);
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block; width: 28px; height: 2px;
+    background: var(--mint);
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 5.5vw, 5.4rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+  h1 .line-pink   { color: var(--pink); display: block; }
+  h1 .line-orange { color: var(--orange); display: block; }
+  h1 .line-gold   { color: var(--gold); display: block; }
+  h1 .line-cream  { color: var(--cream); display: block; }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: #B0A898;
+    max-width: 460px;
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  .hero-clarifier {
+    display: flex; flex-direction: column; gap: 10px;
+    margin-bottom: 40px; max-width: 340px;
+  }
+  .clarifier-tag {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 10px 16px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .clarifier-tag.yes {
+    border-color: rgba(76,175,130,0.5);
+    color: var(--mint);
+    background: rgba(76,175,130,0.06);
+  }
+  .clarifier-tag.no {
+    border-color: rgba(180,40,40,0.25);
+    color: #cc5555;
+    background: rgba(180,40,40,0.05);
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--pink) 0%, var(--orange) 100%);
+    color: #fff;
+    border: none;
+    padding: 16px 36px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  .btn-ghost {
+    color: var(--cream);
+    border: 1px solid var(--border);
+    padding: 15px 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--pink); color: var(--pink); }
+
+  /* hero image */
+  .hero-image {
+    position: relative; z-index: 2;
+    display: flex; justify-content: flex-end; align-items: flex-end;
+  }
+  .hero-image img {
+    width: 100%;
+    max-width: 480px;
+    object-fit: cover;
+    filter: contrast(1.05);
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-bar {
+    background: var(--charcoal);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden; white-space: nowrap; padding: 14px 0;
+  }
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 32s linear infinite;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+  .marquee-inner span { color: var(--pink); margin: 0 16px; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── COMMON SECTION ── */
+  section { padding: 100px 5%; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--mint);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    display: block; width: 20px; height: 2px;
+    background: var(--mint); flex-shrink: 0;
+  }
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    font-size: 1rem; font-weight: 300; color: #999;
+    max-width: 540px; line-height: 1.75; margin-bottom: 60px;
+  }
+
+  /* ── HONEST SECTION ── */
+  .honest { background: var(--charcoal); }
+  .honest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    max-width: 900px;
+  }
+  .honest-card {
+    background: var(--card);
+    padding: 40px 36px;
+  }
+  .honest-card .badge {
+    display: inline-block;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; padding: 5px 12px;
+    margin-bottom: 20px;
+  }
+  .badge-yes { background: rgba(76,175,130,0.12); color: var(--mint); border: 1px solid rgba(76,175,130,0.3); }
+  .badge-no  { background: rgba(180,40,40,0.1); color: #cc5555; border: 1px solid rgba(180,40,40,0.25); }
+  .honest-card ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .honest-card ul li {
+    font-size: 0.95rem; color: #aaa; line-height: 1.6;
+    padding-left: 20px; position: relative;
+  }
+  .honest-card ul li::before {
+    position: absolute; left: 0; top: 0;
+    font-size: 0.85rem;
+  }
+  .badge-yes ~ ul li::before { content: '✓'; color: var(--mint); }
+  .badge-no  ~ ul li::before { content: '✕'; color: #cc5555; }
+
+  /* ── PSYCHOLOGY PILLARS ── */
+  .pillars { background: var(--black); }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .pillar-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .pillar-card:hover { border-color: var(--pink); }
+  .pillar-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  }
+  .pillar-card:nth-child(1)::after { background: var(--pink); }
+  .pillar-card:nth-child(2)::after { background: var(--mint); }
+  .pillar-card:nth-child(3)::after { background: var(--orange); }
+  .pillar-card:nth-child(4)::after { background: var(--mint); }
+  .pillar-card:nth-child(5)::after { background: var(--gold); }
+  .pillar-card:nth-child(6)::after { background: var(--mint); }
+  .pillar-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem; line-height: 1;
+    color: var(--border);
+    margin-bottom: 16px;
+  }
+  .pillar-card h3 {
+    font-size: 1rem; font-weight: 600;
+    color: var(--cream); margin-bottom: 10px;
+  }
+  .pillar-card p { font-size: 0.88rem; color: #777; line-height: 1.7; }
+
+  /* ── WHO THIS IS FOR ── */
+  .for-you { background: var(--charcoal); }
+  .for-you-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .for-you-image img {
+    width: 100%;
+    object-fit: cover;
+    filter: contrast(1.06);
+  }
+  .for-you-list { display: flex; flex-direction: column; gap: 0; }
+  .for-you-item {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .for-you-item:first-child { border-top: 1px solid var(--border); }
+  .for-you-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--mint); margin-top: 7px; flex-shrink: 0;
+  }
+  .for-you-item h4 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; color: var(--cream); }
+  .for-you-item p  { font-size: 0.87rem; color: #777; line-height: 1.65; }
+
+  /* ── WHAT'S INSIDE ── */
+  .inside { background: var(--black); }
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+  .inside-card {
+    background: var(--card);
+    padding: 36px 32px;
+    border-bottom: 3px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .inside-card:hover { background: #1e1e1e; border-bottom-color: var(--mint); }
+  .inside-icon { font-size: 1.6rem; margin-bottom: 16px; }
+  .inside-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--cream); }
+  .inside-card p  { font-size: 0.88rem; color: #777; line-height: 1.7; }
+
+  /* ── CTA ── */
+  .cta-banner {
+    background: linear-gradient(135deg, #140008 0%, #0a0a0a 45%, #0a140a 100%);
+    border-top: 1px solid var(--border);
+    text-align: center; padding: 120px 5%;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::after {
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(76,175,130,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-banner h2 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    max-width: 680px; margin: 0 auto 20px;
+  }
+  .cta-banner .cta-sub {
+    font-size: 1rem; color: #888; max-width: 500px;
+    margin: 0 auto 16px; line-height: 1.75;
+  }
+  .cta-reminder {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--mint);
+    margin-bottom: 44px; display: block;
+  }
+  .cta-btn-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .cta-btn-wrap .btn-primary { font-size: 1rem; padding: 18px 48px; }
+  .cta-fine {
+    font-size: 0.75rem; color: #444; margin-top: 6px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    border-top: 1px solid var(--border);
+    padding: 40px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem; letter-spacing: 0.08em;
+    background: linear-gradient(90deg, var(--pink), var(--orange), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  footer p { font-size: 0.78rem; color: var(--muted); }
+
+  .cta-input-row {
+    display: flex; gap: 0; max-width: 460px; margin: 0 auto;
+  }
+  .cta-input-row input {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-right: none;
+    padding: 16px 20px;
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+  }
+  .cta-input-row input::placeholder { color: #555; }
+  .cta-input-row input:focus { border-color: var(--pink); }
+  .cta-input-row button {
+    background: var(--mint);
+    color: #fff; border: none;
+    padding: 16px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600; font-size: 0.9rem;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .cta-input-row button:hover { background: #3a9468; }
+
+  /* ── BIO ── */
+  .bio { background: var(--charcoal); }
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .bio-image-wrap {
+    position: relative;
+  }
+  .bio-image-wrap img {
+    width: 100%;
+    object-fit: cover;
+    filter: contrast(1.05);
+    display: block;
+  }
+  .bio-image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; right: -10px;
+    width: 100%; height: 100%;
+    border: 2px solid var(--mint);
+    z-index: -1;
+    pointer-events: none;
+  }
+  .bio-content .section-label { margin-bottom: 12px; }
+  .bio-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+    background: linear-gradient(90deg, var(--pink), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bio-title {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .bio-content p {
+    font-size: 0.98rem; color: #999; line-height: 1.85;
+    margin-bottom: 18px;
+  }
+  .bio-content p:last-of-type { margin-bottom: 0; }
+  .bio-content p strong { color: var(--cream); font-weight: 600; }
+  .bio-badges {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-top: 32px;
+  }
+  .bio-badge {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 7px 16px;
+    border: 1px solid var(--border); color: var(--muted);
+  }
+  .bio-badge.highlight { border-color: var(--gold); color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding-top: 100px; gap: 40px; }
+    .hero-image { justify-content: center; }
+    .honest-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .for-you-grid { grid-template-columns: 1fr; }
+    .inside-grid { grid-template-columns: 1fr; }
+    .cta-input-row { flex-direction: column; }
+    .cta-input-row input { border-right: 1px solid var(--border); border-bottom: none; }
+    .bio-grid { grid-template-columns: 1fr; }
+    .bio-image-wrap::after { display: none; }
+    
+    footer p:last-child { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">The Profit Penthouse</div>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">For Millennial Women Ready to Build Real Wealth</div>
+    <h1>
+      <span class="line-cream">WHAT IF YOU WERE</span>
+      <span class="line-pink">ONE SKILLSET</span>
+      <span class="line-orange">AWAY FROM</span>
+      <span class="line-gold">RETIRING EARLY?</span>
+    </h1>
+    <p class="hero-sub">
+      You've spent your whole career building someone else's dream. It's time to build your own financial future — on your terms, at your pace, with women who get it. The Profit Penthouse is where millennial women develop the mindset, the discipline, and the skill to trade independently.
+    </p>
+    <div class="hero-clarifier">
+      <span class="clarifier-tag yes">✓ Accountability</span>
+      <span class="clarifier-tag yes">✓ Trading Psychology</span>
+      <span class="clarifier-tag yes">✓ Built for Millennial Women</span>
+      <span class="clarifier-tag yes">✓ Beginner Welcoming</span>
+      <span class="clarifier-tag no">✕ Not a Signals Group</span>
+      <span class="clarifier-tag no">✕ Not a Course</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#join" class="btn-primary">Join the Waitlist</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782011950/IMG_4998_naaevb.jpg" alt="The Profit Penthouse" />
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    TRADING PSYCHOLOGY <span>✦</span> DISCIPLINE OVER HYPE <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span> FUTURES MARKET <span>✦</span> SIMPLIFIED METHODOLOGY <span>✦</span> NO SIGNALS <span>✦</span> NO COPY TRADING <span>✦</span> INDEPENDENT THINKERS ONLY <span>✦</span>&nbsp;
+    TRADING PSYCHOLOGY <span>✦</span> DISCIPLINE OVER HYPE <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span> FUTURES MARKET <span>✦</span> SIMPLIFIED METHODOLOGY <span>✦</span> NO SIGNALS <span>✦</span> NO COPY TRADING <span>✦</span> INDEPENDENT THINKERS ONLY <span>✦</span>&nbsp;
+  </div>
+</div>
+
+<!-- HONEST SECTION -->
+<section class="honest" id="honest">
+  <div class="section-label">Transparency first</div>
+  <h2>Let's be clear about<br>what this is.</h2>
+  <p class="section-sub">The trading space is full of people selling shortcuts to anyone who'll listen. This isn't that. Here's exactly what millennial women are walking into.</p>
+  <div class="honest-grid">
+    <div class="honest-card">
+      <span class="badge badge-yes">This IS</span>
+      <ul>
+        <li>A private community for millennial women learning to trade independently and think for themselves</li>
+        <li>A space focused on trading psychology, emotional discipline, and risk management</li>
+        <li>Accountability check-ins, journaling prompts, and real conversations about losses</li>
+        <li>Concepts taught using a simplified futures methodology anyone can learn</li>
+        <li>A place to ask questions without judgment — there are no dumb ones here</li>
+      </ul>
+    </div>
+    <div class="honest-card">
+      <span class="badge badge-no">This is NOT</span>
+      <ul>
+        <li>A signals group — you will never be told what to buy or sell</li>
+        <li>A copy-trading service — your trades are your responsibility</li>
+        <li>A get-rich-quick program — real skill takes time and we respect that</li>
+        <li>A course with a certificate at the end — it's ongoing, living support</li>
+        <li>A substitute for your own research, backtesting, and risk management</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PSYCHOLOGY PILLARS -->
+<section class="pillars" id="pillars">
+  <div class="section-label">What we work on</div>
+  <h2>The market will test you.<br>We help you pass.</h2>
+  <p class="section-sub">Every losing streak has more to do with psychology than setups. These are the six areas we focus on inside the community.</p>
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-num">01</div>
+      <h3>Emotional Regulation</h3>
+      <p>Revenge trading, FOMO entries, panic exits — we identify the patterns behind impulsive decisions and build the pause that saves your account.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">02</div>
+      <h3>Risk Discipline</h3>
+      <p>Knowing your setup means nothing if you're overleveraged. We make risk management a non-negotiable habit, not an afterthought.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">03</div>
+      <h3>Consistency Over Perfection</h3>
+      <p>One green week doesn't make you a trader. One red week doesn't break you. We focus on the process — showing up, journaling, reviewing, repeating.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">04</div>
+      <h3>Building Conviction</h3>
+      <p>You should be able to explain every trade you take before you take it. We help you develop the confidence that comes from real understanding — not someone else's call.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">05</div>
+      <h3>Patience as a Strategy</h3>
+      <p>The best trade is often the one you don't take. We normalize sitting on your hands and protecting capital as a skill, not a weakness.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">06</div>
+      <h3>Accountability Without Shame</h3>
+      <p>We review losses honestly. No one comes here to perform. The only way to grow is to look at what actually happened and tell the truth about it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="bio" id="about">
+  <div class="bio-grid">
+    <div class="bio-image-wrap">
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782012822/IMG_4999_rl3lmu.jpg" alt="Shantae — Founder of The Profit Penthouse" />
+    </div>
+    <div class="bio-content">
+      <div class="section-label">The woman behind it</div>
+      <div class="bio-name">Hi, I'm Shantae.</div>
+      <div class="bio-title">Founder · Millennial Trader · Your Accountability Partner</div>
+      <p>
+        I was first introduced to trading about <strong>10 years ago</strong> — and honestly? I ran the other way. The charts looked like noise, the terminology felt like a foreign language, and the space was dominated by people who made it seem like you either already knew everything or you didn't belong.
+      </p>
+      <p>
+        So I walked away. I kept building, kept working, kept doing what made sense — until eventually I got tired of <strong>trading my time for someone else's vision</strong> and came back to the market with fresh eyes and a real commitment to figuring it out.
+      </p>
+      <p>
+        That decision changed everything. I'm now a <strong>consistently profitable, funded trader</strong> — actively trading the futures market with a simplified methodology that finally made the charts make sense. And the thing I wish I'd had when I started? Exactly what The Profit Penthouse is now.
+      </p>
+      <p>
+        Not someone to follow blindly. A <strong>community to grow with.</strong>
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="for-you" id="foryou">
+  <div class="section-label">Is this for me?</div>
+  <div class="for-you-grid">
+    <div class="for-you-image">
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782018245/IMG_5005_qj8pej.jpg" alt="Learning the chart" />
+    </div>
+    <div>
+      <h2>You're in the right place<br>if any of this is you.</h2>
+      <div class="for-you-list">
+        <div class="for-you-item">
+          <div class="for-you-dot"></div>
+          <div>
+            <h4>You're a millennial woman who's done waiting</h4>
+            <p>You've been responsible, you've saved, you've done everything "right" — and it still doesn't feel like enough. You're ready to build something that actually creates freedom.</p>
+          </div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-dot"></div>
+          <div>
+            <h4>You've looked at trading but didn't know where to start</h4>
+            <p>The charts looked like noise, the terminology felt foreign, and the space was full of men who made it seem like you either already knew everything or you didn't belong. Sound familiar?</p>
+          </div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-dot"></div>
+          <div>
+            <h4>You've been in a signals group and it didn't work</h4>
+            <p>You followed alerts, you still lost money, and you realized you had no idea why. You're ready to actually understand what you're doing.</p>
+          </div>
+        </div>
+        <div class="for-you-item">
+          <div class="for-you-dot"></div>
+          <div>
+            <h4>You want community with women on the same path</h4>
+            <p>Trading alone is isolating. You want people who get it — who celebrate the discipline, not just the wins, and who show up even on the red days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside" id="what">
+  <div class="section-label">Inside the community</div>
+  <h2>What you actually get<br>when you join.</h2>
+  <p class="section-sub">No fluff. No filler. Everything here is designed to help you develop as an independent trader.</p>
+  <div class="inside-grid">
+    <div class="inside-card">
+      <div class="inside-icon">🧠</div>
+      <h3>Weekly Psychology Check-Ins</h3>
+      <p>Every week starts with a mindset prompt — not a trade call. We discuss what's showing up emotionally and how to not let it run your account.</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">📓</div>
+      <h3>Trade Journal Reviews</h3>
+      <p>Share your journal entries for feedback. The goal isn't to judge your trades — it's to understand the reasoning behind them and tighten your process.</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">📊</div>
+      <h3>Concept Breakdowns</h3>
+      <p>Futures market structure, price action, liquidity — explained clearly for beginners with chart examples. No assumed knowledge. No gatekeeping.</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">💬</div>
+      <h3>Real Talk Threads</h3>
+      <p>Spaces to post your wins, your losses, your frustrations. A community that normalizes the full experience of learning to trade — not just the highlight reel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="cta-banner" id="join">
+  <p class="section-label" style="text-align:center; margin-bottom:14px;">The doors aren't open yet</p>
+  <h2>Get on the list.<br>Be first in.</h2>
+  <p class="cta-sub">The Profit Penthouse community is coming. Drop your email and you'll be the first to know when we launch — and why we waited until the time was right.</p>
+  <span class="cta-reminder">No signals. No shortcuts. Just growth.</span>
+  <div class="cta-btn-wrap">
+    <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank" style="display:flex; flex-direction:column; align-items:center; gap:12px; width:100%;">
+      <div class="cta-input-row">
+        <input type="email" name="email_address" placeholder="your@email.com" required />
+        <button type="submit">Join the Waitlist</button>
+      </div>
+      <p class="cta-fine">No spam. No pressure. Just a heads up when the community opens.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">The Profit Penthouse</div>
+  <p>© 2026 theprofitpenthouse.com · @introverted_icon</p>
+  <p style="font-size:0.7rem; color:#333; max-width:380px; text-align:right;">
+    Trading futures involves substantial risk of loss. This community is for educational and accountability purposes only. Nothing shared here constitutes financial advice or a trade recommendation.
+  </p>
+</footer>
+
+</body>
+</html>
