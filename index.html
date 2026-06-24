@@ -3,500 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Profit Penthouse — A Community for Beginner Traders</title>
+<title>The Profit Penthouse — A Community for Millennial Women Traders</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --black:   #0A0A0A;
-    --charcoal:#141414;
-    --card:    #1A1A1A;
-    --pink:    #E8185A;
-    --orange:  #E8693A;
-    --gold:    #D4A832;
-    --mint:    #4CAF82;
-    --cream:   #F5F0E8;
-    --muted:   #888888;
-    --border:  #2A2A2A;
+    --black:  #0A0A0A;
+    --card:   #111111;
+    --pink:   #C71585;
+    --orange: #D2691E;
+    --gold:   #FFD700;
+    --teal:   #008080;
+    --white:  #FFFFFF;
+    --muted:  #888888;
+    --border: #2A2A2A;
   }
-
   html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
-  body {
-    background: var(--black);
-    color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 5%; background: rgba(10,10,10,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.08em; background: linear-gradient(90deg, var(--pink), var(--orange), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .nav-pill { background: var(--teal); color: #fff; padding: 9px 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; transition: opacity 0.2s; }
+  .nav-pill:hover { opacity: 0.85; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 5%;
-    background: rgba(10,10,10,0.9);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 0.08em;
-    background: linear-gradient(90deg, var(--pink), var(--orange), var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .nav-cta {
-    background: var(--pink);
-    color: #fff;
-    border: none;
-    padding: 10px 22px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.06em;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .nav-cta:hover { background: #c0134c; }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 120px 5% 80px;
-    position: relative;
-    overflow: hidden;
-    gap: 60px;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(90deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 80px),
-      repeating-linear-gradient(0deg, var(--border) 0, var(--border) 1px, transparent 1px, transparent 80px);
-    opacity: 0.25;
-    pointer-events: none;
-  }
-
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 120px 5% 80px; gap: 60px; position: relative; overflow: hidden; background: #0A0A0A; }
+  .hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, #181818 0, #181818 1px, transparent 1px, transparent 80px), repeating-linear-gradient(0deg, #181818 0, #181818 1px, transparent 1px, transparent 80px); opacity: 0.3; pointer-events: none; }
+  .hero-candles { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.1; pointer-events: none; z-index: 1; }
   .hero-text { position: relative; z-index: 2; }
-
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--mint);
-    margin-bottom: 28px;
-  }
-  .eyebrow::before {
-    content: '';
-    display: block; width: 28px; height: 2px;
-    background: var(--mint);
-  }
-
-  h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3rem, 5.5vw, 5.4rem);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    margin-bottom: 28px;
-  }
-  h1 .line-pink   { color: var(--pink); display: block; }
-  h1 .line-orange { color: var(--orange); display: block; }
-  h1 .line-gold   { color: var(--gold); display: block; }
-  h1 .line-cream  { color: var(--cream); display: block; }
-
-  .hero-sub {
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: #B0A898;
-    max-width: 460px;
-    margin-bottom: 16px;
-    line-height: 1.8;
-  }
-
-  .hero-clarifier {
-    display: flex; flex-direction: column; gap: 10px;
-    margin-bottom: 40px; max-width: 340px;
-  }
-  .clarifier-tag {
-    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 10px 16px;
-    border: 1px solid var(--border);
-    color: var(--muted);
-  }
-  .clarifier-tag.yes {
-    border-color: rgba(76,175,130,0.5);
-    color: var(--mint);
-    background: rgba(76,175,130,0.06);
-  }
-  .clarifier-tag.no {
-    border-color: rgba(180,40,40,0.25);
-    color: #cc5555;
-    background: rgba(180,40,40,0.05);
-  }
-
-  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--pink) 0%, var(--orange) 100%);
-    color: #fff;
-    border: none;
-    padding: 16px 36px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: opacity 0.2s, transform 0.15s;
-  }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px; }
+  .eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--teal); }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 5.5vw, 5.4rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 24px; }
+  .l1 { color: var(--white); display: block; }
+  .l2 { color: var(--pink); display: block; }
+  .l3 { color: var(--orange); display: block; }
+  .l4 { color: var(--gold); display: block; }
+  .hero-sub { font-size: 1rem; font-weight: 300; color: #aaa; max-width: 460px; margin-bottom: 28px; line-height: 1.8; }
+  .hero-tags { display: flex; flex-direction: column; gap: 8px; margin-bottom: 36px; max-width: 320px; }
+  .htag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 14px; border: 1px solid rgba(0,128,128,0.4); color: var(--teal); background: rgba(0,128,128,0.05); }
+  .htag.no { border-color: rgba(180,40,40,0.3); color: #cc5555; background: rgba(180,40,40,0.04); }
+  .btn-primary { background: linear-gradient(135deg, var(--pink), var(--orange)); color: #fff; border: none; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
   .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+  .hero-image { position: relative; z-index: 2; display: flex; justify-content: flex-end; align-items: flex-end; }
+  .hero-image img { width: 100%; max-width: 480px; object-fit: cover; filter: contrast(1.05); }
 
-  .btn-ghost {
-    color: var(--cream);
-    border: 1px solid var(--border);
-    padding: 15px 30px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-ghost:hover { border-color: var(--pink); color: var(--pink); }
+  /* FREEBIE BANNER */
+  .freebie { background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 70px 5%; }
+  .freebie-inner { display: grid; grid-template-columns: auto 1fr auto; gap: 60px; align-items: center; max-width: 1000px; margin: 0 auto; }
+  .freebie-img { width: 160px; flex-shrink: 0; position: relative; }
+  .freebie-img img { width: 100%; display: block; box-shadow: 0 20px 60px rgba(199,21,133,0.25); }
+  .freebie-img::after { content: 'FREE'; position: absolute; top: -10px; right: -10px; background: var(--pink); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; padding: 4px 10px; }
+  .freebie-text .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .freebie-text .label::before { content: ''; display: block; width: 16px; height: 2px; background: var(--teal); }
+  .freebie-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.4rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 12px; background: linear-gradient(90deg, var(--white), #bbb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .freebie-text p { font-size: 0.9rem; color: #888; line-height: 1.7; max-width: 420px; }
+  .freebie-cta { display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; }
+  .freebie-cta .btn-primary { white-space: nowrap; }
+  .freebie-note { font-size: 0.7rem; color: #555; }
 
-  /* hero image */
-  .hero-image {
-    position: relative; z-index: 2;
-    display: flex; justify-content: flex-end; align-items: flex-end;
-  }
-  .hero-image img {
-    width: 100%;
-    max-width: 480px;
-    object-fit: cover;
-    filter: contrast(1.05);
-  }
-
-  /* ── MARQUEE ── */
-  .marquee-bar {
-    background: var(--charcoal);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    overflow: hidden; white-space: nowrap; padding: 14px 0;
-  }
-  .marquee-inner {
-    display: inline-block;
-    animation: marquee 32s linear infinite;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-  }
-  .marquee-inner span { color: var(--pink); margin: 0 16px; }
+  /* MARQUEE */
+  .marquee-bar { background: #0A0A0A; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; white-space: nowrap; padding: 13px 0; }
+  .marquee-inner { display: inline-block; animation: marquee 32s linear infinite; font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 0.12em; color: #444; }
+  .marquee-inner span { color: var(--pink); margin: 0 14px; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  /* ── COMMON SECTION ── */
+  /* COMMON */
   section { padding: 100px 5%; }
-  .section-label {
-    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--mint);
-    margin-bottom: 16px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .section-label::before {
-    content: '';
-    display: block; width: 20px; height: 2px;
-    background: var(--mint); flex-shrink: 0;
-  }
-  h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.2rem, 4vw, 3.6rem);
-    line-height: 1.05;
-    letter-spacing: 0.02em;
-    margin-bottom: 20px;
-  }
-  .section-sub {
-    font-size: 1rem; font-weight: 300; color: #999;
-    max-width: 540px; line-height: 1.75; margin-bottom: 60px;
-  }
+  .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .label::before { content: ''; display: block; width: 18px; height: 2px; background: var(--teal); flex-shrink: 0; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 18px; }
+  .sub { font-size: 0.98rem; font-weight: 300; color: #888; max-width: 520px; line-height: 1.75; margin-bottom: 56px; }
 
-  /* ── HONEST SECTION ── */
-  .honest { background: var(--charcoal); }
-  .honest-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: var(--border);
-    max-width: 900px;
-  }
-  .honest-card {
-    background: var(--card);
-    padding: 40px 36px;
-  }
-  .honest-card .badge {
-    display: inline-block;
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
-    text-transform: uppercase; padding: 5px 12px;
-    margin-bottom: 20px;
-  }
-  .badge-yes { background: rgba(76,175,130,0.12); color: var(--mint); border: 1px solid rgba(76,175,130,0.3); }
-  .badge-no  { background: rgba(180,40,40,0.1); color: #cc5555; border: 1px solid rgba(180,40,40,0.25); }
+  /* MEET SHANTAE */
+  .bio { background: #0A0A0A; }
+  .bio-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: center; }
+  .bio-img-wrap { position: relative; }
+  .bio-img-wrap img { width: 100%; object-fit: cover; filter: contrast(1.05); display: block; }
+  .bio-img-wrap::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 100%; height: 100%; border: 2px solid var(--teal); z-index: -1; pointer-events: none; }
+  .bio-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 4px; background: linear-gradient(90deg, var(--pink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .bio-role { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+  .bio-content p { font-size: 0.97rem; color: #999; line-height: 1.85; margin-bottom: 16px; }
+  .bio-content p strong { color: var(--white); font-weight: 600; }
+
+  /* THIS IS / NOT */
+  .honest { background: var(--card); }
+  .honest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); max-width: 960px; }
+  .honest-card { background: #111; padding: 44px 38px; }
+  .badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 12px; margin-bottom: 24px; }
+  .badge-yes { background: rgba(0,128,128,0.1); color: var(--teal); border: 1px solid rgba(0,128,128,0.3); }
+  .badge-no  { background: rgba(180,40,40,0.08); color: #cc5555; border: 1px solid rgba(180,40,40,0.25); }
   .honest-card ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-  .honest-card ul li {
-    font-size: 0.95rem; color: #aaa; line-height: 1.6;
-    padding-left: 20px; position: relative;
-  }
-  .honest-card ul li::before {
-    position: absolute; left: 0; top: 0;
-    font-size: 0.85rem;
-  }
-  .badge-yes ~ ul li::before { content: '✓'; color: var(--mint); }
+  .honest-card ul li { font-size: 0.93rem; color: #aaa; line-height: 1.65; padding-left: 22px; position: relative; }
+  .honest-card ul li::before { position: absolute; left: 0; top: 0; font-size: 0.85rem; }
+  .badge-yes ~ ul li::before { content: '✓'; color: var(--teal); }
   .badge-no  ~ ul li::before { content: '✕'; color: #cc5555; }
 
-  /* ── PSYCHOLOGY PILLARS ── */
-  .pillars { background: var(--black); }
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .pillar-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 40px 30px;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-  .pillar-card:hover { border-color: var(--pink); }
-  .pillar-card::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-  }
-  .pillar-card:nth-child(1)::after { background: var(--pink); }
-  .pillar-card:nth-child(2)::after { background: var(--mint); }
-  .pillar-card:nth-child(3)::after { background: var(--orange); }
-  .pillar-card:nth-child(4)::after { background: var(--mint); }
-  .pillar-card:nth-child(5)::after { background: var(--gold); }
-  .pillar-card:nth-child(6)::after { background: var(--mint); }
-  .pillar-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem; line-height: 1;
-    color: var(--border);
-    margin-bottom: 16px;
-  }
-  .pillar-card h3 {
-    font-size: 1rem; font-weight: 600;
-    color: var(--cream); margin-bottom: 10px;
-  }
-  .pillar-card p { font-size: 0.88rem; color: #777; line-height: 1.7; }
+  /* WHO IT'S FOR */
+  .foryou { background: #0A0A0A; }
+  .foryou-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+  .foryou-img img { width: 100%; object-fit: cover; filter: contrast(1.06); }
+  .foryou-list { display: flex; flex-direction: column; }
+  .foryou-item { padding: 24px 0; border-bottom: 1px solid var(--border); display: flex; gap: 16px; align-items: flex-start; }
+  .foryou-item:first-child { border-top: 1px solid var(--border); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); margin-top: 8px; flex-shrink: 0; }
+  .foryou-item h4 { font-size: 0.96rem; font-weight: 600; margin-bottom: 5px; color: var(--white); }
+  .foryou-item p  { font-size: 0.86rem; color: #777; line-height: 1.65; }
 
-  /* ── WHO THIS IS FOR ── */
-  .for-you { background: var(--charcoal); }
-  .for-you-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  .for-you-image img {
-    width: 100%;
-    object-fit: cover;
-    filter: contrast(1.06);
-  }
-  .for-you-list { display: flex; flex-direction: column; gap: 0; }
-  .for-you-item {
-    padding: 26px 0;
-    border-bottom: 1px solid var(--border);
-    display: flex; gap: 16px; align-items: flex-start;
-  }
-  .for-you-item:first-child { border-top: 1px solid var(--border); }
-  .for-you-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--mint); margin-top: 7px; flex-shrink: 0;
-  }
-  .for-you-item h4 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; color: var(--cream); }
-  .for-you-item p  { font-size: 0.87rem; color: #777; line-height: 1.65; }
+  /* INSIDE COMMUNITY */
+  .inside { background: var(--card); }
+  .inside-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--border); }
+  .ic { background: #111; padding: 38px 32px; border-bottom: 3px solid transparent; transition: border-color 0.2s, background 0.2s; }
+  .ic:hover { border-bottom-color: var(--teal); background: #141414; }
+  .ic-icon { font-size: 1.6rem; margin-bottom: 16px; }
+  .ic h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--white); }
+  .ic p  { font-size: 0.87rem; color: #777; line-height: 1.7; }
 
-  /* ── WHAT'S INSIDE ── */
-  .inside { background: var(--black); }
-  .inside-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--border);
-  }
-  .inside-card {
-    background: var(--card);
-    padding: 36px 32px;
-    border-bottom: 3px solid transparent;
-    transition: background 0.2s, border-color 0.2s;
-  }
-  .inside-card:hover { background: #1e1e1e; border-bottom-color: var(--mint); }
-  .inside-icon { font-size: 1.6rem; margin-bottom: 16px; }
-  .inside-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--cream); }
-  .inside-card p  { font-size: 0.88rem; color: #777; line-height: 1.7; }
+  /* PILLARS */
+  .pillars { background: #0A0A0A; }
+  .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .pc { background: var(--card); border: 1px solid var(--border); padding: 38px 28px; position: relative; overflow: hidden; transition: border-color 0.2s; }
+  .pc:hover { border-color: var(--pink); }
+  .pc::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
+  .pc:nth-child(1)::after { background: var(--pink); }
+  .pc:nth-child(2)::after { background: var(--teal); }
+  .pc:nth-child(3)::after { background: var(--orange); }
+  .pc:nth-child(4)::after { background: var(--teal); }
+  .pc:nth-child(5)::after { background: var(--gold); }
+  .pc:nth-child(6)::after { background: var(--teal); }
+  .pc-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; line-height: 1; color: #222; margin-bottom: 14px; }
+  .pc h3 { font-size: 0.98rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .pc p  { font-size: 0.86rem; color: #666; line-height: 1.7; }
 
-  /* ── CTA ── */
-  .cta-banner {
-    background: linear-gradient(135deg, #140008 0%, #0a0a0a 45%, #0a140a 100%);
-    border-top: 1px solid var(--border);
-    text-align: center; padding: 120px 5%;
-    position: relative; overflow: hidden;
-  }
-  .cta-banner::after {
-    content: '';
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(76,175,130,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-banner h2 {
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    max-width: 680px; margin: 0 auto 20px;
-  }
-  .cta-banner .cta-sub {
-    font-size: 1rem; color: #888; max-width: 500px;
-    margin: 0 auto 16px; line-height: 1.75;
-  }
-  .cta-reminder {
-    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--mint);
-    margin-bottom: 44px; display: block;
-  }
-  .cta-btn-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-  .cta-btn-wrap .btn-primary { font-size: 1rem; padding: 18px 48px; }
-  .cta-fine {
-    font-size: 0.75rem; color: #444; margin-top: 6px;
-  }
+  /* WAITLIST */
+  .waitlist { background: #0A0A0A; border-top: 1px solid var(--border); text-align: center; padding: 120px 5%; position: relative; overflow: hidden; }
+  .waitlist::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(199,21,133,0.07) 0%, transparent 70%); pointer-events: none; }
+  .waitlist::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,128,128,0.06) 0%, transparent 70%); pointer-events: none; }
+  .waitlist h2 { font-size: clamp(2.4rem, 5vw, 4rem); max-width: 640px; margin: 0 auto 16px; }
+  .waitlist-sub { font-size: 1rem; color: #777; max-width: 480px; margin: 0 auto 14px; line-height: 1.75; }
+  .waitlist-note { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 44px; display: block; }
+  .form-row { display: flex; max-width: 460px; margin: 0 auto; }
+  .form-row input { flex: 1; background: #111; border: 1px solid var(--border); border-right: none; padding: 16px 20px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; }
+  .form-row input::placeholder { color: #444; }
+  .form-row input:focus { border-color: var(--teal); }
+  .form-row button { background: var(--teal); color: #fff; border: none; padding: 16px 28px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .form-row button:hover { background: #006666; }
+  .form-fine { font-size: 0.72rem; color: #444; margin-top: 14px; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--charcoal);
-    border-top: 1px solid var(--border);
-    padding: 40px 5%;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 16px;
-  }
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem; letter-spacing: 0.08em;
-    background: linear-gradient(90deg, var(--pink), var(--orange), var(--gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  footer p { font-size: 0.78rem; color: var(--muted); }
+  /* FOOTER */
+  footer { background: #0A0A0A; border-top: 1px solid var(--border); padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.08em; background: linear-gradient(90deg, var(--pink), var(--orange), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  footer p { font-size: 0.76rem; color: var(--muted); }
 
-  .cta-input-row {
-    display: flex; gap: 0; max-width: 460px; margin: 0 auto;
-  }
-  .cta-input-row input {
-    flex: 1;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-right: none;
-    padding: 16px 20px;
-    color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    outline: none;
-  }
-  .cta-input-row input::placeholder { color: #555; }
-  .cta-input-row input:focus { border-color: var(--pink); }
-  .cta-input-row button {
-    background: var(--mint);
-    color: #fff; border: none;
-    padding: 16px 28px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600; font-size: 0.9rem;
-    cursor: pointer; white-space: nowrap;
-    transition: background 0.2s;
-  }
-  .cta-input-row button:hover { background: #3a9468; }
-
-  /* ── BIO ── */
-  .bio { background: var(--charcoal); }
-  .bio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .bio-image-wrap {
-    position: relative;
-  }
-  .bio-image-wrap img {
-    width: 100%;
-    object-fit: cover;
-    filter: contrast(1.05);
-    display: block;
-  }
-  .bio-image-wrap::after {
-    content: '';
-    position: absolute;
-    bottom: -10px; right: -10px;
-    width: 100%; height: 100%;
-    border: 2px solid var(--mint);
-    z-index: -1;
-    pointer-events: none;
-  }
-  .bio-content .section-label { margin-bottom: 12px; }
-  .bio-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
-    line-height: 1;
-    letter-spacing: 0.02em;
-    margin-bottom: 6px;
-    background: linear-gradient(90deg, var(--pink), var(--orange));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .bio-title {
-    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 28px;
-  }
-  .bio-content p {
-    font-size: 0.98rem; color: #999; line-height: 1.85;
-    margin-bottom: 18px;
-  }
-  .bio-content p:last-of-type { margin-bottom: 0; }
-  .bio-content p strong { color: var(--cream); font-weight: 600; }
-  .bio-badges {
-    display: flex; flex-wrap: wrap; gap: 10px;
-    margin-top: 32px;
-  }
-  .bio-badge {
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 7px 16px;
-    border: 1px solid var(--border); color: var(--muted);
-  }
-  .bio-badge.highlight { border-color: var(--gold); color: var(--gold); }
-
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; padding-top: 100px; gap: 40px; }
     .hero-image { justify-content: center; }
-    .honest-grid { grid-template-columns: 1fr; }
-    .pillars-grid { grid-template-columns: 1fr; }
-    .for-you-grid { grid-template-columns: 1fr; }
-    .inside-grid { grid-template-columns: 1fr; }
-    .cta-input-row { flex-direction: column; }
-    .cta-input-row input { border-right: 1px solid var(--border); border-bottom: none; }
+    .freebie-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .freebie-text .label { justify-content: center; }
+    .freebie-img { margin: 0 auto; }
+    .freebie-cta { align-items: center; }
     .bio-grid { grid-template-columns: 1fr; }
-    .bio-image-wrap::after { display: none; }
-    
+    .bio-img-wrap::after { display: none; }
+    .honest-grid { grid-template-columns: 1fr; }
+    .foryou-grid { grid-template-columns: 1fr; }
+    .inside-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .form-row { flex-direction: column; }
+    .form-row input { border-right: 1px solid var(--border); border-bottom: none; }
+    footer { flex-direction: column; text-align: center; }
     footer p:last-child { text-align: center; }
   }
 </style>
@@ -506,33 +182,70 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">The Profit Penthouse</div>
-
+  <a href="#join" class="nav-pill">Join Waitlist</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+  <svg class="hero-candles" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <line x1="40" y1="750" x2="40" y2="650" stroke="#C71585" stroke-width="1.5"/><rect x="34" y="690" width="12" height="45" fill="#C71585"/>
+    <line x1="70" y1="740" x2="70" y2="640" stroke="#008080" stroke-width="1.5"/><rect x="64" y="665" width="12" height="55" fill="#008080"/>
+    <line x1="100" y1="760" x2="100" y2="660" stroke="#008080" stroke-width="1.5"/><rect x="94" y="680" width="12" height="60" fill="#008080"/>
+    <line x1="130" y1="745" x2="130" y2="645" stroke="#C71585" stroke-width="1.5"/><rect x="124" y="668" width="12" height="50" fill="#C71585"/>
+    <line x1="160" y1="730" x2="160" y2="620" stroke="#008080" stroke-width="1.5"/><rect x="154" y="648" width="12" height="58" fill="#008080"/>
+    <line x1="190" y1="720" x2="190" y2="610" stroke="#008080" stroke-width="1.5"/><rect x="184" y="635" width="12" height="60" fill="#008080"/>
+    <line x1="220" y1="740" x2="220" y2="635" stroke="#C71585" stroke-width="1.5"/><rect x="214" y="658" width="12" height="55" fill="#C71585"/>
+    <line x1="250" y1="710" x2="250" y2="600" stroke="#008080" stroke-width="1.5"/><rect x="244" y="622" width="12" height="64" fill="#008080"/>
+    <line x1="280" y1="700" x2="280" y2="590" stroke="#008080" stroke-width="1.5"/><rect x="274" y="612" width="12" height="62" fill="#008080"/>
+    <line x1="310" y1="720" x2="310" y2="615" stroke="#C71585" stroke-width="1.5"/><rect x="304" y="638" width="12" height="56" fill="#C71585"/>
+    <line x1="340" y1="690" x2="340" y2="580" stroke="#008080" stroke-width="1.5"/><rect x="334" y="600" width="12" height="66" fill="#008080"/>
+    <line x1="370" y1="675" x2="370" y2="565" stroke="#008080" stroke-width="1.5"/><rect x="364" y="586" width="12" height="65" fill="#008080"/>
+    <line x1="400" y1="695" x2="400" y2="590" stroke="#C71585" stroke-width="1.5"/><rect x="394" y="612" width="12" height="54" fill="#C71585"/>
+    <line x1="430" y1="665" x2="430" y2="555" stroke="#008080" stroke-width="1.5"/><rect x="424" y="574" width="12" height="67" fill="#008080"/>
+    <line x1="460" y1="650" x2="460" y2="540" stroke="#008080" stroke-width="1.5"/><rect x="454" y="560" width="12" height="66" fill="#008080"/>
+    <line x1="490" y1="670" x2="490" y2="562" stroke="#C71585" stroke-width="1.5"/><rect x="484" y="584" width="12" height="55" fill="#C71585"/>
+    <line x1="520" y1="640" x2="520" y2="528" stroke="#008080" stroke-width="1.5"/><rect x="514" y="548" width="12" height="68" fill="#008080"/>
+    <line x1="550" y1="625" x2="550" y2="512" stroke="#008080" stroke-width="1.5"/><rect x="544" y="532" width="12" height="69" fill="#008080"/>
+    <line x1="580" y1="645" x2="580" y2="535" stroke="#C71585" stroke-width="1.5"/><rect x="574" y="556" width="12" height="55" fill="#C71585"/>
+    <line x1="610" y1="615" x2="610" y2="500" stroke="#008080" stroke-width="1.5"/><rect x="604" y="520" width="12" height="70" fill="#008080"/>
+    <line x1="640" y1="598" x2="640" y2="482" stroke="#008080" stroke-width="1.5"/><rect x="634" y="502" width="12" height="72" fill="#008080"/>
+    <line x1="670" y1="618" x2="670" y2="508" stroke="#C71585" stroke-width="1.5"/><rect x="664" y="528" width="12" height="56" fill="#C71585"/>
+    <line x1="700" y1="588" x2="700" y2="470" stroke="#008080" stroke-width="1.5"/><rect x="694" y="490" width="12" height="74" fill="#008080"/>
+    <line x1="730" y1="570" x2="730" y2="455" stroke="#008080" stroke-width="1.5"/><rect x="724" y="475" width="12" height="72" fill="#008080"/>
+    <line x1="760" y1="590" x2="760" y2="478" stroke="#C71585" stroke-width="1.5"/><rect x="754" y="498" width="12" height="57" fill="#C71585"/>
+    <line x1="790" y1="558" x2="790" y2="440" stroke="#008080" stroke-width="1.5"/><rect x="784" y="460" width="12" height="75" fill="#008080"/>
+    <line x1="820" y1="540" x2="820" y2="422" stroke="#008080" stroke-width="1.5"/><rect x="814" y="442" width="12" height="75" fill="#008080"/>
+    <line x1="850" y1="562" x2="850" y2="450" stroke="#C71585" stroke-width="1.5"/><rect x="844" y="470" width="12" height="57" fill="#C71585"/>
+    <line x1="880" y1="530" x2="880" y2="410" stroke="#008080" stroke-width="1.5"/><rect x="874" y="430" width="12" height="76" fill="#008080"/>
+    <line x1="910" y1="512" x2="910" y2="394" stroke="#008080" stroke-width="1.5"/><rect x="904" y="414" width="12" height="75" fill="#008080"/>
+    <line x1="940" y1="534" x2="940" y2="422" stroke="#C71585" stroke-width="1.5"/><rect x="934" y="442" width="12" height="57" fill="#C71585"/>
+    <line x1="970" y1="502" x2="970" y2="382" stroke="#008080" stroke-width="1.5"/><rect x="964" y="402" width="12" height="77" fill="#008080"/>
+    <line x1="1000" y1="484" x2="1000" y2="364" stroke="#008080" stroke-width="1.5"/><rect x="994" y="384" width="12" height="77" fill="#008080"/>
+    <line x1="1030" y1="506" x2="1030" y2="394" stroke="#C71585" stroke-width="1.5"/><rect x="1024" y="414" width="12" height="57" fill="#C71585"/>
+    <line x1="1060" y1="474" x2="1060" y2="352" stroke="#008080" stroke-width="1.5"/><rect x="1054" y="372" width="12" height="79" fill="#008080"/>
+    <line x1="1090" y1="456" x2="1090" y2="334" stroke="#008080" stroke-width="1.5"/><rect x="1084" y="354" width="12" height="79" fill="#008080"/>
+    <line x1="1120" y1="478" x2="1120" y2="365" stroke="#C71585" stroke-width="1.5"/><rect x="1114" y="385" width="12" height="57" fill="#C71585"/>
+    <line x1="1150" y1="446" x2="1150" y2="322" stroke="#008080" stroke-width="1.5"/><rect x="1144" y="342" width="12" height="81" fill="#008080"/>
+    <line x1="1180" y1="428" x2="1180" y2="306" stroke="#008080" stroke-width="1.5"/><rect x="1174" y="326" width="12" height="80" fill="#008080"/>
+  </svg>
+
   <div class="hero-text">
     <div class="eyebrow">For Millennial Women Ready to Build Real Wealth</div>
     <h1>
-      <span class="line-cream">WHAT IF YOU WERE</span>
-      <span class="line-pink">ONE SKILLSET</span>
-      <span class="line-orange">AWAY FROM</span>
-      <span class="line-gold">RETIRING EARLY?</span>
+      <span class="l1">WHAT IF YOU WERE</span>
+      <span class="l2">ONE SKILLSET</span>
+      <span class="l3">AWAY FROM</span>
+      <span class="l4">RETIRING EARLY?</span>
     </h1>
-    <p class="hero-sub">
-      You've spent your whole career building someone else's dream. It's time to build your own financial future — on your terms, at your pace, with women who get it. The Profit Penthouse is where millennial women develop the mindset, the discipline, and the skill to trade independently.
-    </p>
-    <div class="hero-clarifier">
-      <span class="clarifier-tag yes">✓ Accountability</span>
-      <span class="clarifier-tag yes">✓ Trading Psychology</span>
-      <span class="clarifier-tag yes">✓ Built for Millennial Women</span>
-      <span class="clarifier-tag yes">✓ Beginner Welcoming</span>
-      <span class="clarifier-tag no">✕ Not a Signals Group</span>
-      <span class="clarifier-tag no">✕ Not a Course</span>
+    <p class="hero-sub">You've spent your whole career building someone else's dream. It's time to build yours — on your terms, at your pace, with women who get it.</p>
+    <div class="hero-tags">
+      <span class="htag">✓ Accountability + Community</span>
+      <span class="htag">✓ Trading Psychology</span>
+      <span class="htag">✓ Built for Millennial Women</span>
+      <span class="htag no">✕ Not a Signals Group</span>
+      <span class="htag no">✕ Not a Course</span>
     </div>
-    <div class="hero-actions">
-      <a href="#join" class="btn-primary">Join the Waitlist</a>
-    </div>
+    <a href="#join" class="btn-primary">Join the Waitlist →</a>
   </div>
 
   <div class="hero-image">
@@ -540,24 +253,59 @@
   </div>
 </section>
 
+<!-- FREEBIE -->
+<section class="freebie" id="freebie">
+  <div class="freebie-inner">
+    <div class="freebie-img">
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782275076/7EA4C290-3D53-40D7-9BB7-7EC24A2CAA61_urf8y8.png" alt="Futures Trading 101 Guide" />
+    </div>
+    <div class="freebie-text">
+      <div class="label">While you wait</div>
+      <h3>Start Here.<br>Futures Trading 101:<br>The Profit Penthouse Guide</h3>
+      <p>The community isn't open yet — but that doesn't mean you have to wait to start learning. This free guide is your prerequisite. Get familiar with the basics so you're ready when the doors open.</p>
+    </div>
+    <div class="freebie-cta">
+      <a href="#join" class="btn-primary">Get Free Access</a>
+      <span class="freebie-note">Drop your email → guide lands in your inbox</span>
+    </div>
+  </div>
+</section>
+
 <!-- MARQUEE -->
 <div class="marquee-bar">
   <div class="marquee-inner">
-    TRADING PSYCHOLOGY <span>✦</span> DISCIPLINE OVER HYPE <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span> FUTURES MARKET <span>✦</span> SIMPLIFIED METHODOLOGY <span>✦</span> NO SIGNALS <span>✦</span> NO COPY TRADING <span>✦</span> INDEPENDENT THINKERS ONLY <span>✦</span>&nbsp;
-    TRADING PSYCHOLOGY <span>✦</span> DISCIPLINE OVER HYPE <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span> FUTURES MARKET <span>✦</span> SIMPLIFIED METHODOLOGY <span>✦</span> NO SIGNALS <span>✦</span> NO COPY TRADING <span>✦</span> INDEPENDENT THINKERS ONLY <span>✦</span>&nbsp;
+    TRADING PSYCHOLOGY <span>✦</span> DISCIPLINE OVER HYPE <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span> FUTURES MARKET <span>✦</span> SIMPLIFIED METHODOLOGY <span>✦</span> NO SIGNALS <span>✦</span> NO COPY TRADING <span>✦</span> INDEPENDENT THINKERS ONLY <span>✦</span>&nbsp;TRADING PSYCHOLOGY <span>✦</span> DISCIPLINE OVER HYPE <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span> FUTURES MARKET <span>✦</span> SIMPLIFIED METHODOLOGY <span>✦</span> NO SIGNALS <span>✦</span> NO COPY TRADING <span>✦</span> INDEPENDENT THINKERS ONLY <span>✦</span>&nbsp;
   </div>
 </div>
 
-<!-- HONEST SECTION -->
+<!-- MEET SHANTAE -->
+<section class="bio" id="about">
+  <div class="bio-grid">
+    <div class="bio-img-wrap">
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782012822/IMG_4999_rl3lmu.jpg" alt="Shantae — Founder" />
+    </div>
+    <div class="bio-content">
+      <div class="label">The woman behind it</div>
+      <div class="bio-name">Hi, I'm Shantae.</div>
+      <div class="bio-role">Founder · Millennial Trader · Your Accountability Partner</div>
+      <p>I was first introduced to trading about <strong>10 years ago</strong> — and honestly? I ran the other way. The charts looked like noise, the terminology felt like a foreign language, and the space was dominated by people who made it seem like you either already knew everything or you didn't belong.</p>
+      <p>So I walked away. I kept building, kept working — until eventually I got tired of <strong>trading my time for someone else's vision</strong> and came back to the market with fresh eyes and a real commitment to figuring it out.</p>
+      <p>That decision changed everything. I'm now a <strong>consistently profitable, funded trader</strong> actively trading the futures market with a simplified methodology that finally made the charts make sense.</p>
+      <p>The Profit Penthouse is the community I wish I had. Not someone to follow blindly. A <strong>community to grow with.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- THIS IS / NOT -->
 <section class="honest" id="honest">
-  <div class="section-label">Transparency first</div>
-  <h2>Let's be clear about<br>what this is.</h2>
-  <p class="section-sub">The trading space is full of people selling shortcuts to anyone who'll listen. This isn't that. Here's exactly what millennial women are walking into.</p>
+  <div class="label">Transparency first</div>
+  <h2>Let's be real about<br>what this is.</h2>
+  <p class="sub">The trading space is full of people selling shortcuts. This isn't that. Here's exactly what millennial women are walking into.</p>
   <div class="honest-grid">
     <div class="honest-card">
       <span class="badge badge-yes">This IS</span>
       <ul>
-        <li>A private community for millennial women learning to trade independently and think for themselves</li>
+        <li>A private community for millennial women learning to trade independently</li>
         <li>A space focused on trading psychology, emotional discipline, and risk management</li>
         <li>Accountability check-ins, journaling prompts, and real conversations about losses</li>
         <li>Concepts taught using a simplified futures methodology anyone can learn</li>
@@ -570,175 +318,80 @@
         <li>A signals group — you will never be told what to buy or sell</li>
         <li>A copy-trading service — your trades are your responsibility</li>
         <li>A get-rich-quick program — real skill takes time and we respect that</li>
-        <li>A course with a certificate at the end — it's ongoing, living support</li>
+        <li>A course with a certificate — it's ongoing, living support</li>
         <li>A substitute for your own research, backtesting, and risk management</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- PSYCHOLOGY PILLARS -->
-<section class="pillars" id="pillars">
-  <div class="section-label">What we work on</div>
-  <h2>The market will test you.<br>We help you pass.</h2>
-  <p class="section-sub">Every losing streak has more to do with psychology than setups. These are the six areas we focus on inside the community.</p>
-  <div class="pillars-grid">
-    <div class="pillar-card">
-      <div class="pillar-num">01</div>
-      <h3>Emotional Regulation</h3>
-      <p>Revenge trading, FOMO entries, panic exits — we identify the patterns behind impulsive decisions and build the pause that saves your account.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-num">02</div>
-      <h3>Risk Discipline</h3>
-      <p>Knowing your setup means nothing if you're overleveraged. We make risk management a non-negotiable habit, not an afterthought.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-num">03</div>
-      <h3>Consistency Over Perfection</h3>
-      <p>One green week doesn't make you a trader. One red week doesn't break you. We focus on the process — showing up, journaling, reviewing, repeating.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-num">04</div>
-      <h3>Building Conviction</h3>
-      <p>You should be able to explain every trade you take before you take it. We help you develop the confidence that comes from real understanding — not someone else's call.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-num">05</div>
-      <h3>Patience as a Strategy</h3>
-      <p>The best trade is often the one you don't take. We normalize sitting on your hands and protecting capital as a skill, not a weakness.</p>
-    </div>
-    <div class="pillar-card">
-      <div class="pillar-num">06</div>
-      <h3>Accountability Without Shame</h3>
-      <p>We review losses honestly. No one comes here to perform. The only way to grow is to look at what actually happened and tell the truth about it.</p>
-    </div>
-  </div>
-</section>
-
-<!-- BIO -->
-<section class="bio" id="about">
-  <div class="bio-grid">
-    <div class="bio-image-wrap">
-      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782012822/IMG_4999_rl3lmu.jpg" alt="Shantae — Founder of The Profit Penthouse" />
-    </div>
-    <div class="bio-content">
-      <div class="section-label">The woman behind it</div>
-      <div class="bio-name">Hi, I'm Shantae.</div>
-      <div class="bio-title">Founder · Millennial Trader · Your Accountability Partner</div>
-      <p>
-        I was first introduced to trading about <strong>10 years ago</strong> — and honestly? I ran the other way. The charts looked like noise, the terminology felt like a foreign language, and the space was dominated by people who made it seem like you either already knew everything or you didn't belong.
-      </p>
-      <p>
-        So I walked away. I kept building, kept working, kept doing what made sense — until eventually I got tired of <strong>trading my time for someone else's vision</strong> and came back to the market with fresh eyes and a real commitment to figuring it out.
-      </p>
-      <p>
-        That decision changed everything. I'm now a <strong>consistently profitable, funded trader</strong> — actively trading the futures market with a simplified methodology that finally made the charts make sense. And the thing I wish I'd had when I started? Exactly what The Profit Penthouse is now.
-      </p>
-      <p>
-        Not someone to follow blindly. A <strong>community to grow with.</strong>
-      </p>
-
-    </div>
-  </div>
-</section>
-
-<!-- WHO THIS IS FOR -->
-<section class="for-you" id="foryou">
-  <div class="section-label">Is this for me?</div>
-  <div class="for-you-grid">
-    <div class="for-you-image">
-      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782018245/IMG_5005_qj8pej.jpg" alt="Learning the chart" />
+<!-- WHO IT'S FOR -->
+<section class="foryou" id="foryou">
+  <div class="foryou-grid">
+    <div class="foryou-img">
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782018245/IMG_5005_qj8pej.jpg" alt="Is this for me?" />
     </div>
     <div>
-      <h2>You're in the right place<br>if any of this is you.</h2>
-      <div class="for-you-list">
-        <div class="for-you-item">
-          <div class="for-you-dot"></div>
-          <div>
-            <h4>You're a millennial woman who's done waiting</h4>
-            <p>You've been responsible, you've saved, you've done everything "right" — and it still doesn't feel like enough. You're ready to build something that actually creates freedom.</p>
-          </div>
-        </div>
-        <div class="for-you-item">
-          <div class="for-you-dot"></div>
-          <div>
-            <h4>You've looked at trading but didn't know where to start</h4>
-            <p>The charts looked like noise, the terminology felt foreign, and the space was full of men who made it seem like you either already knew everything or you didn't belong. Sound familiar?</p>
-          </div>
-        </div>
-        <div class="for-you-item">
-          <div class="for-you-dot"></div>
-          <div>
-            <h4>You've been in a signals group and it didn't work</h4>
-            <p>You followed alerts, you still lost money, and you realized you had no idea why. You're ready to actually understand what you're doing.</p>
-          </div>
-        </div>
-        <div class="for-you-item">
-          <div class="for-you-dot"></div>
-          <div>
-            <h4>You want community with women on the same path</h4>
-            <p>Trading alone is isolating. You want people who get it — who celebrate the discipline, not just the wins, and who show up even on the red days.</p>
-          </div>
-        </div>
+      <div class="label">Is this for me?</div>
+      <h2>You're in the right place if any of this sounds like you.</h2>
+      <div class="foryou-list">
+        <div class="foryou-item"><div class="dot"></div><div><h4>You're a millennial woman who's done waiting</h4><p>You've done everything right — and it still doesn't feel like enough. You're ready to build something that actually creates freedom.</p></div></div>
+        <div class="foryou-item"><div class="dot"></div><div><h4>You've looked at trading but didn't know where to start</h4><p>The charts looked like noise and the space was full of people who made it seem like you didn't belong. Sound familiar?</p></div></div>
+        <div class="foryou-item"><div class="dot"></div><div><h4>You've been in a signals group and it didn't work</h4><p>You followed alerts, still lost money, and realized you had no idea why. You're ready to actually understand what you're doing.</p></div></div>
+        <div class="foryou-item"><div class="dot"></div><div><h4>You want community with women on the same path</h4><p>Trading alone is isolating. You want people who celebrate the discipline, not just the wins, and who show up on the red days too.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT'S INSIDE -->
+<!-- INSIDE COMMUNITY -->
 <section class="inside" id="what">
-  <div class="section-label">Inside the community</div>
+  <div class="label">Inside the community</div>
   <h2>What you actually get<br>when you join.</h2>
-  <p class="section-sub">No fluff. No filler. Everything here is designed to help you develop as an independent trader.</p>
+  <p class="sub">No fluff. No filler. Everything here is designed to help you develop as an independent trader.</p>
   <div class="inside-grid">
-    <div class="inside-card">
-      <div class="inside-icon">🧠</div>
-      <h3>Weekly Psychology Check-Ins</h3>
-      <p>Every week starts with a mindset prompt — not a trade call. We discuss what's showing up emotionally and how to not let it run your account.</p>
-    </div>
-    <div class="inside-card">
-      <div class="inside-icon">📓</div>
-      <h3>Trade Journal Reviews</h3>
-      <p>Share your journal entries for feedback. The goal isn't to judge your trades — it's to understand the reasoning behind them and tighten your process.</p>
-    </div>
-    <div class="inside-card">
-      <div class="inside-icon">📊</div>
-      <h3>Concept Breakdowns</h3>
-      <p>Futures market structure, price action, liquidity — explained clearly for beginners with chart examples. No assumed knowledge. No gatekeeping.</p>
-    </div>
-    <div class="inside-card">
-      <div class="inside-icon">💬</div>
-      <h3>Real Talk Threads</h3>
-      <p>Spaces to post your wins, your losses, your frustrations. A community that normalizes the full experience of learning to trade — not just the highlight reel.</p>
-    </div>
+    <div class="ic"><div class="ic-icon">🧠</div><h3>Weekly Psychology Check-Ins</h3><p>Every week starts with a mindset prompt — not a trade call. We discuss what's showing up emotionally and how to not let it run your account.</p></div>
+    <div class="ic"><div class="ic-icon">📓</div><h3>Trade Journal Reviews</h3><p>Share your journal entries for feedback. The goal isn't to judge your trades — it's to understand the reasoning behind them and tighten your process.</p></div>
+    <div class="ic"><div class="ic-icon">📊</div><h3>Concept Breakdowns</h3><p>Futures market structure, price action, liquidity — explained clearly with chart examples. No assumed knowledge. No gatekeeping.</p></div>
+    <div class="ic"><div class="ic-icon">💬</div><h3>Real Talk Threads</h3><p>Post your wins, losses, and frustrations. A community that normalizes the full experience of learning to trade — not just the highlight reel.</p></div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars" id="pillars">
+  <div class="label">What we work on</div>
+  <h2>The market will test you.<br>We help you pass.</h2>
+  <p class="sub">Every losing streak has more to do with psychology than setups. These are the six areas we focus on inside the community.</p>
+  <div class="pillars-grid">
+    <div class="pc"><div class="pc-num">01</div><h3>Emotional Regulation</h3><p>Revenge trading, FOMO entries, panic exits — we identify the patterns behind impulsive decisions and build the pause that saves your account.</p></div>
+    <div class="pc"><div class="pc-num">02</div><h3>Risk Discipline</h3><p>Knowing your setup means nothing if you're overleveraged. We make risk management a non-negotiable habit, not an afterthought.</p></div>
+    <div class="pc"><div class="pc-num">03</div><h3>Consistency Over Perfection</h3><p>One green week doesn't make you a trader. One red week doesn't break you. We focus on showing up, journaling, reviewing, repeating.</p></div>
+    <div class="pc"><div class="pc-num">04</div><h3>Building Conviction</h3><p>You should be able to explain every trade before you take it. We help you build confidence from real understanding — not someone else's call.</p></div>
+    <div class="pc"><div class="pc-num">05</div><h3>Patience as a Strategy</h3><p>The best trade is often the one you don't take. We normalize sitting on your hands and protecting capital as a skill, not a weakness.</p></div>
+    <div class="pc"><div class="pc-num">06</div><h3>Accountability Without Shame</h3><p>We review losses honestly. No one comes here to perform. The only way to grow is to look at what happened and tell the truth about it.</p></div>
   </div>
 </section>
 
 <!-- WAITLIST -->
-<section class="cta-banner" id="join">
-  <p class="section-label" style="text-align:center; margin-bottom:14px;">The doors aren't open yet</p>
+<section class="waitlist" id="join">
+  <div class="label" style="justify-content:center; margin-bottom:14px;">The doors aren't open yet</div>
   <h2>Get on the list.<br>Be first in.</h2>
-  <p class="cta-sub">The Profit Penthouse community is coming. Drop your email and you'll be the first to know when we launch — and why we waited until the time was right.</p>
-  <span class="cta-reminder">No signals. No shortcuts. Just growth.</span>
-  <div class="cta-btn-wrap">
-    <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank" style="display:flex; flex-direction:column; align-items:center; gap:12px; width:100%;">
-      <div class="cta-input-row">
-        <input type="email" name="email_address" placeholder="your@email.com" required />
-        <button type="submit">Join the Waitlist</button>
-      </div>
-      <p class="cta-fine">No spam. No pressure. Just a heads up when the community opens.</p>
-    </form>
-  </div>
+  <p class="waitlist-sub">Drop your email — you'll get the free Futures Trading 101 guide instantly, plus be first to know when The Profit Penthouse opens its doors.</p>
+  <span class="waitlist-note">No signals. No shortcuts. Just growth.</span>
+  <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank">
+    <div class="form-row">
+      <input type="email" name="email_address" placeholder="your@email.com" required />
+      <button type="submit">Join the Waitlist</button>
+    </div>
+    <p class="form-fine">No spam. No pressure. Just a heads up when the community opens.</p>
+  </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">The Profit Penthouse</div>
   <p>© 2026 theprofitpenthouse.com · @introverted_icon</p>
-  <p style="font-size:0.7rem; color:#333; max-width:380px; text-align:right;">
-    Trading futures involves substantial risk of loss. This community is for educational and accountability purposes only. Nothing shared here constitutes financial advice or a trade recommendation.
-  </p>
+  <p style="font-size:0.68rem; color:#333; max-width:360px; text-align:right;">Trading futures involves substantial risk of loss. This community is for educational and accountability purposes only. Nothing shared here constitutes financial advice or a trade recommendation.</p>
 </footer>
 
 </body>
