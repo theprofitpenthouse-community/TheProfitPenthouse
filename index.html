@@ -10,7 +10,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --black:  #0A0A0A;
-    --card:   #111111;
+    --card:   #0A0A0A;
     --pink:   #C71585;
     --orange: #D2691E;
     --gold:   #FFD700;
@@ -50,18 +50,16 @@
   .hero-image img { width: 100%; max-width: 480px; object-fit: cover; filter: contrast(1.05); }
 
   /* FREEBIE BANNER */
-  .freebie { background: linear-gradient(135deg, #0f0f0f 0%, #0a0a0a 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 70px 5%; }
-  .freebie-inner { display: grid; grid-template-columns: auto 1fr auto; gap: 60px; align-items: center; max-width: 1000px; margin: 0 auto; }
-  .freebie-img { width: 160px; flex-shrink: 0; position: relative; }
-  .freebie-img img { width: 100%; display: block; box-shadow: 0 20px 60px rgba(199,21,133,0.25); }
-  .freebie-img::after { content: 'FREE'; position: absolute; top: -10px; right: -10px; background: var(--pink); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; padding: 4px 10px; }
-  .freebie-text .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-  .freebie-text .label::before { content: ''; display: block; width: 16px; height: 2px; background: var(--teal); }
-  .freebie-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.4rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 12px; background: linear-gradient(90deg, var(--white), #bbb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .freebie-text p { font-size: 0.9rem; color: #888; line-height: 1.7; max-width: 420px; }
-  .freebie-cta { display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; }
-  .freebie-cta .btn-primary { white-space: nowrap; }
-  .freebie-note { font-size: 0.7rem; color: #555; }
+  .freebie { background: #0A0A0A; border-bottom: 1px solid var(--border); padding: 140px 5% 80px; text-align: center; }
+  .freebie-img { width: 280px; margin: 0 auto 40px; position: relative; display: inline-block; }
+  .freebie-img img { width: 100%; display: block; box-shadow: 0 30px 80px rgba(199,21,133,0.3); }
+  .freebie-img::after { content: 'FREE'; position: absolute; top: -12px; right: -12px; background: var(--pink); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 0.1em; padding: 5px 12px; }
+  .freebie-text .label { justify-content: center; margin-bottom: 14px; }
+  .freebie-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 18px; color: var(--white); max-width: 680px; margin-left: auto; margin-right: auto; }
+  .freebie-text p { font-size: 0.95rem; color: #888; line-height: 1.75; max-width: 520px; margin: 0 auto 36px; }
+  .freebie-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .freebie-cta .btn-primary { font-size: 1rem; padding: 18px 48px; }
+  .freebie-note { font-size: 0.72rem; color: #555; }
 
   /* MARQUEE */
   .marquee-bar { background: #0A0A0A; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; white-space: nowrap; padding: 13px 0; }
@@ -88,9 +86,9 @@
   .bio-content p strong { color: var(--white); font-weight: 600; }
 
   /* THIS IS / NOT */
-  .honest { background: var(--card); }
+  .honest { background: #0A0A0A; }
   .honest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); max-width: 960px; }
-  .honest-card { background: #111; padding: 44px 38px; }
+  .honest-card { background: #0A0A0A; padding: 44px 38px; }
   .badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 12px; margin-bottom: 24px; }
   .badge-yes { background: rgba(0,128,128,0.1); color: var(--teal); border: 1px solid rgba(0,128,128,0.3); }
   .badge-no  { background: rgba(180,40,40,0.08); color: #cc5555; border: 1px solid rgba(180,40,40,0.25); }
@@ -112,10 +110,10 @@
   .foryou-item p  { font-size: 0.86rem; color: #777; line-height: 1.65; }
 
   /* INSIDE COMMUNITY */
-  .inside { background: var(--card); }
+  .inside { background: #0A0A0A; }
   .inside-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--border); }
-  .ic { background: #111; padding: 38px 32px; border-bottom: 3px solid transparent; transition: border-color 0.2s, background 0.2s; }
-  .ic:hover { border-bottom-color: var(--teal); background: #141414; }
+  .ic { background: #0A0A0A; padding: 38px 32px; border-bottom: 3px solid transparent; transition: border-color 0.2s, background 0.2s; }
+  .ic:hover { border-bottom-color: var(--teal); background: #0A0A0A; }
   .ic-icon { font-size: 1.6rem; margin-bottom: 16px; }
   .ic h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--white); }
   .ic p  { font-size: 0.87rem; color: #777; line-height: 1.7; }
@@ -123,7 +121,7 @@
   /* PILLARS */
   .pillars { background: #0A0A0A; }
   .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .pc { background: var(--card); border: 1px solid var(--border); padding: 38px 28px; position: relative; overflow: hidden; transition: border-color 0.2s; }
+  .pc { background: #0A0A0A; border: 1px solid var(--border); padding: 38px 28px; position: relative; overflow: hidden; transition: border-color 0.2s; }
   .pc:hover { border-color: var(--pink); }
   .pc::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
   .pc:nth-child(1)::after { background: var(--pink); }
@@ -144,7 +142,7 @@
   .waitlist-sub { font-size: 1rem; color: #777; max-width: 480px; margin: 0 auto 14px; line-height: 1.75; }
   .waitlist-note { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 44px; display: block; }
   .form-row { display: flex; max-width: 460px; margin: 0 auto; }
-  .form-row input { flex: 1; background: #111; border: 1px solid var(--border); border-right: none; padding: 16px 20px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; }
+  .form-row input { flex: 1; background: #0A0A0A; border: 1px solid var(--border); border-right: none; padding: 16px 20px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; }
   .form-row input::placeholder { color: #444; }
   .form-row input:focus { border-color: var(--teal); }
   .form-row button { background: var(--teal); color: #fff; border: none; padding: 16px 28px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
@@ -184,6 +182,21 @@
   <div class="nav-logo">The Profit Penthouse</div>
   <a href="#join" class="nav-pill">Join Waitlist</a>
 </nav>
+
+<!-- FREEBIE -->
+<section class="freebie" id="freebie">
+  <div class="freebie-img">
+    <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782275076/7EA4C290-3D53-40D7-9BB7-7EC24A2CAA61_urf8y8.png" alt="Futures Trading 101 Guide" />
+  </div>
+  <div class="freebie-text">
+    <div class="label">While you wait</div>
+    <p>The community isn't open yet — but that doesn't mean you have to wait to start learning. This free guide is your prerequisite. Get familiar with the basics so you're ready when the doors open.</p>
+  </div>
+  <div class="freebie-cta">
+    <a href="#join" class="btn-primary">Get Free Access</a>
+    <span class="freebie-note">Drop your email → guide lands in your inbox</span>
+  </div>
+</section>
 
 <!-- HERO -->
 <section class="hero">
@@ -250,24 +263,6 @@
 
   <div class="hero-image">
     <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782011950/IMG_4998_naaevb.jpg" alt="The Profit Penthouse" />
-  </div>
-</section>
-
-<!-- FREEBIE -->
-<section class="freebie" id="freebie">
-  <div class="freebie-inner">
-    <div class="freebie-img">
-      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782275076/7EA4C290-3D53-40D7-9BB7-7EC24A2CAA61_urf8y8.png" alt="Futures Trading 101 Guide" />
-    </div>
-    <div class="freebie-text">
-      <div class="label">While you wait</div>
-      <h3>Start Here.<br>Futures Trading 101:<br>The Profit Penthouse Guide</h3>
-      <p>The community isn't open yet — but that doesn't mean you have to wait to start learning. This free guide is your prerequisite. Get familiar with the basics so you're ready when the doors open.</p>
-    </div>
-    <div class="freebie-cta">
-      <a href="#join" class="btn-primary">Get Free Access</a>
-      <span class="freebie-note">Drop your email → guide lands in your inbox</span>
-    </div>
   </div>
 </section>
 
