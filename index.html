@@ -3,151 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Profit Penthouse — A Community for Millennial Women Traders</title>
+<title>The Profit Penthouse — Frustrated to Funded</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --black:  #0A0A0A;
-    --card:   #0A0A0A;
     --pink:   #C71585;
     --orange: #D2691E;
     --gold:   #FFD700;
     --teal:   #008080;
     --white:  #FFFFFF;
-    --muted:  #888888;
-    --border: #2A2A2A;
+    --muted:  #777777;
+    --border: #222222;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 5%; background: rgba(10,10,10,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 5%; background: rgba(10,10,10,0.95); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
   .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.08em; background: linear-gradient(90deg, var(--pink), var(--orange), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .nav-pill { background: var(--teal); color: #fff; padding: 9px 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; transition: opacity 0.2s; }
+  .nav-pill { background: var(--pink); color: #fff; padding: 9px 22px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; transition: opacity 0.2s; }
   .nav-pill:hover { opacity: 0.85; }
 
   /* HERO */
   .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 120px 5% 80px; gap: 60px; position: relative; overflow: hidden; background: #0A0A0A; }
-  .hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, #181818 0, #181818 1px, transparent 1px, transparent 80px), repeating-linear-gradient(0deg, #181818 0, #181818 1px, transparent 1px, transparent 80px); opacity: 0.3; pointer-events: none; }
+  .hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, #161616 0, #161616 1px, transparent 1px, transparent 80px), repeating-linear-gradient(0deg, #161616 0, #161616 1px, transparent 1px, transparent 80px); pointer-events: none; }
   .hero-candles { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.1; pointer-events: none; z-index: 1; }
   .hero-text { position: relative; z-index: 2; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px; }
-  .eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--teal); }
-  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 5.5vw, 5.4rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 24px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px; }
+  .eyebrow::before { content: ''; display: block; width: 22px; height: 2px; background: var(--teal); }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 5.5vw, 5.6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 24px; }
   .l1 { color: var(--white); display: block; }
   .l2 { color: var(--pink); display: block; }
   .l3 { color: var(--orange); display: block; }
   .l4 { color: var(--gold); display: block; }
-  .hero-sub { font-size: 1rem; font-weight: 300; color: #aaa; max-width: 460px; margin-bottom: 28px; line-height: 1.8; }
-  .hero-tags { display: flex; flex-direction: column; gap: 8px; margin-bottom: 36px; max-width: 320px; }
-  .htag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 14px; border: 1px solid rgba(0,128,128,0.4); color: var(--teal); background: rgba(0,128,128,0.05); }
-  .htag.no { border-color: rgba(180,40,40,0.3); color: #cc5555; background: rgba(180,40,40,0.04); }
+  .hero-sub { font-size: 1rem; font-weight: 300; color: #999; max-width: 460px; margin-bottom: 36px; line-height: 1.85; }
+  .hero-sub strong { color: var(--white); font-weight: 600; }
+  .hero-steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+  .step { display: flex; align-items: center; gap: 14px; font-size: 0.85rem; font-weight: 500; color: #aaa; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; flex-shrink: 0; }
+  .step:nth-child(1) .step-num { background: rgba(199,21,133,0.15); color: var(--pink); border: 1px solid var(--pink); }
+  .step:nth-child(2) .step-num { background: rgba(210,105,30,0.15); color: var(--orange); border: 1px solid var(--orange); }
+  .step:nth-child(3) .step-num { background: rgba(0,128,128,0.15); color: var(--teal); border: 1px solid var(--teal); }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
   .btn-primary { background: linear-gradient(135deg, var(--pink), var(--orange)); color: #fff; border: none; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
   .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+  .btn-teal { background: var(--teal); color: #fff; border: none; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
+  .btn-teal:hover { opacity: 0.85; transform: translateY(-2px); }
+  .btn-ghost { color: var(--white); border: 1px solid var(--border); padding: 15px 30px; font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.9rem; cursor: pointer; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
+  .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
   .hero-image { position: relative; z-index: 2; display: flex; justify-content: flex-end; align-items: flex-end; }
   .hero-image img { width: 100%; max-width: 480px; object-fit: cover; filter: contrast(1.05); }
 
-  /* FREEBIE BANNER */
-  .freebie { background: #0A0A0A; border-bottom: 1px solid var(--border); padding: 140px 5% 80px; text-align: center; }
-  .freebie-img { width: 280px; margin: 0 auto 40px; position: relative; display: inline-block; }
-  .freebie-img img { width: 100%; display: block; filter: drop-shadow(0 0 0px transparent); mix-blend-mode: lighten; }
-  .freebie-img::after { content: 'FREE'; position: absolute; top: -12px; right: -12px; background: var(--pink); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 0.1em; padding: 5px 12px; }
-  .freebie-text .label { justify-content: center; margin-bottom: 14px; }
-  .freebie-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 18px; color: var(--white); max-width: 680px; margin-left: auto; margin-right: auto; }
-  .freebie-text p { font-size: 0.95rem; color: #888; line-height: 1.75; max-width: 520px; margin: 0 auto 36px; }
-  .freebie-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  .freebie-cta .btn-primary { font-size: 1rem; padding: 18px 48px; }
-  .freebie-note { font-size: 0.72rem; color: #555; }
-
   /* MARQUEE */
   .marquee-bar { background: #0A0A0A; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; white-space: nowrap; padding: 13px 0; }
-  .marquee-inner { display: inline-block; animation: marquee 32s linear infinite; font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 0.12em; color: #444; }
+  .marquee-inner { display: inline-block; animation: marquee 32s linear infinite; font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 0.12em; color: #333; }
   .marquee-inner span { color: var(--pink); margin: 0 14px; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
   /* COMMON */
   section { padding: 100px 5%; }
-  .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-  .label::before { content: ''; display: block; width: 18px; height: 2px; background: var(--teal); flex-shrink: 0; }
-  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 18px; }
-  .sub { font-size: 0.98rem; font-weight: 300; color: #888; max-width: 520px; line-height: 1.75; margin-bottom: 56px; }
+  .sec-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .sec-label::before { content: ''; display: block; width: 18px; height: 2px; background: var(--teal); flex-shrink: 0; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 16px; }
+  .sec-sub { font-size: 0.97rem; font-weight: 300; color: #888; max-width: 540px; line-height: 1.8; margin-bottom: 52px; }
+  .step-badge { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .step-badge .num { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.1em; padding: 6px 16px; }
+  .num.pink   { background: rgba(199,21,133,0.1); color: var(--pink); border: 1px solid var(--pink); }
+  .num.orange { background: rgba(210,105,30,0.1); color: var(--orange); border: 1px solid var(--orange); }
+  .num.teal   { background: rgba(0,128,128,0.1); color: var(--teal); border: 1px solid var(--teal); }
 
-  /* MEET SHANTAE */
-  .bio { background: #0A0A0A; }
+  /* FREE DOWNLOAD */
+  .download { background: #0A0A0A; border-top: 1px solid var(--border); }
+  .dl-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; }
+  .dl-img { position: relative; }
+  .dl-img img { width: 100%; max-width: 300px; display: block; mix-blend-mode: lighten; }
+  .dl-img .free-tag { position: absolute; top: -10px; right: 20px; background: var(--pink); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; padding: 5px 14px; }
+  .dl-text h2 { margin-bottom: 16px; }
+  .dl-text p { font-size: 0.95rem; color: #888; line-height: 1.8; margin-bottom: 20px; }
+  .dl-text p strong { color: var(--white); }
+  .market-note { font-size: 0.78rem; color: #555; font-style: italic; margin-bottom: 32px; display: block; }
+
+  /* 1:1 COACHING */
+  .coaching { background: #0A0A0A; border-top: 1px solid var(--border); }
+  .coaching-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); }
+  .co-card { background: #0A0A0A; padding: 52px 44px; }
+  .co-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing: 0.02em; margin-bottom: 14px; }
+  .co-card p { font-size: 0.92rem; color: #888; line-height: 1.8; margin-bottom: 28px; }
+  .co-card p strong { color: var(--white); }
+  .co-includes { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+  .co-includes li { font-size: 0.87rem; color: #999; padding-left: 20px; position: relative; line-height: 1.6; }
+  .co-includes li::before { content: '→'; position: absolute; left: 0; color: var(--pink); }
+  .vip-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 12px; background: rgba(255,215,0,0.08); color: var(--gold); border: 1px solid rgba(255,215,0,0.3); margin-bottom: 20px; }
+
+  /* BIO */
+  .bio { background: #0A0A0A; border-top: 1px solid var(--border); }
   .bio-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: center; }
   .bio-img-wrap { position: relative; }
   .bio-img-wrap img { width: 100%; object-fit: cover; filter: contrast(1.05); display: block; }
   .bio-img-wrap::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 100%; height: 100%; border: 2px solid var(--teal); z-index: -1; pointer-events: none; }
-  .bio-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 4px; background: linear-gradient(90deg, var(--pink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .bio-role { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
-  .bio-content p { font-size: 0.97rem; color: #999; line-height: 1.85; margin-bottom: 16px; }
+  .bio-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1; margin-bottom: 4px; background: linear-gradient(90deg, var(--pink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .bio-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+  .bio-content p { font-size: 0.95rem; color: #888; line-height: 1.85; margin-bottom: 16px; }
   .bio-content p strong { color: var(--white); font-weight: 600; }
 
-  /* THIS IS / NOT */
-  .honest { background: #0A0A0A; }
-  .honest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); max-width: 960px; }
-  .honest-card { background: #0A0A0A; padding: 44px 38px; }
-  .badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 12px; margin-bottom: 24px; }
-  .badge-yes { background: rgba(0,128,128,0.1); color: var(--teal); border: 1px solid rgba(0,128,128,0.3); }
-  .badge-no  { background: rgba(180,40,40,0.08); color: #cc5555; border: 1px solid rgba(180,40,40,0.25); }
-  .honest-card ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-  .honest-card ul li { font-size: 0.93rem; color: #aaa; line-height: 1.65; padding-left: 22px; position: relative; }
-  .honest-card ul li::before { position: absolute; left: 0; top: 0; font-size: 0.85rem; }
-  .badge-yes ~ ul li::before { content: '✓'; color: var(--teal); }
-  .badge-no  ~ ul li::before { content: '✕'; color: #cc5555; }
+  /* DIFFERENT */
+  .different { background: #0A0A0A; border-top: 1px solid var(--border); }
+  .diff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); }
+  .diff-card { background: #0A0A0A; padding: 40px 32px; border-bottom: 3px solid transparent; }
+  .diff-card:nth-child(1) { border-bottom-color: var(--pink); }
+  .diff-card:nth-child(2) { border-bottom-color: var(--teal); }
+  .diff-card:nth-child(3) { border-bottom-color: var(--gold); }
+  .diff-card:nth-child(4) { border-bottom-color: var(--orange); }
+  .diff-card:nth-child(5) { border-bottom-color: var(--teal); }
+  .diff-card:nth-child(6) { border-bottom-color: var(--pink); }
+  .diff-icon { font-size: 1.6rem; margin-bottom: 16px; }
+  .diff-card h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+  .diff-card p { font-size: 0.86rem; color: #666; line-height: 1.7; }
 
-  /* WHO IT'S FOR */
-  .foryou { background: #0A0A0A; }
-  .foryou-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-  .foryou-img img { width: 100%; object-fit: cover; filter: contrast(1.06); }
-  .foryou-list { display: flex; flex-direction: column; }
-  .foryou-item { padding: 24px 0; border-bottom: 1px solid var(--border); display: flex; gap: 16px; align-items: flex-start; }
-  .foryou-item:first-child { border-top: 1px solid var(--border); }
-  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); margin-top: 8px; flex-shrink: 0; }
-  .foryou-item h4 { font-size: 0.96rem; font-weight: 600; margin-bottom: 5px; color: var(--white); }
-  .foryou-item p  { font-size: 0.86rem; color: #777; line-height: 1.65; }
+  /* FINAL CTA */
+  .final { background: #0A0A0A; border-top: 1px solid var(--border); text-align: center; padding: 120px 5%; position: relative; overflow: hidden; }
+  .final::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(199,21,133,0.06) 0%, transparent 70%); pointer-events: none; }
+  .final::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,128,128,0.05) 0%, transparent 70%); pointer-events: none; }
+  .final h2 { font-size: clamp(2.4rem, 5vw, 4.2rem); max-width: 680px; margin: 0 auto 16px; position: relative; z-index: 2; }
+  .final-sub { font-size: 1rem; color: #777; max-width: 480px; margin: 0 auto 14px; line-height: 1.8; position: relative; z-index: 2; }
+  .final-note { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 44px; display: block; position: relative; z-index: 2; }
+  .final-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; }
 
-  /* INSIDE COMMUNITY */
-  .inside { background: #0A0A0A; }
-  .inside-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--border); }
-  .ic { background: #0A0A0A; padding: 38px 32px; border-bottom: 3px solid transparent; transition: border-color 0.2s, background 0.2s; }
-  .ic:hover { border-bottom-color: var(--teal); background: #0A0A0A; }
-  .ic-icon { font-size: 1.6rem; margin-bottom: 16px; }
-  .ic h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--white); }
-  .ic p  { font-size: 0.87rem; color: #777; line-height: 1.7; }
-
-  /* PILLARS */
-  .pillars { background: #0A0A0A; }
-  .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .pc { background: #0A0A0A; border: 1px solid var(--border); padding: 38px 28px; position: relative; overflow: hidden; transition: border-color 0.2s; }
-  .pc:hover { border-color: var(--pink); }
-  .pc::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
-  .pc:nth-child(1)::after { background: var(--pink); }
-  .pc:nth-child(2)::after { background: var(--teal); }
-  .pc:nth-child(3)::after { background: var(--orange); }
-  .pc:nth-child(4)::after { background: var(--teal); }
-  .pc:nth-child(5)::after { background: var(--gold); }
-  .pc:nth-child(6)::after { background: var(--teal); }
-  .pc-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; line-height: 1; color: #222; margin-bottom: 14px; }
-  .pc h3 { font-size: 0.98rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
-  .pc p  { font-size: 0.86rem; color: #666; line-height: 1.7; }
-
-  /* WAITLIST */
-  .waitlist { background: #0A0A0A; border-top: 1px solid var(--border); text-align: center; padding: 120px 5%; position: relative; overflow: hidden; }
-  .waitlist::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(199,21,133,0.07) 0%, transparent 70%); pointer-events: none; }
-  .waitlist::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,128,128,0.06) 0%, transparent 70%); pointer-events: none; }
-  .waitlist h2 { font-size: clamp(2.4rem, 5vw, 4rem); max-width: 640px; margin: 0 auto 16px; }
-  .waitlist-sub { font-size: 1rem; color: #777; max-width: 480px; margin: 0 auto 14px; line-height: 1.75; }
-  .waitlist-note { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 44px; display: block; }
-  .form-row { display: flex; max-width: 460px; margin: 0 auto; }
-  .form-row input { flex: 1; background: #0A0A0A; border: 1px solid var(--border); border-right: none; padding: 16px 20px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; }
+  /* EMAIL FORM */
+  .form-wrap { max-width: 460px; margin: 0 auto; }
+  .form-row { display: flex; }
+  .form-row input { flex: 1; background: #111; border: 1px solid var(--border); border-right: none; padding: 16px 20px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; }
   .form-row input::placeholder { color: #444; }
   .form-row input:focus { border-color: var(--teal); }
   .form-row button { background: var(--teal); color: #fff; border: none; padding: 16px 28px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
   .form-row button:hover { background: #006666; }
-  .form-fine { font-size: 0.72rem; color: #444; margin-top: 14px; }
+  .form-fine { font-size: 0.72rem; color: #444; margin-top: 12px; text-align: center; }
 
   /* FOOTER */
   footer { background: #0A0A0A; border-top: 1px solid var(--border); padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
@@ -158,16 +151,13 @@
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; padding-top: 100px; gap: 40px; }
     .hero-image { justify-content: center; }
-    .freebie-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
-    .freebie-text .label { justify-content: center; }
-    .freebie-img { margin: 0 auto; }
-    .freebie-cta { align-items: center; }
+    .dl-grid { grid-template-columns: 1fr; text-align: center; }
+    .dl-img { display: flex; justify-content: center; }
+    .coaching-inner { grid-template-columns: 1fr; }
     .bio-grid { grid-template-columns: 1fr; }
     .bio-img-wrap::after { display: none; }
-    .honest-grid { grid-template-columns: 1fr; }
-    .foryou-grid { grid-template-columns: 1fr; }
-    .inside-grid { grid-template-columns: 1fr; }
-    .pillars-grid { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .final-btns { flex-direction: column; align-items: center; }
     .form-row { flex-direction: column; }
     .form-row input { border-right: 1px solid var(--border); border-bottom: none; }
     footer { flex-direction: column; text-align: center; }
@@ -180,23 +170,8 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">The Profit Penthouse</div>
-  <a href="#join" class="nav-pill">Join Waitlist</a>
+  <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="nav-pill">Resources →</a>
 </nav>
-
-<!-- FREEBIE -->
-<section class="freebie" id="freebie">
-  <div class="freebie-img">
-    <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782275076/7EA4C290-3D53-40D7-9BB7-7EC24A2CAA61_urf8y8.png" alt="Futures Trading 101 Guide" />
-  </div>
-  <div class="freebie-text">
-    <div class="label">While you wait</div>
-    <p>The community isn't open yet — but that doesn't mean you have to wait to start learning. This free guide is your prerequisite. Get familiar with the basics so you're ready when the doors open.</p>
-  </div>
-  <div class="freebie-cta">
-    <a href="#join" class="btn-primary">Get Free Access</a>
-    <span class="freebie-note">Drop your email → guide lands in your inbox</span>
-  </div>
-</section>
 
 <!-- HERO -->
 <section class="hero">
@@ -243,24 +218,24 @@
   </svg>
 
   <div class="hero-text">
-    <div class="eyebrow">For Millennial Women Ready to Build Real Wealth</div>
+    <div class="eyebrow">Beginner Friendly · Futures First</div>
     <h1>
-      <span class="l1">WHAT IF YOU WERE</span>
-      <span class="l2">ONE SKILLSET</span>
-      <span class="l3">AWAY FROM</span>
-      <span class="l4">RETIRING EARLY?</span>
+      <span class="l1">FROM</span>
+      <span class="l2">FRUSTRATED</span>
+      <span class="l3">TO</span>
+      <span class="l4">FUNDED.</span>
     </h1>
-    <p class="hero-sub">You've spent your whole career building someone else's dream. It's time to build yours — on your terms, at your pace, with women who get it.</p>
-    <div class="hero-tags">
-      <span class="htag">✓ Accountability + Community</span>
-      <span class="htag">✓ Trading Psychology</span>
-      <span class="htag">✓ Built for Millennial Women</span>
-      <span class="htag no">✕ Not a Signals Group</span>
-      <span class="htag no">✕ Not a Course</span>
+    <p class="hero-sub">You don't need a finance degree or years of experience. You need a <strong>clear path, honest education, and the right support.</strong> We focus primarily on the futures market — with concepts that apply across markets.</p>
+    <div class="hero-steps">
+      <div class="step"><div class="step-num pink">1</div> Download the free Self-Sufficiency Blueprint</div>
+      <div class="step"><div class="step-num orange">2</div> Study it — build your foundation first</div>
+      <div class="step"><div class="step-num teal">3</div> Explore additional resources when you're ready</div>
     </div>
-    <a href="#join" class="btn-primary">Join the Waitlist →</a>
+    <div class="hero-cta">
+      <a href="#download" class="btn-primary">Get the Free Guide →</a>
+      <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-ghost">Explore Resources</a>
+    </div>
   </div>
-
   <div class="hero-image">
     <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782011950/IMG_4998_naaevb.jpg" alt="The Profit Penthouse" />
   </div>
@@ -269,9 +244,67 @@
 <!-- MARQUEE -->
 <div class="marquee-bar">
   <div class="marquee-inner">
-    TRADING PSYCHOLOGY <span>✦</span> DISCIPLINE OVER HYPE <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span> FUTURES MARKET <span>✦</span> SIMPLIFIED METHODOLOGY <span>✦</span> NO SIGNALS <span>✦</span> NO COPY TRADING <span>✦</span> INDEPENDENT THINKERS ONLY <span>✦</span>&nbsp;TRADING PSYCHOLOGY <span>✦</span> DISCIPLINE OVER HYPE <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span> FUTURES MARKET <span>✦</span> SIMPLIFIED METHODOLOGY <span>✦</span> NO SIGNALS <span>✦</span> NO COPY TRADING <span>✦</span> INDEPENDENT THINKERS ONLY <span>✦</span>&nbsp;
+    FRUSTRATED TO FUNDED <span>✦</span> FUTURES FIRST <span>✦</span> BEGINNER FRIENDLY <span>✦</span> TRADING PSYCHOLOGY <span>✦</span> NO SIGNALS EVER <span>✦</span> ADDITIONAL RESOURCES <span>✦</span> SELF-SUFFICIENCY BLUEPRINT <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span>&nbsp;FRUSTRATED TO FUNDED <span>✦</span> FUTURES FIRST <span>✦</span> BEGINNER FRIENDLY <span>✦</span> TRADING PSYCHOLOGY <span>✦</span> NO SIGNALS EVER <span>✦</span> ADDITIONAL RESOURCES <span>✦</span> SELF-SUFFICIENCY BLUEPRINT <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span>&nbsp;
   </div>
 </div>
+
+<!-- FREE DOWNLOAD -->
+<section class="download" id="download">
+  <div class="dl-grid">
+    <div class="dl-img">
+      <span class="free-tag">FREE</span>
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782275076/7EA4C290-3D53-40D7-9BB7-7EC24A2CAA61_urf8y8.png" alt="Futures Trading Mastery: A Self-Sufficiency Blueprint" />
+    </div>
+    <div class="dl-text">
+      <div class="step-badge"><span class="num pink">STEP 01</span></div>
+      <div class="sec-label">Free download</div>
+      <h2>Futures Trading Mastery:<br>A Self-Sufficiency Blueprint</h2>
+      <p>This is your starting point. Before you book a call, before you touch a chart — <strong>download this guide and study it.</strong> It's built to take you from zero understanding to ready-to-learn, so your 1:1 session is focused on moving forward, not catching you up.</p>
+      <p>We focus primarily on the futures market, with concepts that apply across forex and other markets too.</p>
+      <span class="market-note">Futures-focused methodology · Applicable across markets</span>
+      <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank">
+        <div class="form-row">
+          <input type="email" name="email_address" placeholder="your@email.com" required />
+          <button type="submit">Send Me the Guide</button>
+        </div>
+        <p class="form-fine">Free. No spam. Guide delivered straight to your inbox.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES SECTION -->
+<section class="coaching" id="resources">
+  <div class="sec-label">Ready to go further?</div>
+  <h2>Everything you need<br>to keep moving forward.</h2>
+  <p class="sec-sub">Once you've studied the guide, the next step is exploring what's available to support your journey. Everything is in one place — updated as needed.</p>
+  <div class="coaching-inner">
+    <div class="co-card">
+      <div class="step-badge"><span class="num teal">STEP 02</span></div>
+      <span class="vip-badge">✦ The Profit Penthouse</span>
+      <h3>Additional<br>Resources</h3>
+      <p>When you're ready to go deeper, everything lives on the Linktree. <strong>Updated on the backend as new tools, offers, and opportunities become available</strong> — so you always have access to what's current.</p>
+      <ul class="co-includes">
+        <li>Community access when doors open</li>
+        <li>Recommended tools and platforms for beginners</li>
+        <li>Additional learning resources and courses</li>
+        <li>Ways to connect and stay in the loop</li>
+      </ul>
+      <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-primary">Explore Resources →</a>
+    </div>
+    <div class="co-card" style="border-left: 1px solid var(--border);">
+      <h3>You're ready<br>for the next step if...</h3>
+      <ul class="co-includes" style="margin-top:20px;">
+        <li>You've downloaded and studied the Blueprint</li>
+        <li>You understand the basics but want structured next steps</li>
+        <li>You're looking for community, tools, or deeper education</li>
+        <li>You want to stay connected as new resources drop</li>
+        <li>You're serious about becoming self-sufficient in the market</li>
+        <li>You're done consuming content without a clear direction</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <!-- MEET SHANTAE -->
 <section class="bio" id="about">
@@ -280,113 +313,49 @@
       <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782012822/IMG_4999_rl3lmu.jpg" alt="Shantae — Founder" />
     </div>
     <div class="bio-content">
-      <div class="label">The woman behind it</div>
+      <div class="sec-label">Who you're learning from</div>
       <div class="bio-name">Hi, I'm Shantae.</div>
-      <div class="bio-role">Founder · Millennial Trader · Your Accountability Partner</div>
-      <p>I was first introduced to trading about <strong>10 years ago</strong> — and honestly? I ran the other way. The charts looked like noise, the terminology felt like a foreign language, and the space was dominated by people who made it seem like you either already knew everything or you didn't belong.</p>
-      <p>So I walked away. I kept building, kept working — until eventually I got tired of <strong>trading my time for someone else's vision</strong> and came back to the market with fresh eyes and a real commitment to figuring it out.</p>
-      <p>That decision changed everything. I'm now a <strong>consistently profitable, funded trader</strong> actively trading the futures market with a simplified methodology that finally made the charts make sense.</p>
-      <p>The Profit Penthouse is the community I wish I had. Not someone to follow blindly. A <strong>community to grow with.</strong></p>
+      <div class="bio-role">Founder · Funded Trader · Your Accountability Partner</div>
+      <p>I was first introduced to trading about <strong>10 years ago</strong> — and honestly? I ran the other way. The charts looked like noise, the terminology felt foreign, and the space made it seem like you either already knew everything or you didn't belong.</p>
+      <p>So I walked away. I kept building, kept working — until I got tired of <strong>trading my time for someone else's vision</strong> and came back with fresh eyes and a real commitment to figuring it out.</p>
+      <p>That decision changed everything. I'm now a <strong>consistently profitable, funded trader</strong> primarily in the futures market — with a simplified methodology that finally made the charts make sense.</p>
+      <p>I built The Profit Penthouse because I know what it feels like to be overwhelmed, intimidated, and unsure where to start. <strong>You don't have to figure this out alone.</strong></p>
     </div>
   </div>
 </section>
 
-<!-- THIS IS / NOT -->
-<section class="honest" id="honest">
-  <div class="label">Transparency first</div>
-  <h2>Let's be real about<br>what this is.</h2>
-  <p class="sub">The trading space is full of people selling shortcuts. This isn't that. Here's exactly what millennial women are walking into.</p>
-  <div class="honest-grid">
-    <div class="honest-card">
-      <span class="badge badge-yes">This IS</span>
-      <ul>
-        <li>A private community for millennial women learning to trade independently</li>
-        <li>A space focused on trading psychology, emotional discipline, and risk management</li>
-        <li>Accountability check-ins, journaling prompts, and real conversations about losses</li>
-        <li>Concepts taught using a simplified futures methodology anyone can learn</li>
-        <li>A place to ask questions without judgment — there are no dumb ones here</li>
-      </ul>
-    </div>
-    <div class="honest-card">
-      <span class="badge badge-no">This is NOT</span>
-      <ul>
-        <li>A signals group — you will never be told what to buy or sell</li>
-        <li>A copy-trading service — your trades are your responsibility</li>
-        <li>A get-rich-quick program — real skill takes time and we respect that</li>
-        <li>A course with a certificate — it's ongoing, living support</li>
-        <li>A substitute for your own research, backtesting, and risk management</li>
-      </ul>
-    </div>
+<!-- WHAT MAKES THIS DIFFERENT -->
+<section class="different" id="different">
+  <div class="sec-label">Why this works</div>
+  <h2>What makes this<br>different.</h2>
+  <p class="sec-sub">There's no shortage of trading content online. Here's why beginners who go through this path actually stick around — and actually improve.</p>
+  <div class="diff-grid">
+    <div class="diff-card"><div class="diff-icon">🎯</div><h3>Clear Path, Not Content Overload</h3><p>Download → Study → Book. Three steps that build on each other. No rabbit holes, no confusion about what to do next.</p></div>
+    <div class="diff-card"><div class="diff-icon">🧠</div><h3>Psychology First</h3><p>Most beginners fail not because they don't know the setups — but because they can't manage their emotions in the moment. We address that from day one.</p></div>
+    <div class="diff-card"><div class="diff-icon">🚫</div><h3>Zero Signals. Ever.</h3><p>You will never be told what to buy or sell here. The goal is to make you independent — not dependent on someone else's calls.</p></div>
+    <div class="diff-card"><div class="diff-icon">👤</div><h3>Direct Access to Resources</h3><p>No gatekeeping. Everything Shantae recommends — courses, tools, community options, and more — all in one place, updated as the journey evolves.</p></div>
+    <div class="diff-card"><div class="diff-icon">📈</div><h3>Futures First</h3><p>We lead with the futures market — one of the most accessible markets for self-sufficient traders — with concepts that transfer across markets as you grow.</p></div>
+    <div class="diff-card"><div class="diff-icon">🤝</div><h3>Accountability That's Real</h3><p>You'll be expected to do the work. Study the guide. Show up prepared. That's how real progress happens — and we'll be here when you do.</p></div>
   </div>
 </section>
 
-<!-- WHO IT'S FOR -->
-<section class="foryou" id="foryou">
-  <div class="foryou-grid">
-    <div class="foryou-img">
-      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782018245/IMG_5005_qj8pej.jpg" alt="Is this for me?" />
-    </div>
-    <div>
-      <div class="label">Is this for me?</div>
-      <h2>You're in the right place if any of this sounds like you.</h2>
-      <div class="foryou-list">
-        <div class="foryou-item"><div class="dot"></div><div><h4>You're a millennial woman who's done waiting</h4><p>You've done everything right — and it still doesn't feel like enough. You're ready to build something that actually creates freedom.</p></div></div>
-        <div class="foryou-item"><div class="dot"></div><div><h4>You've looked at trading but didn't know where to start</h4><p>The charts looked like noise and the space was full of people who made it seem like you didn't belong. Sound familiar?</p></div></div>
-        <div class="foryou-item"><div class="dot"></div><div><h4>You've been in a signals group and it didn't work</h4><p>You followed alerts, still lost money, and realized you had no idea why. You're ready to actually understand what you're doing.</p></div></div>
-        <div class="foryou-item"><div class="dot"></div><div><h4>You want community with women on the same path</h4><p>Trading alone is isolating. You want people who celebrate the discipline, not just the wins, and who show up on the red days too.</p></div></div>
-      </div>
-    </div>
+<!-- FINAL CTA -->
+<section class="final" id="start">
+  <div class="sec-label" style="justify-content:center; margin-bottom:14px;">Your next move</div>
+  <h2>Start free.<br>Go as far as you want.</h2>
+  <p class="final-sub">The guide is free. The resources are waiting. Start wherever you are — just start.</p>
+  <span class="final-note">The pivot you've been putting off starts here.</span>
+  <div class="final-btns">
+    <a href="#download" class="btn-primary">Get the Free Guide →</a>
+    <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-teal">Explore Resources →</a>
   </div>
-</section>
-
-<!-- INSIDE COMMUNITY -->
-<section class="inside" id="what">
-  <div class="label">Inside the community</div>
-  <h2>What you actually get<br>when you join.</h2>
-  <p class="sub">No fluff. No filler. Everything here is designed to help you develop as an independent trader.</p>
-  <div class="inside-grid">
-    <div class="ic"><div class="ic-icon">🧠</div><h3>Weekly Psychology Check-Ins</h3><p>Every week starts with a mindset prompt — not a trade call. We discuss what's showing up emotionally and how to not let it run your account.</p></div>
-    <div class="ic"><div class="ic-icon">📓</div><h3>Trade Journal Reviews</h3><p>Share your journal entries for feedback. The goal isn't to judge your trades — it's to understand the reasoning behind them and tighten your process.</p></div>
-    <div class="ic"><div class="ic-icon">📊</div><h3>Concept Breakdowns</h3><p>Futures market structure, price action, liquidity — explained clearly with chart examples. No assumed knowledge. No gatekeeping.</p></div>
-    <div class="ic"><div class="ic-icon">💬</div><h3>Real Talk Threads</h3><p>Post your wins, losses, and frustrations. A community that normalizes the full experience of learning to trade — not just the highlight reel.</p></div>
-  </div>
-</section>
-
-<!-- PILLARS -->
-<section class="pillars" id="pillars">
-  <div class="label">What we work on</div>
-  <h2>The market will test you.<br>We help you pass.</h2>
-  <p class="sub">Every losing streak has more to do with psychology than setups. These are the six areas we focus on inside the community.</p>
-  <div class="pillars-grid">
-    <div class="pc"><div class="pc-num">01</div><h3>Emotional Regulation</h3><p>Revenge trading, FOMO entries, panic exits — we identify the patterns behind impulsive decisions and build the pause that saves your account.</p></div>
-    <div class="pc"><div class="pc-num">02</div><h3>Risk Discipline</h3><p>Knowing your setup means nothing if you're overleveraged. We make risk management a non-negotiable habit, not an afterthought.</p></div>
-    <div class="pc"><div class="pc-num">03</div><h3>Consistency Over Perfection</h3><p>One green week doesn't make you a trader. One red week doesn't break you. We focus on showing up, journaling, reviewing, repeating.</p></div>
-    <div class="pc"><div class="pc-num">04</div><h3>Building Conviction</h3><p>You should be able to explain every trade before you take it. We help you build confidence from real understanding — not someone else's call.</p></div>
-    <div class="pc"><div class="pc-num">05</div><h3>Patience as a Strategy</h3><p>The best trade is often the one you don't take. We normalize sitting on your hands and protecting capital as a skill, not a weakness.</p></div>
-    <div class="pc"><div class="pc-num">06</div><h3>Accountability Without Shame</h3><p>We review losses honestly. No one comes here to perform. The only way to grow is to look at what happened and tell the truth about it.</p></div>
-  </div>
-</section>
-
-<!-- WAITLIST -->
-<section class="waitlist" id="join">
-  <div class="label" style="justify-content:center; margin-bottom:14px;">The doors aren't open yet</div>
-  <h2>Your seat is<br>being held.</h2>
-  <p class="waitlist-sub">Drop your email and get instant access to the <strong style="color:#fff;">Futures Trading Mastery: A Self-Sufficiency Blueprint</strong> — your prerequisite guide to the community. Study it. Learn it. Be ready when the doors open.</p>
-  <span class="waitlist-note">The pivot you've been putting off starts here.</span>
-  <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank">
-    <div class="form-row">
-      <input type="email" name="email_address" placeholder="your@email.com" required />
-      <button type="submit">Join the Waitlist</button>
-    </div>
-    <p class="form-fine">No spam. No pressure. Just a heads up when the community opens.</p>
-  </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">The Profit Penthouse</div>
   <p>© 2026 theprofitpenthouse.com · @introverted_icon</p>
-  <p style="font-size:0.68rem; color:#333; max-width:360px; text-align:right;">Trading futures involves substantial risk of loss. This community is for educational and accountability purposes only. Nothing shared here constitutes financial advice or a trade recommendation.</p>
+  <p style="font-size:0.68rem; color:#333; max-width:360px; text-align:right;">Trading futures involves substantial risk of loss. This is for educational purposes only. Nothing here constitutes financial advice or a trade recommendation.</p>
 </footer>
 
 </body>
