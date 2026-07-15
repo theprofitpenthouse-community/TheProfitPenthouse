@@ -95,9 +95,10 @@
   /* BIO */
   .bio { background: #0A0A0A; border-top: 1px solid var(--border); }
   .bio-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: center; }
-  .bio-img-wrap { position: relative; width: 320px; height: 320px; margin: 0 auto; }
+  .bio-img-wrap { position: relative; width: 320px; height: 320px; margin: 0 auto; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, #C71585, #D2691E, #FFD700, #008080); }
   .bio-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; border-radius: 50%; filter: contrast(1.05); display: block; }
-  .bio-img-wrap::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--teal); z-index: -1; pointer-events: none; }
+  .bio-img-wrap::after { display: none; }
+  .bio-img-wrap::before { display: none; }
   .bio-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1; margin-bottom: 4px; background: linear-gradient(90deg, var(--pink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .bio-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
   .bio-content p { font-size: 0.95rem; color: #888; line-height: 1.85; margin-bottom: 16px; }
