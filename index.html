@@ -3,20 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>From Frustrated to Funded — The Profit Penthouse</title>
+<title>The Profit Penthouse — A Trading Community Launching 2027</title>
+
+<!-- SEO -->
+<meta name="description" content="The Profit Penthouse is a private trading accountability community for beginners. Learn forex concepts, build consistency, and work toward becoming a funded futures trader. Waitlist open — only 50 spots per quarter." />
+<meta name="keywords" content="forex trading for beginners, futures trading, trading accountability, funded trader, trading community, self-sufficient trader" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="From Frustrated to Funded — The Profit Penthouse" />
-<meta property="og:description" content="I'm not here to be another guru selling false hope. I'm that homegirl who figured it out first and is pulling you up with her." />
+<meta property="og:description" content="A private trading community for beginners ready to go from frustrated to funded. Only 50 spots per quarter. Join the waitlist." />
 <meta property="og:image" content="https://res.cloudinary.com/divbiulha/image/upload/v1782011950/IMG_4998_naaevb.jpg" />
 <meta property="og:url" content="https://theprofitpenthouse.com" />
 <meta property="og:type" content="website" />
-
-<!-- Twitter/X Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="From Frustrated to Funded — The Profit Penthouse" />
-<meta name="twitter:description" content="I'm not here to be another guru selling false hope. I'm that homegirl who figured it out first and is pulling you up with her." />
+<meta name="twitter:description" content="A private trading community for beginners. Only 50 spots per quarter." />
 <meta name="twitter:image" content="https://res.cloudinary.com/divbiulha/image/upload/v1782011950/IMG_4998_naaevb.jpg" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
@@ -34,33 +37,38 @@
   html { scroll-behavior: smooth; }
   body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
+  /* GRADIENT LINE */
+  .grad-line { height: 3px; background: linear-gradient(90deg, #C71585, #D2691E, #FFD700, #008080); }
+
+  /* COMMON */
+  section { padding: 90px 5%; }
+  .sec-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .sec-label::before { content: ''; display: block; width: 18px; height: 2px; background: var(--teal); flex-shrink: 0; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 16px; }
+  .sec-sub { font-size: 0.97rem; font-weight: 300; color: #888; max-width: 580px; line-height: 1.8; margin-bottom: 52px; }
+  .btn-primary { background: linear-gradient(135deg, var(--pink), var(--orange)); color: #fff; border: none; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+  .btn-teal { background: var(--teal); color: #fff; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; border: none; }
+  .btn-teal:hover { opacity: 0.85; transform: translateY(-2px); }
+
   /* HERO */
-  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 120px 5% 80px; gap: 60px; position: relative; overflow: hidden; background: #0A0A0A; }
-  .hero::before { display: none; }
-  .hero-candles { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.1; pointer-events: none; z-index: 1; }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 80px 5%; gap: 60px; position: relative; overflow: hidden; background: #0A0A0A; }
+  .hero-candles { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.08; pointer-events: none; z-index: 1; }
   .hero-text { position: relative; z-index: 2; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px; }
-  .eyebrow::before { content: ''; display: block; width: 22px; height: 2px; background: var(--teal); }
+  .launching-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(199,21,133,0.1); border: 1px solid rgba(199,21,133,0.4); color: var(--pink); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 7px 16px; margin-bottom: 28px; }
+  .launching-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--pink); display: block; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
   h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 5.5vw, 5.6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 24px; }
   .l1 { color: var(--white); display: block; }
   .l2 { color: var(--pink); display: block; }
   .l3 { color: var(--orange); display: block; }
   .l4 { color: var(--gold); display: block; }
-  .hero-sub { font-size: 1rem; font-weight: 300; color: #999; max-width: 460px; margin-bottom: 36px; line-height: 1.85; }
+  .hero-sub { font-size: 1rem; font-weight: 300; color: #999; max-width: 460px; margin-bottom: 32px; line-height: 1.85; }
   .hero-sub strong { color: var(--white); font-weight: 600; }
-  .hero-steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
-  .step { display: flex; align-items: center; gap: 14px; font-size: 0.85rem; font-weight: 500; color: #aaa; }
-  .step-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; flex-shrink: 0; }
-  .step:nth-child(1) .step-num { background: rgba(199,21,133,0.15); color: var(--pink); border: 1px solid var(--pink); }
-  .step:nth-child(2) .step-num { background: rgba(210,105,30,0.15); color: var(--orange); border: 1px solid var(--orange); }
-  .step:nth-child(3) .step-num { background: rgba(0,128,128,0.15); color: var(--teal); border: 1px solid var(--teal); }
-  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-  .btn-primary { background: linear-gradient(135deg, var(--pink), var(--orange)); color: #fff; border: none; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
-  .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
-  .btn-teal { background: var(--teal); color: #fff; border: none; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.15s; }
-  .btn-teal:hover { opacity: 0.85; transform: translateY(-2px); }
-  .btn-ghost { color: var(--white); border: 1px solid var(--border); padding: 15px 30px; font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.9rem; cursor: pointer; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
-  .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+  .scarcity-bar { background: rgba(255,215,0,0.06); border: 1px solid rgba(255,215,0,0.2); padding: 14px 20px; margin-bottom: 32px; max-width: 420px; }
+  .scarcity-bar p { font-size: 0.82rem; color: var(--gold); font-weight: 500; line-height: 1.5; }
+  .scarcity-bar p span { font-weight: 700; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
   .hero-image { position: relative; z-index: 2; display: flex; justify-content: flex-end; align-items: flex-end; }
   .hero-image img { width: 100%; max-width: 480px; object-fit: cover; filter: contrast(1.05); }
 
@@ -70,85 +78,72 @@
   .marquee-inner span { color: var(--pink); margin: 0 14px; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  /* COMMON */
-  section { padding: 100px 5%; }
-  .sec-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-  .sec-label::before { content: ''; display: block; width: 18px; height: 2px; background: var(--teal); flex-shrink: 0; }
-  h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 16px; }
-  .sec-sub { font-size: 0.97rem; font-weight: 300; color: #888; max-width: 540px; line-height: 1.8; margin-bottom: 52px; }
-  .step-badge { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-  .step-badge .num { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.1em; padding: 6px 16px; }
-  .num.pink   { background: rgba(199,21,133,0.1); color: var(--pink); border: 1px solid var(--pink); }
-  .num.orange { background: rgba(210,105,30,0.1); color: var(--orange); border: 1px solid var(--orange); }
-  .num.teal   { background: rgba(0,128,128,0.1); color: var(--teal); border: 1px solid var(--teal); }
+  /* JOURNEY / PROGRESSION */
+  .journey { background: #0A0A0A; border-top: 1px solid var(--border); }
+  .journey-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); }
+  .journey-card { background: #0A0A0A; padding: 44px 36px; position: relative; overflow: hidden; }
+  .journey-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
+  .journey-card:nth-child(1)::after { background: var(--pink); }
+  .journey-card:nth-child(2)::after { background: var(--orange); }
+  .journey-card:nth-child(3)::after { background: var(--gold); }
+  .journey-num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: #1a1a1a; line-height: 1; margin-bottom: 14px; }
+  .journey-stage { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+  .journey-card:nth-child(1) .journey-stage { color: var(--pink); }
+  .journey-card:nth-child(2) .journey-stage { color: var(--orange); }
+  .journey-card:nth-child(3) .journey-stage { color: var(--gold); }
+  .journey-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.02em; margin-bottom: 12px; color: var(--white); }
+  .journey-card p { font-size: 0.87rem; color: #666; line-height: 1.75; }
 
-  /* FREE DOWNLOAD */
-  .download { background: #0A0A0A; border-top: 1px solid var(--border); }
-  .dl-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; }
-  .dl-img { position: relative; }
-  .dl-img img { width: 100%; max-width: 300px; display: block; mix-blend-mode: lighten; }
-  .dl-img .free-tag { position: absolute; top: -10px; right: 20px; background: var(--pink); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; padding: 5px 14px; }
-  .dl-text h2 { margin-bottom: 16px; }
-  .dl-text p { font-size: 0.95rem; color: #888; line-height: 1.8; margin-bottom: 20px; }
-  .dl-text p strong { color: var(--white); }
-  .market-note { font-size: 0.78rem; color: #555; font-style: italic; margin-bottom: 32px; display: block; }
+  /* WHO IT'S FOR */
+  .foryou { background: #0A0A0A; border-top: 1px solid var(--border); }
+  .foryou-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--border); }
+  .foryou-card { background: #0A0A0A; padding: 36px 32px; display: flex; gap: 18px; align-items: flex-start; }
+  .foryou-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); margin-top: 7px; flex-shrink: 0; }
+  .foryou-card h4 { font-size: 0.97rem; font-weight: 600; margin-bottom: 6px; color: var(--white); }
+  .foryou-card p { font-size: 0.86rem; color: #666; line-height: 1.65; }
 
-  /* 1:1 COACHING */
-  .coaching { background: #0A0A0A; border-top: 1px solid var(--border); }
-  .coaching-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); }
-  .co-card { background: #0A0A0A; padding: 52px 44px; }
-  .co-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing: 0.02em; margin-bottom: 14px; }
-  .co-card p { font-size: 0.92rem; color: #888; line-height: 1.8; margin-bottom: 28px; }
-  .co-card p strong { color: var(--white); }
-  .co-includes { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-  .co-includes li { font-size: 0.87rem; color: #999; padding-left: 20px; position: relative; line-height: 1.6; }
-  .co-includes li::before { content: '→'; position: absolute; left: 0; color: var(--pink); }
-  .vip-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 12px; background: rgba(255,215,0,0.08); color: var(--gold); border: 1px solid rgba(255,215,0,0.3); margin-bottom: 20px; }
+  /* WHAT'S INSIDE */
+  .inside { background: #0A0A0A; border-top: 1px solid var(--border); }
+  .inside-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--border); }
+  .ic { background: #0A0A0A; padding: 38px 32px; border-bottom: 3px solid transparent; transition: border-color 0.2s; }
+  .ic:hover { border-bottom-color: var(--teal); }
+  .ic-icon { font-size: 1.6rem; margin-bottom: 16px; }
+  .ic h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--white); }
+  .ic p { font-size: 0.87rem; color: #666; line-height: 1.7; }
 
   /* BIO */
   .bio { background: #0A0A0A; border-top: 1px solid var(--border); }
   .bio-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: center; }
   .bio-img-wrap { position: relative; width: 320px; height: 320px; margin: 0 auto; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, #C71585, #D2691E, #FFD700, #008080); }
   .bio-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; border-radius: 50%; filter: contrast(1.05); display: block; }
-  .bio-img-wrap::after { display: none; }
-  .bio-img-wrap::before { display: none; }
   .bio-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1; margin-bottom: 4px; background: linear-gradient(90deg, var(--pink), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .bio-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
   .bio-content p { font-size: 0.95rem; color: #888; line-height: 1.85; margin-bottom: 16px; }
   .bio-content p strong { color: var(--white); font-weight: 600; }
 
-  /* DIFFERENT */
-  .different { background: #0A0A0A; border-top: 1px solid var(--border); }
-  .diff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); }
-  .diff-card { background: #0A0A0A; padding: 40px 32px; border-bottom: 3px solid transparent; }
-  .diff-card:nth-child(1) { border-bottom-color: var(--pink); }
-  .diff-card:nth-child(2) { border-bottom-color: var(--teal); }
-  .diff-card:nth-child(3) { border-bottom-color: var(--gold); }
-  .diff-card:nth-child(4) { border-bottom-color: var(--orange); }
-  .diff-card:nth-child(5) { border-bottom-color: var(--teal); }
-  .diff-card:nth-child(6) { border-bottom-color: var(--pink); }
-  .diff-icon { font-size: 1.6rem; margin-bottom: 16px; }
-  .diff-card h3 { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 10px; }
-  .diff-card p { font-size: 0.86rem; color: #666; line-height: 1.7; }
-
-  /* FINAL CTA */
-  .final { background: #0A0A0A; border-top: 1px solid var(--border); text-align: center; padding: 120px 5%; position: relative; overflow: hidden; }
-  .final::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(199,21,133,0.06) 0%, transparent 70%); pointer-events: none; }
-  .final::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,128,128,0.05) 0%, transparent 70%); pointer-events: none; }
-  .final h2 { font-size: clamp(2.4rem, 5vw, 4.2rem); max-width: 680px; margin: 0 auto 16px; position: relative; z-index: 2; }
-  .final-sub { font-size: 1rem; color: #777; max-width: 480px; margin: 0 auto 14px; line-height: 1.8; position: relative; z-index: 2; }
-  .final-note { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 44px; display: block; position: relative; z-index: 2; }
-  .final-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; }
-
-  /* EMAIL FORM */
+  /* WAITLIST */
+  .waitlist { background: #0A0A0A; border-top: 1px solid var(--border); text-align: center; padding: 110px 5%; position: relative; overflow: hidden; }
+  .waitlist::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(199,21,133,0.06) 0%, transparent 70%); pointer-events: none; }
+  .waitlist::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,128,128,0.05) 0%, transparent 70%); pointer-events: none; }
+  .waitlist-inner { position: relative; z-index: 2; }
+  .spots-counter { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,215,0,0.06); border: 1px solid rgba(255,215,0,0.25); padding: 10px 22px; margin-bottom: 28px; }
+  .spots-counter p { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+  .waitlist h2 { font-size: clamp(2.4rem, 5vw, 4rem); max-width: 640px; margin: 0 auto 16px; }
+  .waitlist-sub { font-size: 1rem; color: #777; max-width: 500px; margin: 0 auto 36px; line-height: 1.8; }
   .form-wrap { max-width: 460px; margin: 0 auto; }
   .form-row { display: flex; }
   .form-row input { flex: 1; background: #111; border: 1px solid var(--border); border-right: none; padding: 16px 20px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; }
   .form-row input::placeholder { color: #444; }
-  .form-row input:focus { border-color: var(--teal); }
-  .form-row button { background: var(--teal); color: #fff; border: none; padding: 16px 28px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
-  .form-row button:hover { background: #006666; }
+  .form-row input:focus { border-color: var(--pink); }
+  .form-row button { background: var(--pink); color: #fff; border: none; padding: 16px 28px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .form-row button:hover { background: #a01070; }
   .form-fine { font-size: 0.72rem; color: #444; margin-top: 12px; text-align: center; }
+  .waitlist-note { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-top: 20px; display: block; }
+
+  /* RESOURCES */
+  .resources { background: #0A0A0A; border-top: 1px solid var(--border); text-align: center; padding: 80px 5%; }
+  .resources h2 { max-width: 560px; margin: 0 auto 16px; }
+  .resources p { font-size: 0.97rem; color: #777; max-width: 480px; margin: 0 auto 36px; line-height: 1.8; }
 
   /* FOOTER */
   footer { background: #0A0A0A; border-top: 1px solid var(--border); padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
@@ -157,15 +152,12 @@
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; padding-top: 100px; gap: 40px; }
+    .hero { grid-template-columns: 1fr; padding-top: 60px; gap: 40px; }
     .hero-image { justify-content: center; }
-    .dl-grid { grid-template-columns: 1fr; text-align: center; }
-    .dl-img { display: flex; justify-content: center; }
-    .coaching-inner { grid-template-columns: 1fr; }
+    .journey-grid { grid-template-columns: 1fr; }
+    .foryou-grid { grid-template-columns: 1fr; }
+    .inside-grid { grid-template-columns: 1fr; }
     .bio-grid { grid-template-columns: 1fr; }
-    .bio-img-wrap::after { display: none; }
-    .diff-grid { grid-template-columns: 1fr; }
-    .final-btns { flex-direction: column; align-items: center; }
     .form-row { flex-direction: column; }
     .form-row input { border-right: 1px solid var(--border); border-bottom: none; }
     footer { flex-direction: column; text-align: center; }
@@ -175,13 +167,14 @@
 </head>
 <body>
 
-<!-- MEET SHANTAE -->
+<!-- BIO (INTRO — VERY TOP) -->
 <section class="bio" id="about">
   <div class="bio-grid">
     <div class="bio-img-wrap">
-      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782012822/IMG_4999_rl3lmu.jpg" alt="Shantae — Founder" />
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782012822/IMG_4999_rl3lmu.jpg" alt="Shantae — Founder of The Profit Penthouse" />
     </div>
     <div class="bio-content">
+      <div class="sec-label">Your trading bestie</div>
       <div class="bio-name">Hi, I'm Shantae.</div>
       <div class="bio-role">Your New Trading Bestie & Accountability Partner</div>
       <p>I was introduced to trading over <strong>10 years ago</strong> — and I'll be honest, I had no idea what I was doing. No mentor, no roadmap, and no real direction. I bought a few courses along the way, but nothing ever quite clicked or catered to the way I actually learn.</p>
@@ -193,7 +186,27 @@
   </div>
 </section>
 
-<div style="height: 3px; background: linear-gradient(90deg, #C71585, #D2691E, #FFD700, #008080); margin: 0;"></div>
+<div class="grad-line"></div>
+
+<!-- FREE COURSE -->
+<section class="bio" style="border-top: none;" id="course">
+  <div class="sec-label">Start here — it's free</div>
+  <h2>Forex Beginners Course</h2>
+  <p class="sec-sub" style="margin-bottom: 36px;">Before you join anything, I want you to learn. This free course walks you through the forex fundamentals — so you can decide if trading is for you, and if I'm the right person to guide you. No pressure. Just knowledge.</p>
+  <div style="position: relative; width: 100%; max-width: 800px; aspect-ratio: 16/9; background: #111; margin-bottom: 20px;">
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?list=PLj-lAjzaaE9C4-MVgfbhKFHRgvuqF5Ys0"
+      title="Forex Beginners Course — The Profit Penthouse"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="position: absolute; inset: 0; width: 100%; height: 100%;">
+    </iframe>
+  </div>
+  <p style="font-size: 0.82rem; color: #555; margin-top: 8px;">Watch at your own pace. When you're ready for accountability, community, and the next level — the waitlist is below.</p>
+</section>
+
+<div class="grad-line"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -240,108 +253,133 @@
   </svg>
 
   <div class="hero-text">
+    <div class="launching-badge">Community Launching 2027</div>
     <h1>
       <span class="l1">FROM</span>
       <span class="l2">FRUSTRATED</span>
       <span class="l3">TO</span>
       <span class="l4">FUNDED.</span>
     </h1>
-    <p class="hero-sub">I don't have a finance degree — so I'm not here to provide financial advice. Just over a decade of experience in the market and a genuine desire to help you avoid the mistakes I made. Here are a few things I put together to help jumpstart your journey.</p>
-    <div class="hero-steps">
-      <div class="step"><div class="step-num pink">1</div> Download the free Self-Sufficiency Blueprint</div>
-      <div class="step"><div class="step-num orange">2</div> Study it — build your foundation first</div>
-      <div class="step"><div class="step-num teal">3</div> Explore additional resources when you're ready</div>
+    <p class="hero-sub">The Profit Penthouse is a <strong>private trading community</strong> for beginners who are tired of spinning their wheels and ready to get serious about trading. You'll start with the basics of forex, build real skills, master discipline, and work your way toward becoming a consistently profitable, funded futures trader. No shortcuts, no overnight success stories. Just strategy, accountability, for those committed to finally mastering the skill of trading the financial markets.</p>
+    <div class="scarcity-bar">
+      <p>⚠️ <span>Only 50 spots available per quarter.</span> Once they're gone, the next opening is 3 months away.</p>
     </div>
-    <div class="hero-cta">
-      <a href="#download" class="btn-primary">Get the Free Guide →</a>
+    <div class="hero-btns">
+      <a href="#waitlist" class="btn-primary">Secure My Spot →</a>
       <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-teal">Explore Resources →</a>
     </div>
   </div>
   <div class="hero-image">
-    <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782011950/IMG_4998_naaevb.jpg" alt="The Profit Penthouse" />
+    <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782011950/IMG_4998_naaevb.jpg" alt="The Profit Penthouse — From Frustrated to Funded" />
   </div>
 </section>
+
+<div class="grad-line"></div>
 
 <!-- MARQUEE -->
 <div class="marquee-bar">
   <div class="marquee-inner">
-    FRUSTRATED TO FUNDED <span>✦</span> FUTURES FIRST <span>✦</span> BEGINNER FRIENDLY <span>✦</span> TRADING PSYCHOLOGY <span>✦</span> NO SIGNALS EVER <span>✦</span> ADDITIONAL RESOURCES <span>✦</span> SELF-SUFFICIENCY BLUEPRINT <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span>&nbsp;FRUSTRATED TO FUNDED <span>✦</span> FUTURES FIRST <span>✦</span> BEGINNER FRIENDLY <span>✦</span> TRADING PSYCHOLOGY <span>✦</span> NO SIGNALS EVER <span>✦</span> ADDITIONAL RESOURCES <span>✦</span> SELF-SUFFICIENCY BLUEPRINT <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span>&nbsp;
+    FOREX FUNDAMENTALS <span>✦</span> TRADING PSYCHOLOGY <span>✦</span> ACCOUNTABILITY COMMUNITY <span>✦</span> FUNDED FUTURES TRADER <span>✦</span> NO SIGNALS EVER <span>✦</span> 50 SPOTS PER QUARTER <span>✦</span> SELF-SUFFICIENT TRADER <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span>&nbsp;FOREX FUNDAMENTALS <span>✦</span> TRADING PSYCHOLOGY <span>✦</span> ACCOUNTABILITY COMMUNITY <span>✦</span> FUNDED FUTURES TRADER <span>✦</span> NO SIGNALS EVER <span>✦</span> 50 SPOTS PER QUARTER <span>✦</span> SELF-SUFFICIENT TRADER <span>✦</span> BUILD YOUR OWN EDGE <span>✦</span>&nbsp;
   </div>
 </div>
 
-<!-- FREE DOWNLOAD -->
-<section class="download" id="download">
-  <div class="dl-grid">
-    <div class="dl-img">
-      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782275076/7EA4C290-3D53-40D7-9BB7-7EC24A2CAA61_urf8y8.png" alt="Futures Trading Mastery: A Self-Sufficiency Blueprint" />
+<!-- JOURNEY -->
+<section class="journey" id="journey">
+  <div class="sec-label">The Profit Penthouse Roadmap</div>
+  <h2>Where you start.<br>Where you're going.</h2>
+  <p class="sec-sub">Inside the community, you move at your own pace through a clear progression — from understanding the basics all the way to trading funded capital in the futures market.</p>
+  <div class="journey-grid">
+    <div class="journey-card">
+      <div class="journey-num">01</div>
+      <div class="journey-stage">Phase One</div>
+      <h3>Forex Fundamentals</h3>
+      <p>Start here. Learn how markets move, how to read price action, and how to think like a trader before you ever place a live trade. We focus on building a real foundation — not rushing to results.</p>
     </div>
-    <div class="dl-text">
-      
-      <div class="sec-label">Free download</div>
-      <h2>Futures Trading Mastery:<br>A Self-Sufficiency Blueprint</h2>
-      <p>This is your starting point. <strong>Download this guide and study it</strong> before you do anything else. It's built to take you from zero understanding to ready-to-learn so you can hit the ground running.</p>
-      <p>Once you've gone through it, explore the additional resources I've put together to support the next phase of your journey.</p>
-      <span class="market-note">Futures-focused methodology · Applicable across markets</span>
+    <div class="journey-card">
+      <div class="journey-num">02</div>
+      <div class="journey-stage">Phase Two</div>
+      <h3>Consistent & Profitable</h3>
+      <p>Once the concepts click, the real work begins — building the discipline, risk management, and emotional control to trade consistently. This is where most people quit. Not here.</p>
+    </div>
+    <div class="journey-card">
+      <div class="journey-num">03</div>
+      <div class="journey-stage">Phase Three</div>
+      <h3>Funded Futures Trader</h3>
+      <p>When you're consistently profitable and emotionally disciplined, you're ready to transition into futures and pursue funded capital. The goal isn't just to trade — it's to trade other people's money.</p>
+    </div>
+  </div>
+</section>
+
+<div class="grad-line"></div>
+
+<!-- WHO IT'S FOR -->
+<section class="foryou" id="foryou">
+  <div class="sec-label">Is this for me?</div>
+  <h2>You belong here if...</h2>
+  <p class="sec-sub">The Profit Penthouse isn't for everyone. It's for people who are serious, coachable, and ready to do the actual work.</p>
+  <div class="foryou-grid">
+    <div class="foryou-card"><div class="foryou-dot"></div><div><h4>You're a complete beginner with no idea where to start</h4><p>You've heard about trading but every time you try to learn, you end up more confused than before. You need a clear starting point — not more content.</p></div></div>
+    <div class="foryou-card"><div class="foryou-dot"></div><div><h4>You've tried signals groups and lost money</h4><p>You followed alerts, had no idea why, and still lost. You're done outsourcing your brain. You want to actually understand what you're doing.</p></div></div>
+    <div class="foryou-card"><div class="foryou-dot"></div><div><h4>You know some basics but can't trade consistently</h4><p>The setups are there but the emotions aren't cooperating. You need accountability, structure, and someone to tell you the truth about your trading.</p></div></div>
+    <div class="foryou-card"><div class="foryou-dot"></div><div><h4>You want a community — not a guru</h4><p>You're not looking for someone to follow. You want a space to grow with people who are on the same path and honest about the real experience.</p></div></div>
+  </div>
+</section>
+
+<div class="grad-line"></div>
+
+<!-- INSIDE -->
+<section class="inside" id="inside">
+  <div class="sec-label">Inside the community</div>
+  <h2>What you actually get.</h2>
+  <p class="sec-sub">No fluff. No filler. Everything inside is designed to help you develop into an independent, self-sufficient trader.</p>
+  <div class="inside-grid">
+    <div class="ic"><div class="ic-icon">🧠</div><h3>Trading Psychology & Mindset</h3><p>Weekly check-ins focused on what's showing up emotionally. Revenge trading, FOMO, fear of pulling the trigger — we address it all before it drains your account.</p></div>
+    <div class="ic"><div class="ic-icon">📊</div><h3>Concept Breakdowns</h3><p>Forex fundamentals and futures market structure explained clearly — with no assumed knowledge and no gatekeeping. You learn the why, not just the what.</p></div>
+    <div class="ic"><div class="ic-icon">📓</div><h3>Trade Journal Reviews</h3><p>Share your journal for real feedback. We focus on the reasoning behind your trades — not just whether they were wins or losses.</p></div>
+    <div class="ic"><div class="ic-icon">💬</div><h3>Accountability & Real Talk</h3><p>A space to post wins, losses, and frustrations without judgment. We normalize the full experience of learning — not just the highlight reel.</p></div>
+    <div class="ic"><div class="ic-icon">🚫</div><h3>Zero Signals. Ever.</h3><p>You will never be told what to buy or sell. The entire goal is to make you independent — not dependent on someone else's calls to survive in the market.</p></div>
+    <div class="ic"><div class="ic-icon">🎯</div><h3>A Clear Path Forward</h3><p>Forex fundamentals → consistent profitability → funded futures trader. You always know where you are, what to work on next, and where you're headed.</p></div>
+  </div>
+</section>
+
+<div class="grad-line"></div>
+
+<!-- WAITLIST -->
+<section class="waitlist" id="waitlist">
+  <div class="waitlist-inner">
+    <div class="spots-counter"><p>⚡ Only <span>50 spots</span> available per quarter — first come, first served</p></div>
+    <h2>Secure your spot<br>before it's gone.</h2>
+    <p class="waitlist-sub">Drop your email to join the waitlist. When doors open you'll be first in line. Miss this quarter and you're waiting 3 months for the next opening.</p>
+    <div class="form-wrap">
       <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank">
         <div class="form-row">
           <input type="email" name="email_address" placeholder="your@email.com" required />
-          <button type="submit">Send Me the Guide</button>
+          <button type="submit">Secure My Spot</button>
         </div>
-        <p class="form-fine">Free. No spam. Guide delivered straight to your inbox.</p>
+        <p class="form-fine">No spam. Just a heads up when the doors open.</p>
       </form>
+      <span class="waitlist-note">The pivot you've been putting off starts here.</span>
     </div>
   </div>
 </section>
 
-<!-- RESOURCES SECTION -->
-<section class="coaching" id="resources">
-  <div class="sec-label">Ready to go further?</div>
-  <h2>The guide is just<br>the beginning.</h2>
-  <p class="sec-sub">Once you've studied the Blueprint and built your foundation, the next step is connecting with everything I've curated to support your growth as a trader. It's all in one place — and it evolves as the journey does.</p>
-  <div class="coaching-inner">
-    <div class="co-card">
-      <h3>What's waiting<br>for you</h3>
-      <p>I've put together a hub of resources specifically for traders at every stage of the beginner journey. Whether you're still getting familiar with the charts or you're ready to go deeper — there's something there for you. <strong>It's updated regularly so what you see is always current and relevant.</strong></p>
-      <ul class="co-includes">
-        <li>Tools and platforms I personally recommend for beginners</li>
-        <li>Learning resources to deepen your understanding of the market</li>
-        <li>Ways to stay connected and be first to know when new offers drop</li>
-        <li>Community access details as The Profit Penthouse continues to grow</li>
-        <li>Everything in one place — no searching, no guessing</li>
-      </ul>
-      <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-primary">Explore What's Available →</a>
-    </div>
-    <div class="co-card" style="border-left: 1px solid var(--border);">
-      <h3>You're ready<br>for the next step if...</h3>
-      <ul class="co-includes" style="margin-top:20px;">
-        <li>You've downloaded and studied the Blueprint</li>
-        <li>You're starting to understand the basics and want to build on that</li>
-        <li>You're looking for community, tools, or structured next steps</li>
-        <li>You want to stay in the loop as new resources and opportunities drop</li>
-        <li>You're serious about becoming self-sufficient in the market</li>
-        <li>You're done consuming random content without a clear direction</li>
-      </ul>
-    </div>
-  </div>
+<div class="grad-line"></div>
+
+<!-- RESOURCES -->
+<section class="resources" id="resources">
+  <div class="sec-label" style="justify-content:center;">While you wait</div>
+  <h2>Not ready to commit yet?<br>Start here.</h2>
+  <p>I've put together a hub of resources to help you get familiar with trading before the community opens. Tools, guides, and more — all in one place, updated as the journey evolves.</p>
+  <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-teal">Explore Resources →</a>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final" id="start">
-  <div class="sec-label" style="justify-content:center; margin-bottom:14px;">Your next move</div>
-  <h2>Start free.<br>Go as far as you want.</h2>
-  <p class="final-sub">The guide is free. The resources are waiting. Start wherever you are — just start.</p>
-  <span class="final-note">The pivot you've been putting off starts here.</span>
-  <div class="final-btns">
-    <a href="#download" class="btn-primary">Get the Free Guide →</a>
-    <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-teal">Explore Resources →</a>
-  </div>
-</section>
+<div class="grad-line"></div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">The Profit Penthouse</div>
   <p>© 2026 theprofitpenthouse.com · @introverted_icon</p>
-  <p style="font-size:0.68rem; color:#333; max-width:360px; text-align:right;">Trading futures involves substantial risk of loss. This is for educational purposes only. Nothing here constitutes financial advice or a trade recommendation.</p>
+  <p style="font-size:0.68rem; color:#333; max-width:360px; text-align:right;">Trading involves substantial risk of loss. This community is for educational and accountability purposes only. Nothing here constitutes financial advice or a trade recommendation.</p>
 </footer>
 
 </body>
