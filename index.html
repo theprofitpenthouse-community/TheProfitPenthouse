@@ -77,7 +77,7 @@ h2 {
   background: var(--pink);
   color: #fff; border: none;
   padding: 17px 40px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-family: 'DM Sans', sans-serif; font-weight: 700;
   font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;
   cursor: pointer; text-decoration: none; display: inline-block;
@@ -90,7 +90,7 @@ h2 {
   border: none;
   color: #000;
   padding: 17px 38px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-family: 'DM Sans', sans-serif; font-weight: 700;
   font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;
   cursor: pointer; text-decoration: none; display: inline-block;
@@ -185,7 +185,8 @@ h2 {
 }
 
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
-.hero-fine { font-size: 0.72rem; color: #444; }
+.hero-fine { font-size: 0.72rem; color: #444; margin-top: 10px; }
+.hero-form { max-width: 440px; }
 
 /* desktop mockup image */
 .hero-mockup {
@@ -232,11 +233,12 @@ h2 {
 .inside { background: var(--black); border-top: 1px solid var(--border); }
 .inside-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: #1a0f18;
+  gap: 1px; background: #1a0f18; border-radius: 10px; overflow: hidden;
 }
 .ic {
   background: var(--black); padding: 40px 32px;
   border-bottom: 2px solid transparent;
+  border-radius: 8px;
   transition: border-color 0.25s, background 0.25s;
 }
 .ic:hover { background: var(--deep); border-bottom-color: var(--gold); }
@@ -257,11 +259,49 @@ h2 {
 .ic:nth-child(even) .ic-tag { color: var(--gold); border-color: rgba(212,175,55,0.3); }
 
 /* ══════════════════════════════════════
+   COMMUNITY INVITE
+══════════════════════════════════════ */
+.community { background: var(--black); border-top: 1px solid var(--border); }
+.community-hero-img {
+  position: relative; width: 100%; height: 420px; overflow: hidden; border-radius: 12px 12px 0 0;
+}
+.community-hero-img img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+  display: block;
+}
+.community-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%);
+}
+.community-body {
+  max-width: 720px; margin: 0 auto;
+  padding: 60px 40px 80px;
+  text-align: center;
+}
+.community-body h2 { margin-bottom: 20px; }
+.community-body .sec-sub { margin-bottom: 36px; }
+.community-list {
+  list-style: none; padding: 0; margin: 0 auto 40px;
+  display: inline-flex; flex-direction: column; gap: 14px;
+  text-align: left;
+}
+.community-list li {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+  color: #aaa; line-height: 1.6;
+}
+.cl-dot {
+  width: 8px; height: 8px; background: var(--pink);
+  transform: rotate(45deg); flex-shrink: 0; margin-top: 6px;
+}
+.community-list li:nth-child(even) .cl-dot { background: var(--gold); }
+
+/* ══════════════════════════════════════
    ROADMAP / JOURNEY
 ══════════════════════════════════════ */
 .journey { background: var(--deep); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
-.journey-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: #1a0f18; }
-.jcard { background: var(--deep); padding: 48px 36px; position: relative; overflow: hidden; }
+.journey-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: #1a0f18; border-radius: 10px; overflow: hidden; }
+.jcard { background: var(--deep); padding: 48px 36px; position: relative; overflow: hidden; border-radius: 8px; }
 .jcard::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -295,10 +335,11 @@ h2 {
    WHO IT'S FOR
 ══════════════════════════════════════ */
 .foryou { background: var(--black); border-top: 1px solid var(--border); }
-.foryou-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: #1a0f18; }
+.foryou-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: #1a0f18; border-radius: 10px; overflow: hidden; }
 .fycard {
   background: var(--black); padding: 38px 32px;
   display: flex; gap: 18px; align-items: flex-start;
+  border-radius: 8px;
   transition: background 0.2s;
 }
 .fycard:hover { background: var(--deep); }
@@ -405,15 +446,18 @@ h2 {
 .form-row input::placeholder { color: #333; }
 .form-row input:focus { border-color: var(--pink); }
 .form-row button {
-  background: var(--pink); color: #fff; border: none;
-  padding: 17px 30px;
+  background: var(--foil);
+  background-size: 200% auto;
+  animation: foilShift 3s linear infinite;
+  color: #000; border: none;
+  padding: 17px 36px;
   border-radius: 0 8px 8px 0;
-  font-family: 'DM Sans', sans-serif; font-weight: 700;
-  font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase;
+  font-family: 'DM Sans', sans-serif; font-weight: 800;
+  font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
   cursor: pointer; white-space: nowrap;
-  transition: background 0.2s;
+  transition: opacity 0.2s, transform 0.15s;
 }
-.form-row button:hover { background: var(--pink-lt); }
+.form-row button:hover { opacity: 0.9; transform: scale(1.02); }
 .form-fine { font-size: 0.72rem; color: #333; margin-top: 12px; text-align: center; }
 .wl-note {
   font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em;
@@ -460,7 +504,8 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
   .bio-grid     { grid-template-columns: 1fr; }
   .bio-img-wrap { width: 220px; height: 220px; }
   .form-row { flex-direction: column; }
-  .form-row input { border-right: 1px solid #2a1a28; border-bottom: none; }
+  .form-row input { border-right: 1px solid #2a1a28; border-bottom: none; border-radius: 6px 6px 0 0; }
+  .form-row button { border-radius: 0 0 6px 6px; }
   footer { flex-direction: column; text-align: center; }
   footer .disclaimer { text-align: center; }
 }
@@ -473,13 +518,18 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
 
   <!-- desktop mockup — left column, first thing seen -->
   <div class="hero-mockup">
-    <img src="https://res.cloudinary.com/divbiulha/image/upload/e_background_removal/v1792689196/IMG_6567_wgxizq.png" alt="From Frustrated to Funded — Beginner's Guide to Futures Trading" />
+    <img src="https://res.cloudinary.com/divbiulha/image/upload/v1792689778/B7242970-3C7E-40CE-8AA2-33497FD8F863_dc3nde.png" alt="From Frustrated to Funded — Beginner's Guide to Futures Trading" />
   </div>
 
   <div class="hero-text">
     <!-- mobile mockup first on mobile -->
     <div class="hero-mockup-mobile">
-      <img src="https://res.cloudinary.com/divbiulha/image/upload/e_background_removal/v1792689196/IMG_6567_wgxizq.png" alt="From Frustrated to Funded — Beginner's Guide to Futures Trading" />
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1792689778/B7242970-3C7E-40CE-8AA2-33497FD8F863_dc3nde.png" alt="From Frustrated to Funded — Beginner's Guide to Futures Trading" />
+    </div>
+
+    <div class="hero-inside-blurb">
+      <div class="sec-label" style="margin-bottom:8px;">Inside the guide</div>
+      <p style="font-size:0.82rem;color:#888;line-height:1.7;margin:0;">No fluff, no gatekeeping. Every section is built to give beginners a real foundation — the kind of education that saves you years of expensive mistakes.</p>
     </div>
 
     <p class="hero-sub">Stop guessing. Stop blowing accounts. This free guide walks you through the fundamentals of futures trading — plus a daily session log so you can track every trade and actually learn from it.</p>
@@ -491,11 +541,15 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
       <li>Built for discipline, consistency, and real accountability</li>
     </ul>
 
-    <div class="hero-btns">
-      <a href="#waitlist" class="btn-pink">Get the Free Guide →</a>
-      <a href="#about" class="btn-gold">Who Is This For?</a>
+    <div class="hero-form">
+      <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank">
+        <div class="form-row">
+          <input type="email" name="email_address" placeholder="your@email.com" required />
+          <button type="submit">Download Your Free Copy</button>
+        </div>
+      </form>
+      <p class="hero-fine">Free. No credit card. No spam.</p>
     </div>
-    <p class="hero-fine">Free. No credit card. Drop your email below.</p>
   </div>
 </section>
 
@@ -510,80 +564,30 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
 
 <div class="grad-line"></div>
 
-<!-- ══════ WHAT'S INSIDE ══════ -->
-<section class="inside" id="inside">
-  <div class="sec-label">Inside the guide</div>
-  <h2>Everything you need<br>to start right.</h2>
-  <p class="sec-sub">No fluff, no gatekeeping. Every section is built to give beginners a real foundation — the kind of education that saves you years of expensive mistakes.</p>
-  <div class="inside-grid">
-    <div class="ic">
-      <div class="ic-num">01</div>
-      <div class="ic-tag">Foundation</div>
-      <h3>Market Structure Basics</h3>
-      <p>Learn how price actually moves — structure, trends, and the logic behind every setup before you risk a single dollar.</p>
-    </div>
-    <div class="ic">
-      <div class="ic-num">02</div>
-      <div class="ic-tag">Discipline</div>
-      <h3>Trading Psychology</h3>
-      <p>Revenge trading, FOMO, hesitation — we address the mental side because most losses start between your ears, not on the chart.</p>
-    </div>
-    <div class="ic">
-      <div class="ic-num">03</div>
-      <div class="ic-tag">Protection</div>
-      <h3>Risk Management</h3>
-      <p>Position sizing, stop losses, and the rules that keep you in the game long enough to actually get good at this.</p>
-    </div>
-    <div class="ic">
-      <div class="ic-num">04</div>
-      <div class="ic-tag">Daily Practice</div>
-      <h3>Session Log</h3>
-      <p>One page per day. Fill in before the session — bias, plan, instrument. Fill in after — what happened, what you'd do differently.</p>
-    </div>
-    <div class="ic">
-      <div class="ic-num">05</div>
-      <div class="ic-tag">Growth</div>
-      <h3>Trade Journal</h3>
-      <p>Track every trade: entry, exit, P&amp;L, and your reasoning. Patterns in your losses only show up when you're writing them down.</p>
-    </div>
-    <div class="ic">
-      <div class="ic-num">06</div>
-      <div class="ic-tag">The Path</div>
-      <h3>Road to Funded</h3>
-      <p>Understand the prop firm model — how funded challenges work and what it actually takes to pass one and keep profits.</p>
-    </div>
+<!-- ══════ COMMUNITY INVITE ══════ -->
+<section class="community" id="community">
+  <div class="community-hero-img">
+    <img src="https://res.cloudinary.com/divbiulha/image/upload/v1792690670/IMG_6542_vpjymm.jpg" alt="The Profit Penthouse Community" />
+    <div class="community-img-overlay"></div>
   </div>
-</section>
-
-<div class="grad-line"></div>
-
-<!-- ══════ ROADMAP ══════ -->
-<section class="journey" id="journey">
-  <div class="bokeh-bg">
-    <span class="b1" style="opacity:0.08"></span>
-    <span class="b2" style="opacity:0.06"></span>
-  </div>
-  <div class="sec-label">The Profit Penthouse Roadmap</div>
-  <h2>Where you start.<br>Where you're going.</h2>
-  <p class="sec-sub">The community takes you through a clear three-phase progression — no skipping steps, no rushing. This is how consistent traders are actually built.</p>
-  <div class="journey-grid">
-    <div class="jcard">
-      <div class="jcard-num">01</div>
-      <div class="jcard-phase">Phase One</div>
-      <h3>Master Market Structure</h3>
-      <p>Start here. Learn how markets move — price action, structure, key levels, and the logic behind every setup. We build your foundation before you ever risk real money.</p>
-    </div>
-    <div class="jcard">
-      <div class="jcard-num">02</div>
-      <div class="jcard-phase">Phase Two</div>
-      <h3>Get Funded</h3>
-      <p>Once your skill and discipline are solid, you pursue a funded account challenge — where a prop firm puts up the capital and you keep the profits. No risk, real rewards.</p>
-    </div>
-    <div class="jcard">
-      <div class="jcard-num">03</div>
-      <div class="jcard-phase">Phase Three</div>
-      <h3>Trade Live Capital</h3>
-      <p>After passing your challenge, you trade live firm capital. Scale your payouts over time and eventually fund your own account — trading your own money on your own terms.</p>
+  <div class="community-body">
+    <div class="sec-label">The Profit Penthouse</div>
+    <h2>Ready to go deeper?<br>You don't have to do this alone.</h2>
+    <p class="sec-sub">The guide gets you started — but the community is where the real work happens. Inside The Profit Penthouse, beginner female traders get structured support, live accountability, and a space where asking questions is always the right move.</p>
+    <ul class="community-list">
+      <li><span class="cl-dot"></span>Weekly accountability check-ins so you stay consistent</li>
+      <li><span class="cl-dot"></span>A judgment-free space built for women learning to trade futures</li>
+      <li><span class="cl-dot"></span>Structured curriculum from market structure to funded accounts</li>
+      <li><span class="cl-dot"></span>Direct access to a consistently profitable, funded trader</li>
+    </ul>
+    <div class="community-form" id="waitlist">
+      <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank">
+        <div class="form-row">
+          <input type="email" name="email_address" placeholder="your@email.com" required />
+          <button type="submit">Join the Waitlist</button>
+        </div>
+      </form>
+      <p class="hero-fine">No spam. You'll hear from us when doors open.</p>
     </div>
   </div>
 </section>
@@ -633,7 +637,7 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
 <section class="bio" id="story">
   <div class="bio-grid">
     <div class="bio-img-wrap">
-      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1782012822/IMG_4999_rl3lmu.jpg" alt="Shantae — Founder of The Profit Penthouse" />
+      <img src="https://res.cloudinary.com/divbiulha/image/upload/v1792691437/C8D0C26E-F3C0-495A-9C2C-1B11C6C69E03_bygllg.png" alt="Shantae — Founder of The Profit Penthouse" />
     </div>
     <div class="bio-content">
       <div class="sec-label">Your trading bestie</div>
@@ -656,28 +660,6 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
   <p class="sec-sub" style="text-align:center">Tools, guides, recommendations, and a free forex beginners course — all in one place, updated as the community grows. No sign-up required.</p>
   <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-gold">Access the Hub →</a>
   <p class="hub-fine">Free to access. No sign-up required.</p>
-</section>
-
-<div class="grad-line"></div>
-
-<!-- ══════ WAITLIST ══════ -->
-<section class="waitlist" id="waitlist">
-  <div class="waitlist-glow"></div>
-  <div class="waitlist-inner">
-    <div class="wl-badge">⚡ Community Launching 2027 — 50 Spots Per Quarter</div>
-    <h2>Secure your spot<br><span class="foil">before it's gone.</span></h2>
-    <p class="waitlist-sub">Drop your email to get the free guide now and join the waitlist. When doors open, you'll be first in line. Miss this quarter and you're waiting 3 months.</p>
-    <div class="form-wrap">
-      <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank">
-        <div class="form-row">
-          <input type="email" name="email_address" placeholder="your@email.com" required />
-          <button type="submit">Get Access</button>
-        </div>
-        <p class="form-fine">No spam. Just the guide + a heads up when doors open.</p>
-      </form>
-      <span class="wl-note">The pivot you've been putting off starts here.</span>
-    </div>
-  </div>
 </section>
 
 <div class="grad-line"></div>
