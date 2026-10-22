@@ -53,6 +53,19 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
   animation: foilShift 4s linear infinite;
 }
 @keyframes foilShift { to { background-position: 200% center; } }
+@keyframes foilTwinkle {
+  0%   { background-position: 0% center; }
+  50%  { background-position: 100% center; }
+  100% { background-position: 200% center; }
+}
+.foil-gold {
+  background: linear-gradient(105deg, #7a5c10 0%, #D4AF37 25%, #F5E090 45%, #fff8dc 50%, #F5E090 55%, #D4AF37 75%, #7a5c10 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: foilTwinkle 3s ease-in-out infinite;
+}
 
 .pink-text { color: var(--pink); }
 .gold-text  { color: var(--gold); }
@@ -61,10 +74,14 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
 section { padding: 90px 5%; }
 .sec-label {
   font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  text-transform: uppercase; margin-bottom: 14px;
   display: flex; align-items: center; gap: 10px;
+  background: linear-gradient(105deg, #7a5c10 0%, #D4AF37 25%, #F5E090 45%, #fff8dc 50%, #F5E090 55%, #D4AF37 75%, #7a5c10 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; animation: foilTwinkle 3s ease-in-out infinite;
 }
-.sec-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.sec-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--gold); flex-shrink: 0; -webkit-text-fill-color: initial; }
 h2 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2.4rem, 4.5vw, 3.8rem);
@@ -131,9 +148,13 @@ h2 {
   display: inline-flex; align-items: center; gap: 10px;
   border: 1px solid rgba(212,175,55,0.35);
   background: rgba(212,175,55,0.06);
-  color: var(--gold); font-size: 0.68rem; font-weight: 700;
+  font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.18em; text-transform: uppercase;
   padding: 8px 18px; margin-bottom: 32px;
+  background: linear-gradient(105deg, #7a5c10 0%, #D4AF37 25%, #F5E090 45%, #fff8dc 50%, #F5E090 55%, #D4AF37 75%, #7a5c10 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; animation: foilTwinkle 3s ease-in-out infinite;
 }
 .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -179,9 +200,12 @@ h2 {
   display: flex; align-items: flex-start; gap: 12px;
 }
 .hero-checklist li::before {
-  content: '✦';
-  color: var(--gold); font-size: 0.65rem;
-  flex-shrink: 0; margin-top: 4px;
+  content: '—';
+  font-size: 0.75rem; flex-shrink: 0; margin-top: 2px;
+  background: linear-gradient(105deg, #7a5c10 0%, #D4AF37 25%, #F5E090 45%, #fff8dc 50%, #F5E090 55%, #D4AF37 75%, #7a5c10 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; animation: foilTwinkle 3s ease-in-out infinite;
 }
 
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
@@ -290,9 +314,9 @@ h2 {
 }
 .cl-dot {
   width: 8px; height: 8px; background: var(--pink);
-  transform: rotate(45deg); flex-shrink: 0; margin-top: 6px;
+  border-radius: 50%; flex-shrink: 0; margin-top: 6px;
 }
-.community-list li:nth-child(even) .cl-dot { background: var(--gold); }
+.community-list li:nth-child(even) .cl-dot { background: var(--pink); }
 
 /* ══════════════════════════════════════
    ROADMAP / JOURNEY
@@ -343,9 +367,9 @@ h2 {
 .fycard:hover { background: var(--deep); }
 .fy-diamond {
   width: 9px; height: 9px; background: var(--pink);
-  transform: rotate(45deg); flex-shrink: 0; margin-top: 6px;
+  border-radius: 50%; flex-shrink: 0; margin-top: 6px;
 }
-.fycard:nth-child(even) .fy-diamond { background: var(--gold); }
+.fycard:nth-child(even) .fy-diamond { background: var(--pink); }
 .fycard h4 { font-size: 0.97rem; font-weight: 700; margin-bottom: 8px; color: var(--white); }
 .fycard p  { font-size: 0.85rem; color: #666; line-height: 1.7; }
 
@@ -553,15 +577,6 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
 
 <div class="grad-line"></div>
 
-<!-- ══════ MARQUEE ══════ -->
-<div class="marquee-bar">
-  <div class="marquee-inner">
-    LEARN AT YOUR OWN PACE <span class="m-gold">✦</span> BUILD YOUR FOUNDATION <span class="m-pink">✦</span> TRADE WITH CONFIDENCE <span class="m-gold">✦</span> MASTER RISK MANAGEMENT <span class="m-pink">✦</span> COMMUNITY OVER COMPETITION <span class="m-gold">✦</span> REAL EDUCATION NO FLUFF <span class="m-pink">✦</span> DISCIPLINE CREATES CONSISTENCY <span class="m-gold">✦</span> YOU BELONG HERE <span class="m-pink">✦</span> PROGRESS OVER PERFECTION <span class="m-gold">✦</span> CHART ANALYSIS MADE SIMPLE <span class="m-pink">✦</span>&nbsp;LEARN AT YOUR OWN PACE <span class="m-gold">✦</span> BUILD YOUR FOUNDATION <span class="m-pink">✦</span> TRADE WITH CONFIDENCE <span class="m-gold">✦</span> MASTER RISK MANAGEMENT <span class="m-pink">✦</span> COMMUNITY OVER COMPETITION <span class="m-gold">✦</span> REAL EDUCATION NO FLUFF <span class="m-pink">✦</span> DISCIPLINE CREATES CONSISTENCY <span class="m-gold">✦</span> YOU BELONG HERE <span class="m-pink">✦</span> PROGRESS OVER PERFECTION <span class="m-gold">✦</span> CHART ANALYSIS MADE SIMPLE <span class="m-pink">✦</span>&nbsp;
-  </div>
-</div>
-
-<div class="grad-line"></div>
-
 <!-- ══════ COMMUNITY INVITE ══════ -->
 <section class="community" id="community">
   <div class="community-hero-img">
@@ -579,13 +594,8 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
       <li><span class="cl-dot"></span>Direct access to a consistently profitable, funded trader</li>
     </ul>
     <div class="community-form" id="waitlist">
-      <form action="https://app.kit.com/forms/9592240/subscriptions" method="post" target="_blank">
-        <div class="form-row">
-          <input type="email" name="email_address" placeholder="your@email.com" required />
-          <button type="submit">Join the Waitlist</button>
-        </div>
-      </form>
-      <p class="hero-fine">No spam. You'll hear from us when doors open.</p>
+      <a href="https://www.skool.com/the-profit-penthouse-6394/about" target="_blank" class="btn-pink" style="font-size:1rem; padding:20px 48px;">Join the Waitlist</a>
+      <p class="hero-fine" style="margin-top:16px;">Free to join. Spots are limited.</p>
     </div>
   </div>
 </section>
@@ -647,17 +657,6 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
       <p>I'm not here to be another guru selling false hope. I'm here as someone who actually lived this <strong>hard</strong> journey and wants to be a guide. Think of me less as a mentor and more as that homegirl who figured it out first and is pulling you up with her.</p>
     </div>
   </div>
-</section>
-
-<div class="grad-line"></div>
-
-<!-- ══════ RESOURCE HUB ══════ -->
-<section class="hub" id="hub">
-  <div class="sec-label" style="justify-content:center">Everything in one place</div>
-  <h2>Your free trading<br>resource hub.</h2>
-  <p class="sec-sub" style="text-align:center">Tools, guides, recommendations, and a free forex beginners course — all in one place, updated as the community grows. No sign-up required.</p>
-  <a href="https://linktr.ee/theprofitpenthouse" target="_blank" class="btn-gold">Access the Hub →</a>
-  <p class="hub-fine">Free to access. No sign-up required.</p>
 </section>
 
 <div class="grad-line"></div>
