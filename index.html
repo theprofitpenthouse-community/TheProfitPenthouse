@@ -131,11 +131,11 @@ h2 {
    HERO — FREEBIE SECTION
 ══════════════════════════════════════ */
 .hero {
-  min-height: 100vh;
+  min-height: unset;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 80px 6%;
+  padding: 32px 6% 48px;
   gap: 60px;
   background: #000000;
   position: relative;
@@ -536,7 +536,7 @@ footer .disclaimer { font-size: 0.64rem; color: #222; max-width: 360px; text-ali
 }
 @media (max-width: 768px) {
   section { padding: 70px 5%; }
-  .hero { grid-template-columns: 1fr; padding-top: 64px; gap: 0; }
+  .hero { grid-template-columns: 1fr; padding-top: 24px; gap: 0; }
   .hero-mockup { display: none; }
   .hero-mockup-mobile { display: block; }
   .journey-grid { grid-template-columns: 1fr; }
