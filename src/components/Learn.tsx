@@ -39,7 +39,7 @@ export function Curriculum() {
               >
                 <div className="flex items-center justify-between">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gold/10 foil-icon"><Icon size={20} aria-hidden /></span>
-                  <span className="text-xs font-bold text-white/40">Module {i + 1}</span>
+                  <span className="text-xs font-bold text-blush">Module {i + 1}</span>
                 </div>
                 <h3 className="display-sm mt-5 text-white">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/65">{short}</p>
