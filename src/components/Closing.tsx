@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { ChevronDown, Globe, Mail } from 'lucide-react'
 import { AnchorButton, CheckoutButton, Heading, Reveal, Section } from './ui'
 import { WAITLIST_FAQS } from './waitlistCopy'
@@ -49,8 +49,18 @@ export function Founder() {
   )
 }
 
-const faqs = [
+const faqs: [string, ReactNode][] = [
   ...WAITLIST_FAQS,
+  [
+    'Can men join this community?',
+    <>
+      The Profit Penthouse is exclusively for women. If you’re a man looking for a trading community, I recommend{' '}
+      <a href="https://cctrendpro.com/ref/theprofitpenthouse" target="_blank" rel="sponsored noopener" className="font-semibold text-blush underline underline-offset-4 hover:text-gold">
+        CC Trend Pro
+      </a>{' '}
+      <span className="text-white/45">(affiliate link)</span>.
+    </>,
+  ],
   ['Is The Profit Penthouse beginner-friendly?', 'Yes. The Profit Penthouse Community includes a Beginner path for women who are completely new to futures and forex, and a Rebuild path for women who have traded before but need to reset their foundation.'],
   ['Do I need money to start trading?', 'No trading account is required to begin learning. Members can study charts and practice using simulation tools before deciding whether to risk real capital.'],
   ['Do you teach futures or forex?', 'Both. The curriculum covers concepts relevant to futures and forex, while explaining important differences between the two markets.'],
