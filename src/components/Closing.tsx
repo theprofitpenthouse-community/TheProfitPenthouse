@@ -48,7 +48,6 @@ export function Founder() {
 }
 
 const faqs = [
-  ['Is the trading roadmap really free?', 'Yes. Enter your name and email and the roadmap goes straight to your inbox. You’ll also get occasional emails from The Profit Penthouse, and you can unsubscribe anytime.'],
   ['Is The Profit Penthouse beginner-friendly?', 'Yes. The Profit Penthouse Community includes a Beginner path for women who are completely new to futures and forex, and a Rebuild path for women who have traded before but need to reset their foundation.'],
   ['Do I need money to start trading?', 'No trading account is required to begin learning. Members can study charts and practice using simulation tools before deciding whether to risk real capital.'],
   ['Do you teach futures or forex?', 'Both. The curriculum covers concepts relevant to futures and forex, while explaining important differences between the two markets.'],
@@ -159,7 +158,6 @@ export function Footer({ home = '', affiliateDisclosure = false }: { home?: stri
             <ul className="mt-4 space-y-2.5 text-sm text-white/70">
               <li><a href={`${home}#membership`} className="hover:text-gold">Membership Plans</a></li>
               <li><a href={`${home}#founder`} className="hover:text-gold">About</a></li>
-              <li><a href="./roadmap.html" className="hover:text-gold">Free Roadmap</a></li>
               <li><a href="./tools.html" className="hover:text-gold">Trading Toolkit</a></li>
               <li><a href={`${home}#faq`} className="hover:text-gold">FAQ</a></li>
               <li>

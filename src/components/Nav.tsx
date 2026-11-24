@@ -4,7 +4,6 @@ import { CheckoutButton } from './ui'
 import { isConfigured, isRoadmapConnected } from '../config'
 
 const links = [
-  { href: '#roadmap', label: 'Free Roadmap' },
   { href: '#membership', label: 'Membership' },
   { href: '#curriculum', label: 'Curriculum' },
   { href: '#founder', label: 'Founder' },

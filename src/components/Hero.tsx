@@ -3,7 +3,7 @@ import { HeroVisual } from './HeroVisual'
 import { CheckoutButton, Reveal } from './ui'
 
 const trust = [
-  { icon: BookOpen, label: 'Free Beginner Roadmap' },
+  { icon: BookOpen, label: 'Beginner-Friendly Education' },
   { icon: CandlestickChart, label: 'Futures & Forex' },
   { icon: PlayCircle, label: 'Step-by-Step Learning Path' },
   { icon: Users, label: 'Women-Only Community' },
@@ -26,7 +26,7 @@ export function Hero() {
             <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="hero" />
             <CheckoutButton plan="community" label="Join The Community — $19/Month" variant="secondary" location="hero" />
           </div>
-          <p className="mt-3 text-xs text-white/50">The roadmap is free · Community membership is $19/month, billed through Skool</p>
+          <p className="mt-3 text-xs text-white/50">Community membership is $19/month, billed through Skool</p>
         </Reveal>
 
         <Reveal delay={0.15} className="mt-12 md:mt-16">
