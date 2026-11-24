@@ -10,6 +10,7 @@ import { AFFILIATE_DISCLOSURE } from './Toolkit'
 export function Founder() {
   return (
     <Section id="founder" labelledBy="founder-title">
+      <div aria-hidden className="mx-auto mb-14 h-px w-full max-w-md bg-gradient-to-r from-transparent via-gold/70 to-transparent md:mb-16" />
       <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <div className="relative mx-auto aspect-square w-full max-w-[15rem] sm:max-w-[18rem]">
