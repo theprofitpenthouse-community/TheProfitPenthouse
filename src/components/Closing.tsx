@@ -135,10 +135,12 @@ const IgIcon = () => (
 
 export function Footer({ affiliateDisclosure = false }: { home?: string; affiliateDisclosure?: boolean }) {
   const { legal, contactEmail, instagramHandle } = siteConfig
+  // The Legal column only shows once at least one policy link is added in src/config.ts
+  const hasLegal = Object.values(legal).some((v) => v.trim() !== '')
   return (
     <footer className="border-t border-white/10 bg-ink px-5 pb-10 pt-14 sm:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
+        <div className={`grid gap-10 ${hasLegal ? 'md:grid-cols-[1.3fr_1fr_1fr]' : 'md:grid-cols-[1.3fr_1fr]'}`}>
           <div>
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/55">Where Women Learn to Trade With Structure, Strategy &amp; Confidence.</p>
@@ -171,7 +173,7 @@ export function Footer({ affiliateDisclosure = false }: { home?: string; affilia
               </li>
             </ul>
           </nav>
-          <div>
+          {hasLegal && (<div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/40">Legal</p>
             <ul className="mt-4 space-y-2.5 text-sm text-white/70">
               <li><PolicyLink href={legal.privacy} label="Privacy Policy" /></li>
@@ -179,7 +181,7 @@ export function Footer({ affiliateDisclosure = false }: { home?: string; affilia
               <li><PolicyLink href={legal.refund} label="Refund/Cancellation Policy" /></li>
               <li><PolicyLink href={legal.riskDisclosure} label="Trading Risk Disclosure" /></li>
             </ul>
-          </div>
+          </div>)}
         </div>
         <p className="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-white/45">
           The Profit Penthouse provides educational content only and does not provide personalized investment advice, trade recommendations, or guarantees of financial results. Futures and forex trading involve substantial risk of loss and may not be suitable for everyone. Past performance does not guarantee future results.
