@@ -37,7 +37,7 @@ export const siteConfig = {
      * (first name + email) and send signups straight to Kit, instead of loading Kit's embed below.
      * Find it in Kit: your form → Publish/Embed → HTML → action="https://app.kit.com/forms/<ID>/subscriptions".
      */
-    kitFormId: '',
+    kitFormId: '10233277',
     roadmap: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
     waitlist: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
   },

@@ -50,7 +50,7 @@ export default function WaitlistPage() {
                 <p className="mt-2 text-sm text-white/60">Enter your name and email. It’s free, and it doesn’t sign you up for a membership.</p>
                 <div className="mt-6">
                   {siteConfig.forms.kitFormId ? (
-                    <KitForm formId={siteConfig.forms.kitFormId} button="Join the Waitlist" success="Check your email to confirm. You’ll be the first to know when the doors open." location="waitlist_page" />
+                    <KitForm formId={siteConfig.forms.kitFormId} button="Join the Waitlist" success="You’ve been added to the waitlist. Check your email (and spam folder) for your free download." location="waitlist_page" />
                   ) : (
                     <FormEmbed html={siteConfig.forms.waitlist} placeholder="The waitlist signup opens soon." />
                   )}
