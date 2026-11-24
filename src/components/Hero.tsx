@@ -14,7 +14,7 @@ export function Hero() {
     <section id="top" aria-labelledby="hero-title" className="relative overflow-hidden px-5 pb-16 pt-10 sm:px-8 md:pb-24 md:pt-16">
       <div className="relative mx-auto max-w-6xl">
         <Reveal className="mx-auto max-w-4xl text-center">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] foil-text">For women ready to understand the markets</p>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-blush">For women ready to understand the markets</p>
           <h1 id="hero-title" className="display-xl text-white">
             Stop Guessing.
             <span className="mx-auto mt-1 block w-fit foil-text">Start Understanding the Charts.</span>
