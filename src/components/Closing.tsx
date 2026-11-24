@@ -169,7 +169,7 @@ export function Footer({ affiliateDisclosure = false }: { home?: string; affilia
           </div>
           <nav aria-label="Footer">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/40">Explore</p>
-            <ul className="mt-4 space-y-2.5 text-sm text-white/70">
+            <ul className="mt-4 space-y-2.5 text-sm text-blush">
               <li><a href="./#membership" className="hover:text-gold">Membership</a></li>
               <li><a href="./#founder" className="hover:text-gold">About</a></li>
               <li><a href="./tools.html" className="hover:text-gold">Trading Toolkit</a></li>
