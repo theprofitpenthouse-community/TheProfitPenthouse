@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { ArrowLeft, ArrowRight, BookOpenCheck, Brain, ChartCandlestick, Check, ChevronDown, FlaskConical, Layers, Lock, MessageCircle, MonitorPlay, Sparkles } from 'lucide-react'
 import { Shell } from './components/Shell'
 import { Footer } from './components/Closing'
@@ -32,10 +32,20 @@ export default function InnerCirclePage() {
   const { foundingPrice, regularPrice, foundingSeats, billingConfirmed } = innerCircle
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
-  const faqs: [string, string][] = [
+  const faqs: [string, ReactNode][] = [
     [
       'Who can join the Inner Circle?',
       'The Inner Circle is available only to active members of The Profit Penthouse Community. Upgrade from inside Skool while you’re signed in to your Community account.',
+    ],
+    [
+      'Is the Inner Circle open to men?',
+      <>
+        No. Like The Profit Penthouse Community, the Inner Circle is for women only. If you’re a man looking for a trading community with live support, I recommend{' '}
+        <a href="https://cctrendpro.com/ref/theprofitpenthouse" target="_blank" rel="sponsored noopener" className="font-semibold text-blush underline underline-offset-4 hover:text-gold">
+          CC Trend Pro
+        </a>{' '}
+        <span className="text-white/45">(affiliate link)</span>.
+      </>,
     ],
     [
       'What happens to my Community membership when I upgrade?',
