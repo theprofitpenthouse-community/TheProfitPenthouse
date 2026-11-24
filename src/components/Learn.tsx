@@ -23,7 +23,7 @@ export function Curriculum() {
         sub="Eight core modules, in order. Tap any module to see what’s inside."
       />
       <div className="mb-8 flex flex-wrap justify-center gap-3 text-xs font-bold uppercase tracking-wider">
-        <span className="relative inline-flex items-center gap-2 rounded-full foil-ring px-3 py-1.5 foil-text"><BookOpen size={14} aria-hidden /> Beginner curriculum · Included in your membership</span>
+        <span className="relative inline-flex items-center gap-2 rounded-full foil-ring px-3 py-1.5 text-blush"><BookOpen size={14} aria-hidden /> Beginner curriculum · Included in your membership</span>
               </div>
       <ol className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {modules.map(({ icon: Icon, title, short, topics }, i) => {
