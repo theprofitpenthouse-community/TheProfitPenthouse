@@ -99,7 +99,7 @@ export function FinalCTA() {
   return (
     <section aria-labelledby="final-title" className="relative overflow-hidden bg-ink px-5 py-24 sm:px-8 md:py-32">
       <Reveal className="relative mx-auto max-w-4xl text-center">
-        <h2 id="final-title" className="display-lg text-white">
+        <h2 id="final-title" className="display-lg foil-text">
           Your Next Chapter Starts With Understanding the Charts.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/75">You don’t need to know everything before you begin.</p>
