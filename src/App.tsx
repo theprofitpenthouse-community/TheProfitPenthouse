@@ -6,7 +6,8 @@ import { Curriculum } from './components/Learn'
 import { FAQ, FinalCTA, Footer, Founder } from './components/Closing'
 import { Shell } from './components/Shell'
 
-// One-page funnel: Attention → Problem → Solution → What you learn → The Profit Penthouse Community ($19) → Founder → FAQ → Join
+// One-page funnel: Attention → Problem → Solution → What you learn → The Community (waitlist) → Founder → FAQ → Join
+// The free roadmap (roadmap.html) and the Community waitlist signup (waitlist.html) each have their own page.
 export default function App() {
   return (
     <Shell>

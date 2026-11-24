@@ -80,7 +80,7 @@ export function Toolkit() {
         <p className="mx-auto mt-3 max-w-md text-white/70">Learn how to actually read the charts with structured lessons and a community of women doing the same.</p>
         <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
           <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="toolkit_page" />
-          <CheckoutButton plan="community" label="Join The Community — $19/Month" variant="secondary" location="toolkit_page" />
+          <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" variant="secondary" location="toolkit_page" />
         </div>
         <p className="mt-4 text-sm">
           <a href="./" className="font-semibold text-white/60 underline-offset-4 hover:text-blush hover:underline">See what’s inside The Profit Penthouse</a>

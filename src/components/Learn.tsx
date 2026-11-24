@@ -19,7 +19,7 @@ export function Curriculum() {
     <Section id="curriculum" labelledBy="curriculum-title">
       <Heading
         id="curriculum-title"
-        title={<>Learn to Read the Markets. <span className="block w-fit mx-auto foil-text">Not Just Follow Signals.</span></>}
+        title={<><span className="block text-blush">Learn to Read the Markets.</span> <span className="block w-fit mx-auto foil-text">Not Just Follow Signals.</span></>}
         sub="Eight core modules, in order. Tap any module to see what’s inside."
       />
       <div className="mb-8 flex flex-wrap justify-center gap-3 text-xs font-bold uppercase tracking-wider">
@@ -70,7 +70,7 @@ function PathsRow() {
   return (
     <div className="mt-14">
       <Reveal className="mb-6 text-center">
-        <h3 className="display-sm text-white">Two ways in. Both included in your Community membership.</h3>
+        <h3 className="display-sm text-blush">Two ways in. Both included in your Community membership.</h3>
       </Reveal>
       <div className="grid gap-4 md:grid-cols-2">
         {paths.map(({ icon: Icon, tag, name, quote, body }, i) => (

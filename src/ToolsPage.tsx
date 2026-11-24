@@ -3,16 +3,16 @@ import { Shell } from './components/Shell'
 import { Toolkit } from './components/Toolkit'
 import { Footer } from './components/Closing'
 import { CheckoutButton } from './components/ui'
-import { isConfigured, isRoadmapConnected } from './config'
+import { isRoadmapConnected } from './config'
 
 export default function ToolsPage() {
-  const needsSetup = !isRoadmapConnected() || !isConfigured('community')
+  const needsSetup = !isRoadmapConnected()
   return (
     <Shell>
       <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
         {needsSetup && (
           <p id="checkout-setup-note" className="foil-fill px-4 py-1.5 text-center text-xs font-bold text-ink">
-            Preview mode — {[!isRoadmapConnected() && 'the roadmap signup form', !isConfigured('community') && 'the Skool join link'].filter(Boolean).join(' and ')} isn’t connected yet. Add it in <code>src/config.ts</code>.
+            Preview mode — the roadmap signup form isn’t connected yet. Add it in <code>src/config.ts</code>.
           </p>
         )}
         <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">

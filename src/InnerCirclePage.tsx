@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, BookOpenCheck, Brain, ChartCandlestick, Check, C
 import { Shell } from './components/Shell'
 import { Footer } from './components/Closing'
 import { Reveal, Section } from './components/ui'
-import { destination, isConfigured, siteConfig } from './config'
+import { destination, siteConfig } from './config'
 import { track } from './lib/analytics'
 
 /**
@@ -157,11 +157,11 @@ export default function InnerCirclePage() {
               <p className="mt-3 text-center text-sm text-white/55">
                 Not a member yet?{' '}
                 <a
-                  href={destination('community') || './#membership'}
-                  onClick={() => track('community_cta_click', { location: 'inner_circle_not_member', configured: isConfigured('community') })}
+                  href={destination('waitlist')}
+                  onClick={() => track('waitlist_cta_click', { location: 'inner_circle_not_member' })}
                   className="font-semibold text-blush underline-offset-4 hover:underline"
                 >
-                  Join The Community — $19/Month
+                  Join the Community Waitlist
                 </a>
               </p>
             </Reveal>

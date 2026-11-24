@@ -2,6 +2,8 @@ import { ArrowLeft, Clock, Compass, ShieldCheck } from 'lucide-react'
 import { Shell } from './components/Shell'
 import { Footer } from './components/Closing'
 import { ThriveCartEmbed } from './components/ThriveCartEmbed'
+import { FormEmbed } from './components/FormEmbed'
+import { siteConfig } from './config'
 import { Reveal, Section } from './components/ui'
 
 const benefits = [
@@ -51,7 +53,11 @@ export default function RoadmapPage() {
               <h2 className="display-sm text-white">Send me the free roadmap</h2>
               <p className="mt-2 text-sm text-white/60">Enter your name and email and it goes straight to your inbox.</p>
               <div className="mt-6">
-                <ThriveCartEmbed />
+                {siteConfig.forms.roadmap.trim() ? (
+                  <FormEmbed html={siteConfig.forms.roadmap} placeholder="The roadmap signup opens soon." />
+                ) : (
+                  <ThriveCartEmbed />
+                )}
               </div>
               <p className="mt-5 text-xs leading-relaxed text-white/45">
                 By signing up, you’ll get the roadmap plus occasional emails from The Profit Penthouse; unsubscribe anytime. Education only, not financial advice. Trading forex and futures involves substantial risk of loss and isn’t suitable for everyone. Examples are hypothetical.

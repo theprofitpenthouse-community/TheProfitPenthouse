@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ChevronDown, Globe, Mail } from 'lucide-react'
 import { AnchorButton, CheckoutButton, Heading, Reveal, Section } from './ui'
+import { WAITLIST_FAQS } from './waitlistCopy'
 import { Logo } from './Nav'
 import { siteConfig } from '../config'
 import { track } from '../lib/analytics'
@@ -48,6 +49,7 @@ export function Founder() {
 }
 
 const faqs = [
+  ...WAITLIST_FAQS,
   ['Is The Profit Penthouse beginner-friendly?', 'Yes. The Profit Penthouse Community includes a Beginner path for women who are completely new to futures and forex, and a Rebuild path for women who have traded before but need to reset their foundation.'],
   ['Do I need money to start trading?', 'No trading account is required to begin learning. Members can study charts and practice using simulation tools before deciding whether to risk real capital.'],
   ['Do you teach futures or forex?', 'Both. The curriculum covers concepts relevant to futures and forex, while explaining important differences between the two markets.'],
@@ -106,7 +108,7 @@ export function FinalCTA() {
         </p>
         <div className="mx-auto mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-md lg:w-max lg:max-w-none lg:flex-row lg:items-center lg:[&>*]:whitespace-nowrap">
           <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="final" />
-          <CheckoutButton plan="community" label="Join The Community — $19/Month" variant="secondary" location="final" />
+          <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" variant="secondary" location="final" />
         </div>
         <p className="mt-12 text-2xl font-semibold leading-snug text-gold [text-wrap:balance] sm:text-3xl">Your seat at <span className="text-white">The Profit Penthouse</span> is waiting.</p>
       </Reveal>
@@ -131,7 +133,7 @@ const IgIcon = () => (
   </svg>
 )
 
-export function Footer({ home = '', affiliateDisclosure = false }: { home?: string; affiliateDisclosure?: boolean }) {
+export function Footer({ affiliateDisclosure = false }: { home?: string; affiliateDisclosure?: boolean }) {
   const { legal, contactEmail, instagramHandle } = siteConfig
   return (
     <footer className="border-t border-white/10 bg-ink px-5 pb-10 pt-14 sm:px-8">
@@ -156,10 +158,10 @@ export function Footer({ home = '', affiliateDisclosure = false }: { home?: stri
           <nav aria-label="Footer">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/40">Explore</p>
             <ul className="mt-4 space-y-2.5 text-sm text-white/70">
-              <li><a href={`${home}#membership`} className="hover:text-gold">Membership Plans</a></li>
-              <li><a href={`${home}#founder`} className="hover:text-gold">About</a></li>
+              <li><a href="./#membership" className="hover:text-gold">Membership</a></li>
+              <li><a href="./#founder" className="hover:text-gold">About</a></li>
               <li><a href="./tools.html" className="hover:text-gold">Trading Toolkit</a></li>
-              <li><a href={`${home}#faq`} className="hover:text-gold">FAQ</a></li>
+              <li><a href="./#faq" className="hover:text-gold">FAQ</a></li>
               <li>
                 {contactEmail ? (
                   <a href={`mailto:${contactEmail}`} className="inline-flex items-center gap-2 hover:text-gold"><Mail size={16} aria-hidden /> Contact · {contactEmail}</a>

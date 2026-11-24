@@ -47,6 +47,7 @@ export function Heading({ id, title, sub, center = true }: { id: string; title: 
 /* ── Setup dialog: shown when a button's link hasn't been configured yet ── */
 const setupCopy: Record<PlanId, { title: string; what: string; key: string }> = {
   roadmap: { title: 'The free roadmap signup', what: 'ThriveCart embed details', key: 'thrivecart' },
+  waitlist: { title: 'The waitlist page', what: 'waitlist page', key: 'waitlist' },
   community: { title: 'The Community checkout', what: 'Skool join link', key: 'checkout.community' },
   innerCircle: { title: 'The Inner Circle upgrade', what: 'Skool plans/upgrade link', key: 'checkout.innerCircle' },
 }
@@ -107,7 +108,7 @@ const styles: Record<Variant, string> = {
 const base =
   'group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-6 py-3.5 text-center text-sm font-extrabold uppercase tracking-[0.08em] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blush focus-visible:ring-offset-2 focus-visible:ring-offset-ink'
 
-const events = { roadmap: 'roadmap_cta_click', community: 'community_cta_click', innerCircle: 'inner_circle_cta_click' } as const
+const events = { roadmap: 'roadmap_cta_click', waitlist: 'waitlist_cta_click', community: 'community_cta_click', innerCircle: 'inner_circle_cta_click' } as const
 
 /** Call-to-action button. Goes to the configured link; if it's blank, opens a setup note instead of a broken link. */
 export function CheckoutButton({ plan, label, variant = 'primary', location, className = '' }: { plan: PlanId; label: string; variant?: Variant; location: string; className?: string }) {

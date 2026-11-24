@@ -14,19 +14,20 @@ export function Hero() {
     <section id="top" aria-labelledby="hero-title" className="relative overflow-hidden px-5 pb-16 pt-10 sm:px-8 md:pb-24 md:pt-16">
       <div className="relative mx-auto max-w-6xl">
         <Reveal className="mx-auto max-w-4xl text-center">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-blush">For women ready to understand the markets</p>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-blush [text-wrap:balance]">Trading education. Designed for women.</p>
           <h1 id="hero-title" className="display-xl text-white">
-            Stop Guessing.
-            <span className="mx-auto mt-1 block w-fit foil-text">Start Understanding the Charts.</span>
+            Master Your Mindset.
+            <span className="mx-auto mt-1 block w-fit foil-text">Decode the Markets.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80 [text-wrap:pretty] md:text-xl">
-            Learn futures and forex trading through structured education, practical resources, and a supportive community of women who are serious about developing their trading skills.
+            Build your trading knowledge with structured forex and futures education that fits your real life.
           </p>
+          <p className="mt-4 text-lg font-semibold text-gold md:text-xl">Your next chapter starts here.</p>
           <div className="mx-auto mt-9 flex w-full flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-md lg:w-max lg:max-w-none lg:flex-row lg:items-center lg:[&>*]:whitespace-nowrap">
             <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="hero" />
-            <CheckoutButton plan="community" label="Join The Community — $19/Month" variant="secondary" location="hero" />
+            <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" variant="secondary" location="hero" />
           </div>
-          <p className="mt-3 text-xs text-white/50">Community membership is $19/month, billed through Skool</p>
+          <p className="mt-3 text-xs text-white/50">The Profit Penthouse Community opens soon. The waitlist is free to join.</p>
         </Reveal>
 
         <Reveal delay={0.15} className="mt-12 md:mt-16">

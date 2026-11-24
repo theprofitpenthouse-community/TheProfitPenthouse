@@ -25,6 +25,22 @@ export const siteConfig = {
     embeddable: 'tc-enrichmarketingsolutions-45-RGRZ2Q',
   },
 
+  /**
+   * Signup forms from your email/autoresponder tool (MailerLite, Flodesk, ConvertKit, etc.).
+   * Paste the tool's full "HTML embed" code between the backticks. Leave `` blank for a
+   * "signup coming soon" placeholder. If `roadmap` is filled in, it replaces the ThriveCart form.
+   * Turn ON the name field in your form builder so you get first name + email.
+   */
+  forms: {
+    roadmap: ``,
+    waitlist: ``,
+  },
+
+  /** Waitlist page (waitlist.html). The Community join buttons point here until doors open. */
+  waitlist: {
+    opening: '', // e.g. 'Doors open January 2027' — leave '' to just say "Opening soon"
+  },
+
   /** Your Skool group URL, e.g. https://www.skool.com/your-group — used on the members-only Inner Circle page. */
   communityUrl: 'https://www.skool.com/the-profit-penthouse-6394',
 
@@ -127,13 +143,13 @@ export const siteConfig = {
   },
 }
 
-export type PlanId = 'roadmap' | 'community' | 'innerCircle'
+export type PlanId = 'roadmap' | 'waitlist' | 'community' | 'innerCircle'
 
 /** Where each button goes ('' = not set up yet → the button shows a setup note instead of a broken link). */
 export const destination = (plan: PlanId) =>
-  (plan === 'roadmap' ? './roadmap.html' : siteConfig.checkout[plan]).trim()
+  (plan === 'roadmap' ? './roadmap.html' : plan === 'waitlist' ? './waitlist.html' : siteConfig.checkout[plan]).trim()
 
 /** True once the ThriveCart roadmap embed is configured. */
-export const isRoadmapConnected = () => siteConfig.thrivecart.embeddable.trim() !== ''
+export const isRoadmapConnected = () => siteConfig.forms.roadmap.trim() !== '' || siteConfig.thrivecart.embeddable.trim() !== ''
 
 export const isConfigured = (plan: PlanId) => destination(plan) !== ''

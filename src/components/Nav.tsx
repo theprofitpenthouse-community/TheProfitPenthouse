@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react'
 import { Lock, Menu, X } from 'lucide-react'
 import { CheckoutButton } from './ui'
-import { isConfigured, isRoadmapConnected } from '../config'
+import { isRoadmapConnected } from '../config'
 
 const links = [
-  { href: '#membership', label: 'Membership' },
-  { href: '#curriculum', label: 'Curriculum' },
-  { href: '#founder', label: 'Founder' },
-  { href: '#faq', label: 'FAQ' },
+  { href: './#membership', label: 'Membership' },
+  { href: './#curriculum', label: 'Curriculum' },
+  { href: './#founder', label: 'Founder' },
+  { href: './#faq', label: 'FAQ' },
 ]
 
 export function Logo() {
   return (
-    <a href="#top" className="flex items-center rounded-md py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blush" aria-label="The Profit Penthouse — back to top">
+    <a href="./" className="flex items-center rounded-md py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blush" aria-label="The Profit Penthouse — home">
       <span className="script-accent foil-text foil-script whitespace-nowrap text-[1.9rem] sm:text-[2.2rem]">The Profit Penthouse</span>
     </a>
   )
@@ -21,7 +21,7 @@ export function Logo() {
 export function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const needsSetup = !isRoadmapConnected() || !isConfigured('community')
+  const needsSetup = !isRoadmapConnected()
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 12)
@@ -34,7 +34,7 @@ export function Nav() {
     <header className="sticky top-0 z-50">
       {needsSetup && (
         <p id="checkout-setup-note" className="foil-fill px-4 py-1.5 text-center text-xs font-bold text-ink">
-          Preview mode — {[!isRoadmapConnected() && 'the roadmap signup form', !isConfigured('community') && 'the Skool join link'].filter(Boolean).join(' and ')} isn’t connected yet. Add it in <code>src/config.ts</code>.
+          Preview mode — the roadmap signup form isn’t connected yet. Add it in <code>src/config.ts</code>.
         </p>
       )}
       <nav
@@ -87,7 +87,7 @@ export function Nav() {
             </ul>
             <div className="flex flex-col gap-3">
               <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="mobile_menu" className="w-full" />
-              <CheckoutButton plan="community" label="Join The Community — $19/Month" variant="secondary" location="mobile_menu" className="w-full" />
+              <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" variant="secondary" location="mobile_menu" className="w-full" />
             </div>
           </div>
         )}

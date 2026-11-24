@@ -39,11 +39,8 @@ export function Pricing() {
           <article aria-labelledby="tier-community" className="relative flex flex-col rounded-[2rem] foil-ring foil-ring-2 bg-gradient-to-b from-[#17130d] to-ink p-7 shadow-gold sm:p-10">
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] foil-text">Membership</p>
             <h3 id="tier-community" className="display-md mt-3 text-white">The Profit Penthouse Community</h3>
-            <p className="mt-6 flex items-baseline gap-2">
-              <span className="font-display text-[4rem] leading-none tracking-[0.02em] text-white">$19</span>
-              <span className="text-base font-semibold text-white/60">/ month</span>
-            </p>
-            <p className="mt-1 text-sm text-white/50">Recurring monthly subscription · Billed through Skool</p>
+            <p className="mt-6 font-display text-[3.25rem] leading-none tracking-[0.02em] foil-text sm:text-[4rem]">Opening Soon</p>
+            <p className="mt-2 text-sm text-white/50">Join the free waitlist to be the first to know when the doors open.</p>
             <p className="mt-5 leading-relaxed text-white/75">The entry point for every member: self-paced education, workbook exercises, journaling resources, and a learning path built for where you are.</p>
             <ul className="mt-7 space-y-3">
               {includes.map((f) => (
@@ -54,12 +51,12 @@ export function Pricing() {
               ))}
             </ul>
             <div className="pt-9">
-              <CheckoutButton plan="community" label="Join The Community — $19/Month" location="pricing_card" className="w-full" />
+              <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" location="pricing_card" className="w-full" />
             </div>
           </article>
         </Reveal>
         <p className="mx-auto mt-8 max-w-xl text-center text-sm text-white/50">
-          Billed monthly through Skool. Self-paced education only — no trade signals or personalized investment advice.
+          Self-paced education only — no trade signals or personalized investment advice.
         </p>
       </div>
     </section>

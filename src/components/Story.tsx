@@ -25,7 +25,7 @@ export function Problem() {
         ))}
       </div>
       <Reveal className="mx-auto mt-14 max-w-2xl text-center">
-        <p className="display-md text-white">
+        <p className="display-md text-blush">
           The Profit Penthouse was created to change the way women approach learning the markets.
         </p>
       </Reveal>
@@ -45,15 +45,15 @@ export function Intro() {
       <CandleStrip className="pointer-events-none absolute inset-x-0 top-10 h-40 w-full opacity-[0.07]" count={48} seed={7} />
       <div className="relative">
         <Reveal className="mx-auto mb-14 max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] foil-text">Introducing The Profit Penthouse</p>
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-white">Introducing The Profit Penthouse</p>
           <h2 id="intro-title" className="mt-5 text-white">
             <span className="script-accent foil-text foil-script block w-fit mx-auto text-[2.6rem] sm:text-[3.4rem]">Welcome to your</span>
-            <span className="display-lg -mt-1 block sm:-mt-2">Trading Education Era.</span>
+            <span className="display-lg -mt-1 block text-blush sm:-mt-2">Trading Education Era.</span>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/75 [text-wrap:pretty]">
             The Profit Penthouse is a private educational community where women learn to understand futures and forex markets through price action, market structure, trading psychology, and disciplined risk management.
           </p>
-          <p className="mt-4 text-lg font-semibold text-white">No shortcuts. No overnight success stories. Just education, structure, and a community committed to learning.</p>
+          <p className="mt-4 text-lg font-semibold text-blush">No shortcuts. No overnight success stories. Just education, structure, and a community committed to learning.</p>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-3">
           {pillars.map(({ icon: Icon, title, body }, i) => (
