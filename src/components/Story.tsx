@@ -10,7 +10,7 @@ const problems = [
 export function Problem() {
   return (
     <Section id="why" labelledBy="problem-title">
-      <Heading id="problem-title" title="You Don’t Need Another Random Trading Video." sub={<span className="text-xl font-semibold text-blush sm:text-2xl">You need a place to actually learn.</span>} />
+      <Heading id="problem-title" title="You Don’t Need Another Random Trading Video." sub={<span className="text-xl font-semibold text-blush sm:text-2xl">Does this sound familiar?</span>} />
       <div className="grid gap-5 md:grid-cols-3">
         {problems.map(({ icon: Icon, title, body }, i) => (
           <Reveal key={title} delay={i * 0.08}>
