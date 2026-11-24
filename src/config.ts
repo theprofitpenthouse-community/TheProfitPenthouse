@@ -42,7 +42,7 @@ export const siteConfig = {
      * Separate Kit form for the roadmap page, so roadmap signups can get their own tag
      * (Kit → Automations → Rules: "Subscribes to form" → "Add tag"). Leave '' to use kitFormId above.
      */
-    kitRoadmapFormId: '',
+    kitRoadmapFormId: '10234984',
     roadmap: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
     waitlist: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
   },
