@@ -47,16 +47,13 @@ npm run dev        # http://localhost:5173
 npm run build      # production build → dist/
 ```
 
-## Deploy to GitHub Pages
+## How the live site is published
 
-1. Push this folder to a GitHub repo (branch `main`).
-2. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Every push to `main` builds and deploys via `.github/workflows/deploy.yml`.
-4. Custom domain: `public/CNAME` already contains `theprofitpenthouse.com`. At your domain registrar add:
-   - `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `CNAME` record for `www` → `<your-github-username>.github.io`
-   Then tick **Enforce HTTPS** in Settings → Pages.
-   (Not using the custom domain yet? Delete `public/CNAME` — asset paths are relative, so the site also works at `username.github.io/repo-name/`.)
+- Repo: `theprofitpenthouse-community/TheProfitPenthouse`
+- **`new-site` branch** = this source code.
+- **`main` branch** = the built website. GitHub Pages serves `main` (deploy from branch, root) at theprofitpenthouse.com.
+- To publish a change: edit the source here, run `npm run build`, then replace everything on `main` with the contents of `dist/` plus `.nojekyll` and a short README. `CNAME` comes along in `dist/`.
+- `.github/workflows/deploy.yml` is an alternative: if you ever switch **Settings → Pages → Source** to **GitHub Actions** and keep the source on `main`, every push builds and deploys automatically.
 
 ## Analytics events (ready, not active)
 
