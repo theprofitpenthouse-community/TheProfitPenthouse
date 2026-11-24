@@ -25,9 +25,7 @@ export function Hero() {
           <p className="mt-4 text-lg font-semibold text-gold md:text-xl">Your next chapter starts here.</p>
           <div className="mx-auto mt-9 flex w-full flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-md lg:w-max lg:max-w-none lg:flex-row lg:items-center lg:[&>*]:whitespace-nowrap">
             <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="hero" />
-            <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" variant="secondary" location="hero" />
           </div>
-          <p className="mt-3 text-xs text-white/50">The Profit Penthouse Community opens soon. The waitlist is free to join.</p>
         </Reveal>
 
         <Reveal delay={0.15} className="mt-12 md:mt-16">
