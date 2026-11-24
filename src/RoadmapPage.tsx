@@ -55,7 +55,7 @@ export default function RoadmapPage() {
               <p className="mt-2 text-sm text-white/60">Enter your name and email and it goes straight to your inbox.</p>
               <div className="mt-6">
                 {siteConfig.forms.kitFormId ? (
-                  <KitForm formId={siteConfig.forms.kitFormId} button="Send Me the Roadmap" success="Check your email (and spam folder) for the link to your free roadmap." location="roadmap_page" />
+                  <KitForm formId={siteConfig.forms.kitRoadmapFormId || siteConfig.forms.kitFormId} button="Send Me the Roadmap" success="Check your email (and spam folder) for the link to your free roadmap." location="roadmap_page" />
                 ) : siteConfig.forms.roadmap.trim() ? (
                   <FormEmbed html={siteConfig.forms.roadmap} placeholder="The roadmap signup opens soon." />
                 ) : (
