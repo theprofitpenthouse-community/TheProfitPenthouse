@@ -25,7 +25,7 @@ export function Problem() {
         ))}
       </div>
       <Reveal className="mx-auto mt-14 max-w-2xl text-center">
-        <p className="display-md text-blush">
+        <p className="display-md foil-text">
           The Profit Penthouse was created to change the way women approach learning the markets.
         </p>
       </Reveal>
