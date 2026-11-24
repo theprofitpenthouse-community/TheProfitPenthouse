@@ -32,8 +32,8 @@ export const siteConfig = {
    * Turn ON the name field in your form builder so you get first name + email.
    */
   forms: {
-    roadmap: ``,
-    waitlist: ``,
+    roadmap: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
+    waitlist: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
   },
 
   /** Waitlist page (waitlist.html). The Community join buttons point here until doors open. */
