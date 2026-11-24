@@ -50,7 +50,7 @@ export function Curriculum() {
                     ))}
                   </ul>
                 </div>
-                <ChevronDown size={18} aria-hidden className={`mt-auto self-end pt-3 text-white/40 transition ${isOpen ? 'rotate-180 text-gold' : ''}`} />
+                <ChevronDown size={22} strokeWidth={2.5} aria-hidden className={`mt-auto self-end pt-3 text-blush transition ${isOpen ? 'rotate-180' : ''}`} />
               </button>
             </li>
           )
