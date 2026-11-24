@@ -3,6 +3,7 @@ import { Shell } from './components/Shell'
 import { Footer } from './components/Closing'
 import { ThriveCartEmbed } from './components/ThriveCartEmbed'
 import { FormEmbed } from './components/FormEmbed'
+import { KitForm } from './components/KitForm'
 import { siteConfig } from './config'
 import { Reveal, Section } from './components/ui'
 
@@ -53,7 +54,9 @@ export default function RoadmapPage() {
               <h2 className="display-sm text-white">Send me the free roadmap</h2>
               <p className="mt-2 text-sm text-white/60">Enter your name and email and it goes straight to your inbox.</p>
               <div className="mt-6">
-                {siteConfig.forms.roadmap.trim() ? (
+                {siteConfig.forms.kitFormId ? (
+                  <KitForm formId={siteConfig.forms.kitFormId} button="Send Me the Roadmap" success="Check your email to confirm, and your roadmap will be on its way." location="roadmap_page" />
+                ) : siteConfig.forms.roadmap.trim() ? (
                   <FormEmbed html={siteConfig.forms.roadmap} placeholder="The roadmap signup opens soon." />
                 ) : (
                   <ThriveCartEmbed />

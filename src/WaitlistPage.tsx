@@ -3,6 +3,7 @@ import { Shell } from './components/Shell'
 import { Nav } from './components/Nav'
 import { Footer } from './components/Closing'
 import { FormEmbed } from './components/FormEmbed'
+import { KitForm } from './components/KitForm'
 import { Reveal, Section } from './components/ui'
 import { siteConfig } from './config'
 
@@ -48,7 +49,11 @@ export default function WaitlistPage() {
                 <h2 className="display-sm text-white">Join the waitlist</h2>
                 <p className="mt-2 text-sm text-white/60">Enter your name and email. It’s free, and it doesn’t sign you up for a membership.</p>
                 <div className="mt-6">
-                  <FormEmbed html={siteConfig.forms.waitlist} placeholder="The waitlist signup opens soon." />
+                  {siteConfig.forms.kitFormId ? (
+                    <KitForm formId={siteConfig.forms.kitFormId} button="Join the Waitlist" success="Check your email to confirm. You’ll be the first to know when the doors open." location="waitlist_page" />
+                  ) : (
+                    <FormEmbed html={siteConfig.forms.waitlist} placeholder="The waitlist signup opens soon." />
+                  )}
                 </div>
                 <p className="mt-5 text-xs leading-relaxed text-white/45">
                   By joining, you’ll get updates about the Community opening plus occasional emails from The Profit Penthouse; unsubscribe anytime. Education only, not financial advice.

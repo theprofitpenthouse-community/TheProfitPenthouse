@@ -32,6 +32,12 @@ export const siteConfig = {
    * Turn ON the name field in your form builder so you get first name + email.
    */
   forms: {
+    /**
+     * Your Kit form's ID number. When set, both pages show the custom Profit Penthouse form
+     * (first name + email) and send signups straight to Kit, instead of loading Kit's embed below.
+     * Find it in Kit: your form → Publish/Embed → HTML → action="https://app.kit.com/forms/<ID>/subscriptions".
+     */
+    kitFormId: '',
     roadmap: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
     waitlist: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
   },
@@ -150,6 +156,6 @@ export const destination = (plan: PlanId) =>
   (plan === 'roadmap' ? './roadmap.html' : plan === 'waitlist' ? './waitlist.html' : siteConfig.checkout[plan]).trim()
 
 /** True once the ThriveCart roadmap embed is configured. */
-export const isRoadmapConnected = () => siteConfig.forms.roadmap.trim() !== '' || siteConfig.thrivecart.embeddable.trim() !== ''
+export const isRoadmapConnected = () => siteConfig.forms.kitFormId.trim() !== '' || siteConfig.forms.roadmap.trim() !== '' || siteConfig.thrivecart.embeddable.trim() !== ''
 
 export const isConfigured = (plan: PlanId) => destination(plan) !== ''

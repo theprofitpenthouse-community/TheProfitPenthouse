@@ -3,6 +3,7 @@ import { siteConfig } from '../config'
 export type TrackEvent =
   | 'roadmap_cta_click'
   | 'waitlist_cta_click'
+  | 'signup_submit'
   | 'roadmap_signup'
   | 'community_cta_click'
   | 'inner_circle_cta_click'
