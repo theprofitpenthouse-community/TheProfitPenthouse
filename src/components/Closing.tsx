@@ -110,7 +110,7 @@ export function FinalCTA() {
           <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="final" />
           <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" variant="secondary" location="final" />
         </div>
-        <p className="mt-12 text-2xl font-semibold leading-snug text-gold [text-wrap:balance] sm:text-3xl">Your seat at <span className="text-white">The Profit Penthouse</span> is waiting.</p>
+        <p className="mt-12 text-2xl font-semibold leading-snug text-blush [text-wrap:balance] sm:text-3xl">Your seat at The Profit Penthouse is waiting.</p>
       </Reveal>
     </section>
   )
