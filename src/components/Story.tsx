@@ -29,6 +29,7 @@ export function Problem() {
           The Profit Penthouse was created to change the way women approach learning the markets.
         </p>
       </Reveal>
+      <div aria-hidden className="mx-auto mt-14 h-px w-full max-w-md bg-gradient-to-r from-transparent via-gold/70 to-transparent" />
     </Section>
   )
 }
