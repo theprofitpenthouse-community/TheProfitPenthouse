@@ -57,8 +57,7 @@ const faqs: [string, ReactNode][] = [
       The Profit Penthouse is exclusively for women. If you’re a man looking for a trading community, I recommend{' '}
       <a href="https://cctrendpro.com/ref/theprofitpenthouse" target="_blank" rel="sponsored noopener" className="font-semibold text-blush underline underline-offset-4 hover:text-gold">
         CC Trend Pro
-      </a>{' '}
-      <span className="text-white/45">(affiliate link)</span>.
+      </a>.
     </>,
   ],
   ['Is The Profit Penthouse beginner-friendly?', 'Yes. The Profit Penthouse Community includes a Beginner path for women who are completely new to futures and forex, and a Rebuild path for women who have traded before but need to reset their foundation.'],

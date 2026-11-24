@@ -43,8 +43,7 @@ export default function InnerCirclePage() {
         No. Like The Profit Penthouse Community, the Inner Circle is for women only. If you’re a man looking for a trading community, I recommend{' '}
         <a href="https://cctrendpro.com/ref/theprofitpenthouse" target="_blank" rel="sponsored noopener" className="font-semibold text-blush underline underline-offset-4 hover:text-gold">
           CC Trend Pro
-        </a>{' '}
-        <span className="text-white/45">(affiliate link)</span>.
+        </a>.
       </>,
     ],
     [
