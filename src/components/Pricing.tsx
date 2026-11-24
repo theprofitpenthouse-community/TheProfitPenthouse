@@ -3,7 +3,7 @@ import { Check } from 'lucide-react'
 import { CheckoutButton, Heading, Reveal } from './ui'
 import { track } from '../lib/analytics'
 
-const includes = [
+export const includes = [
   'Self-paced forex and futures trading education',
   'Beginner and Rebuild learning paths',
   'Market structure and price action lessons',
