@@ -1,5 +1,6 @@
 import { BookOpen, CandlestickChart, PlayCircle, Users } from 'lucide-react'
 import { HeroVisual } from './HeroVisual'
+import { IntroText } from './Story'
 import { CheckoutButton, Reveal } from './ui'
 
 const trust = [
@@ -27,6 +28,8 @@ export function Hero() {
             <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="hero" />
           </div>
         </Reveal>
+
+        <IntroText />
 
         <Reveal delay={0.15} className="mt-12 md:mt-16">
           <HeroVisual />

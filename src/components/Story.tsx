@@ -40,12 +40,13 @@ const pillars = [
   { icon: Brain, title: 'Mindset', body: 'Understand the psychological challenges of trading and build healthier decision-making habits.' },
 ]
 
-export function Intro() {
+/** "Introducing The Profit Penthouse" block — shown in the hero, right under the roadmap button. */
+export function IntroText() {
   return (
-    <Section id="about" labelledBy="intro-title">
-      <CandleStrip className="pointer-events-none absolute inset-x-0 top-10 h-40 w-full opacity-[0.07]" count={48} seed={7} />
-      <div className="relative">
-        <Reveal className="mx-auto mb-14 max-w-3xl text-center">
+    <div className="relative mt-14 md:mt-16">
+      <div aria-hidden className="mx-auto h-px w-full max-w-md bg-gradient-to-r from-transparent via-gold/70 to-transparent" />
+      <CandleStrip className="pointer-events-none absolute inset-x-0 top-14 h-40 w-full opacity-[0.07]" count={48} seed={7} />
+        <Reveal className="relative mx-auto mt-14 max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-white">Introducing The Profit Penthouse</p>
           <h2 id="intro-title" className="mt-5 text-white">
             <span className="script-accent foil-text foil-script block w-fit mx-auto text-[2.6rem] sm:text-[3.4rem]">Welcome to your</span>
@@ -56,6 +57,14 @@ export function Intro() {
           </p>
           <p className="mt-4 text-lg font-semibold text-blush">No shortcuts. No overnight success stories. Just education, structure, and a community committed to learning.</p>
         </Reveal>
+    </div>
+  )
+}
+
+export function Intro() {
+  return (
+    <Section id="about" className="!pt-10 md:!pt-14">
+      <div className="relative">
         <div className="grid gap-5 md:grid-cols-3">
           {pillars.map(({ icon: Icon, title, body }, i) => (
             <Reveal key={title} delay={i * 0.08}>
