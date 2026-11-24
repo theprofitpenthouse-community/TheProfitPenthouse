@@ -34,7 +34,7 @@ export function Pricing() {
   return (
     <section ref={ref} id="membership" aria-labelledby="pricing-title" className="relative px-5 py-20 sm:px-8 md:py-28">
       <div className="relative mx-auto max-w-6xl">
-        <Heading id="pricing-title" title="Your Trading Foundation Starts Here." sub="Learn to read the charts, understand market structure, manage risk, and develop the discipline to approach forex and futures with a plan." />
+        <Heading id="pricing-title" title={<span className="text-blush">Your Trading Foundation Starts Here.</span>} sub="Learn to read the charts, understand market structure, manage risk, and develop the discipline to approach forex and futures with a plan." />
         <Reveal className="mx-auto max-w-xl">
           <article aria-labelledby="tier-community" className="relative flex flex-col rounded-[2rem] foil-ring foil-ring-2 bg-gradient-to-b from-[#17130d] to-ink p-7 shadow-gold sm:p-10">
             <p className="text-xs font-extrabold uppercase tracking-[0.22em] foil-text">Membership</p>
