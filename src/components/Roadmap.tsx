@@ -13,7 +13,7 @@ export function Roadmap() {
     <Section id="roadmap" labelledBy="roadmap-title">
       <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-blush">Free · Start here</p>
+          <p className="text-xs font-bold uppercase tracking-[0.22em] foil-text">Free · Start here</p>
           <h2 id="roadmap-title" className="display-lg mt-4 text-white">The Busy Woman’s Beginner Trading Roadmap</h2>
           <p className="mt-5 text-lg leading-relaxed text-white/75 [text-wrap:pretty]">
             A clear first step into forex and futures, made for learning after work. Read a chart, put risk first, and follow a 7-day plan without risking a dollar.
@@ -21,7 +21,7 @@ export function Roadmap() {
           <ul className="mt-8 space-y-5">
             {benefits.map(({ icon: Icon, title, body }) => (
               <li key={title} className="flex gap-4">
-                <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose/15 text-blush">
+                <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/10 foil-icon">
                   <Icon size={19} aria-hidden />
                 </span>
                 <p className="leading-relaxed text-white/75">
@@ -40,14 +40,14 @@ export function Roadmap() {
         <Reveal delay={0.1}>
           <div className="relative mx-auto w-[88%] max-w-sm sm:w-full" aria-hidden>
             <div className="absolute inset-0 translate-x-3 translate-y-3 rotate-2 sm:translate-x-4 sm:translate-y-4 sm:rotate-3 rounded-2xl border border-white/10 bg-night" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-[#1a1218] to-ink p-7 shadow-glow">
-              <p className="script-accent text-3xl text-blush">The Profit Penthouse</p>
+            <div className="relative overflow-hidden rounded-2xl foil-ring bg-gradient-to-b from-[#17130d] to-ink p-7 shadow-gold">
+              <p className="script-accent foil-text foil-script w-fit text-3xl">The Profit Penthouse</p>
               <p className="display-md mt-5 text-white">The Busy Woman’s Beginner Trading Roadmap</p>
-              <div className="my-6 h-px bg-gradient-to-r from-rose/70 to-transparent" />
+              <div className="my-6 h-px bg-gradient-to-r from-gold/70 to-transparent" />
               <ul className="space-y-2.5 text-sm text-white/75">
                 {['Chart basics', 'Forex vs. futures', 'Risk-first math', '7-day practice plan'].map((t) => (
                   <li key={t} className="flex items-center gap-2.5">
-                    <Check size={15} className="text-blush" /> {t}
+                    <Check size={15} className="foil-icon" /> {t}
                   </li>
                 ))}
               </ul>

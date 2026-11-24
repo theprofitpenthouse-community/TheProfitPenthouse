@@ -19,11 +19,11 @@ export function Curriculum() {
     <Section id="curriculum" labelledBy="curriculum-title">
       <Heading
         id="curriculum-title"
-        title={<>Learn to Read the Markets. <span className="block text-blush">Not Just Follow Signals.</span></>}
+        title={<>Learn to Read the Markets. <span className="block w-fit mx-auto foil-text">Not Just Follow Signals.</span></>}
         sub="Eight core modules, in order. Tap any module to see what’s inside."
       />
       <div className="mb-8 flex flex-wrap justify-center gap-3 text-xs font-bold uppercase tracking-wider">
-        <span className="inline-flex items-center gap-2 rounded-full border border-blush/40 px-3 py-1.5 text-blush"><BookOpen size={14} aria-hidden /> Beginner curriculum · Included in your membership</span>
+        <span className="relative inline-flex items-center gap-2 rounded-full foil-ring px-3 py-1.5 foil-text"><BookOpen size={14} aria-hidden /> Beginner curriculum · Included in your membership</span>
               </div>
       <ol className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {modules.map(({ icon: Icon, title, short, topics }, i) => {
@@ -35,10 +35,10 @@ export function Curriculum() {
                 aria-expanded={isOpen}
                 aria-controls={`mod-${i}`}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className={`glass group flex h-full w-full flex-col rounded-3xl p-6 text-left transition duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blush ${isOpen ? 'border-blush/60 shadow-glow' : ''}`}
+                className={`glass group flex h-full w-full flex-col rounded-3xl p-6 text-left transition duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blush ${isOpen ? 'border-gold/60 shadow-gold' : ''}`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-rose/15 text-blush"><Icon size={20} aria-hidden /></span>
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gold/10 foil-icon"><Icon size={20} aria-hidden /></span>
                   <span className="text-xs font-bold text-white/40">Module {i + 1}</span>
                 </div>
                 <h3 className="display-sm mt-5 text-white">{title}</h3>
@@ -50,7 +50,7 @@ export function Curriculum() {
                     ))}
                   </ul>
                 </div>
-                <ChevronDown size={18} aria-hidden className={`mt-auto self-end pt-3 text-white/40 transition ${isOpen ? 'rotate-180 text-blush' : ''}`} />
+                <ChevronDown size={18} aria-hidden className={`mt-auto self-end pt-3 text-white/40 transition ${isOpen ? 'rotate-180 text-gold' : ''}`} />
               </button>
             </li>
           )
@@ -75,9 +75,9 @@ function PathsRow() {
       <div className="grid gap-4 md:grid-cols-2">
         {paths.map(({ icon: Icon, tag, name, quote, body }, i) => (
           <Reveal key={name} delay={i * 0.08}>
-            <article className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-rose/[0.12] via-white/[0.03] to-transparent p-6 sm:p-7">
-              <Icon size={96} className="absolute -right-5 -top-5 text-blush/[0.07]" aria-hidden />
-              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-blush">{tag} · {name}</p>
+            <article className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-gold/[0.08] via-white/[0.03] to-transparent p-6 sm:p-7">
+              <Icon size={96} className="absolute -right-5 -top-5 text-gold/[0.08]" aria-hidden />
+              <p className="text-xs font-extrabold uppercase tracking-[0.22em] foil-text">{tag} · {name}</p>
               <p className="mt-3 text-lg font-semibold leading-snug text-white">“{quote}”</p>
               <p className="mt-2 leading-relaxed text-white/65">{body}</p>
             </article>

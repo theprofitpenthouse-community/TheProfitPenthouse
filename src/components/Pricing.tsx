@@ -36,8 +36,8 @@ export function Pricing() {
       <div className="relative mx-auto max-w-6xl">
         <Heading id="pricing-title" title="Your Trading Foundation Starts Here." sub="Learn to read the charts, understand market structure, manage risk, and develop the discipline to approach forex and futures with a plan." />
         <Reveal className="mx-auto max-w-xl">
-          <article aria-labelledby="tier-community" className="glass flex flex-col rounded-[2rem] p-7 shadow-glow sm:p-10">
-            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-blush">Membership</p>
+          <article aria-labelledby="tier-community" className="relative flex flex-col rounded-[2rem] foil-ring foil-ring-2 bg-gradient-to-b from-[#17130d] to-ink p-7 shadow-gold sm:p-10">
+            <p className="text-xs font-extrabold uppercase tracking-[0.22em] foil-text">Membership</p>
             <h3 id="tier-community" className="display-md mt-3 text-white">The Profit Penthouse Community</h3>
             <p className="mt-6 flex items-baseline gap-2">
               <span className="font-display text-[4rem] leading-none tracking-[0.02em] text-white">$19</span>
@@ -48,7 +48,7 @@ export function Pricing() {
             <ul className="mt-7 space-y-3">
               {includes.map((f) => (
                 <li key={f} className="flex gap-3 text-white/85">
-                  <Check size={18} className="mt-0.5 shrink-0 text-blush" aria-hidden />
+                  <Check size={18} className="foil-icon mt-0.5 shrink-0" aria-hidden />
                   <span>{f}</span>
                 </li>
               ))}

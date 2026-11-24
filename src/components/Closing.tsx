@@ -26,7 +26,7 @@ export function Founder() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-blush">Meet your founder</p>
+          <p className="text-xs font-bold uppercase tracking-[0.22em] foil-text">Meet your founder</p>
           <h2 id="founder-title" className="display-lg mt-4 text-white">Hey Girl, I’m Shantae.</h2>
           <div className="mt-7 space-y-5 text-lg leading-relaxed text-white/75">
             <p>I’m a funded futures and forex trader, and my journey into the markets didn’t come with a shortcut.</p>
@@ -77,10 +77,10 @@ export function FAQ() {
                     setOpen(isOpen ? null : i)
                     track('faq_interaction', { question: q, action: isOpen ? 'close' : 'open' })
                   }}
-                  className="flex min-h-[64px] w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-white transition hover:text-blush focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blush sm:px-7 sm:text-lg"
+                  className="flex min-h-[64px] w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-white transition hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blush sm:px-7 sm:text-lg"
                 >
                   <span>{q}</span>
-                  <ChevronDown size={20} aria-hidden className={`shrink-0 text-blush transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown size={20} aria-hidden className={`shrink-0 text-gold transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
               </h3>
               <div id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`} hidden={!isOpen} className="px-5 pb-6 leading-relaxed text-white/70 sm:px-7">
@@ -109,14 +109,14 @@ export function FinalCTA() {
           <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="final" />
           <CheckoutButton plan="community" label="Join The Community — $19/Month" variant="secondary" location="final" />
         </div>
-        <p className="mt-12 text-2xl font-semibold leading-snug text-blush [text-wrap:balance] sm:text-3xl">Your seat at <span className="text-white">The Profit Penthouse</span> is waiting.</p>
+        <p className="mt-12 text-2xl font-semibold leading-snug text-gold [text-wrap:balance] sm:text-3xl">Your seat at <span className="text-white">The Profit Penthouse</span> is waiting.</p>
       </Reveal>
     </section>
   )
 }
 
 function PolicyLink({ href, label }: { href: string; label: string }) {
-  if (href) return <a href={href} className="hover:text-blush">{label}</a>
+  if (href) return <a href={href} className="hover:text-gold">{label}</a>
   return (
     <span className="cursor-not-allowed text-white/35" title="Document not published yet">
       {label} <span className="text-[10px] uppercase tracking-wider text-gold/70">(coming soon)</span>
@@ -143,12 +143,12 @@ export function Footer({ home = '', affiliateDisclosure = false }: { home?: stri
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/55">Where Women Learn to Trade With Structure, Strategy &amp; Confidence.</p>
             <ul className="mt-5 space-y-2.5 text-sm text-white/70">
               <li>
-                <a href={`https://instagram.com/${instagramHandle}`} className="inline-flex items-center gap-2 hover:text-blush" rel="noopener">
+                <a href={`https://instagram.com/${instagramHandle}`} className="inline-flex items-center gap-2 hover:text-gold" rel="noopener">
                   <IgIcon /> @{instagramHandle}
                 </a>
               </li>
               <li>
-                <a href="https://theprofitpenthouse.com" className="inline-flex items-center gap-2 hover:text-blush">
+                <a href="https://theprofitpenthouse.com" className="inline-flex items-center gap-2 hover:text-gold">
                   <Globe size={18} aria-hidden /> theprofitpenthouse.com
                 </a>
               </li>
@@ -157,16 +157,16 @@ export function Footer({ home = '', affiliateDisclosure = false }: { home?: stri
           <nav aria-label="Footer">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/40">Explore</p>
             <ul className="mt-4 space-y-2.5 text-sm text-white/70">
-              <li><a href={`${home}#membership`} className="hover:text-blush">Membership Plans</a></li>
-              <li><a href={`${home}#founder`} className="hover:text-blush">About</a></li>
-              <li><a href="./roadmap.html" className="hover:text-blush">Free Roadmap</a></li>
-              <li><a href="./tools.html" className="hover:text-blush">Trading Toolkit</a></li>
-              <li><a href={`${home}#faq`} className="hover:text-blush">FAQ</a></li>
+              <li><a href={`${home}#membership`} className="hover:text-gold">Membership Plans</a></li>
+              <li><a href={`${home}#founder`} className="hover:text-gold">About</a></li>
+              <li><a href="./roadmap.html" className="hover:text-gold">Free Roadmap</a></li>
+              <li><a href="./tools.html" className="hover:text-gold">Trading Toolkit</a></li>
+              <li><a href={`${home}#faq`} className="hover:text-gold">FAQ</a></li>
               <li>
                 {contactEmail ? (
-                  <a href={`mailto:${contactEmail}`} className="inline-flex items-center gap-2 hover:text-blush"><Mail size={16} aria-hidden /> Contact · {contactEmail}</a>
+                  <a href={`mailto:${contactEmail}`} className="inline-flex items-center gap-2 hover:text-gold"><Mail size={16} aria-hidden /> Contact · {contactEmail}</a>
                 ) : (
-                  <a href={`https://instagram.com/${instagramHandle}`} className="hover:text-blush">Contact (DM on Instagram)</a>
+                  <a href={`https://instagram.com/${instagramHandle}`} className="hover:text-gold">Contact (DM on Instagram)</a>
                 )}
               </li>
             </ul>
