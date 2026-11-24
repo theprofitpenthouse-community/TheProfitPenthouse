@@ -1,0 +1,130 @@
+/* ── Custom fonts (each file ships a single 400 weight — no faux bold) ── */
+@font-face {
+  font-family: 'American Captain';
+  src: url('./assets/fonts/american-captain.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Brother Signature';
+  src: url('./assets/fonts/brother-signature.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Metric-matched fallback so headings don't jump while American Captain loads */
+@font-face {
+  font-family: 'American Captain Fallback';
+  src: local('Impact'), local('Arial Narrow Bold'), local('Arial Bold');
+  size-adjust: 88%;
+  ascent-override: 92%;
+  descent-override: 24%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foil: linear-gradient(110deg, #8a6f3e 0%, #c6a66b 16%, #f3e6c4 28%, #d7bd86 38%, #9c7f47 50%, #e6d3a6 62%, #f8efd9 70%, #c6a66b 82%, #85693a 94%, #c6a66b 100%);
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+    background: #0b0b0f;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ink font-sans text-white antialiased;
+    overflow-x: clip;
+  }
+  ::selection { background: #c84d87; color: #0b0b0f; }
+  :focus-visible { outline: 2px solid #c84d87; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  /* ── Gold foil ── */
+  .foil-text {
+    background-image: var(--foil);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .foil-fill {
+    background-image: var(--foil);
+    background-size: 200% 100%;
+    color: #0b0b0f;
+  }
+  .foil-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--ring, 1px);
+    background: var(--foil);
+    background-size: 200% 100%;
+    background-position: inherit;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .foil-ring-2 { --ring: 1.5px; }
+  /* Script swashes overflow the text box — pad the painted area so they stay foiled */
+  .foil-script { padding: 0.35em 0.4em; margin: 0 -0.4em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  /* Gold buttons: foil on the label + arrow, solid dark fill behind */
+  .gold-btn > span:not([class*='absolute']) {
+    background-image: var(--foil);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: foil-sheen 7s ease-in-out infinite;
+  }
+  .gold-btn > svg { stroke: url(#foil-grad); }
+  .foil-soft::before { opacity: 0.55; }
+  .foil-text svg, .foil-icon svg, svg.foil-icon { stroke: url(#foil-grad); }
+    .foil-shine.foil-text { background-size: 200% 100%; }
+  .foil-shine, .foil-shine.foil-text { animation: foil-sheen 7s ease-in-out infinite; }
+  .foil-shine::before { animation: foil-sheen 7s ease-in-out infinite; }
+  @keyframes foil-sheen { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+  @media (prefers-reduced-motion: reduce) {
+    .foil-shine, .foil-shine::before, .gold-btn > span { animation: none !important; }
+  }
+
+  .font-script { font-weight: 400; }
+
+  /* ── Display type scale: American Captain ──
+     One scale, fluid between 360px phones and desktop. */
+  .display-xl, .display-lg, .display-md, .display-sm {
+    font-family: 'American Captain', 'American Captain Fallback', Impact, 'Arial Narrow', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  .display-xl { font-size: clamp(3.1rem, 10.5vw, 6rem); line-height: 0.95; letter-spacing: 0.012em; }
+  .display-lg { font-size: clamp(2.4rem, 7vw, 4rem);   line-height: 1;    letter-spacing: 0.018em; }
+  .display-md { font-size: clamp(1.75rem, 4.4vw, 2.4rem); line-height: 1.04; letter-spacing: 0.025em; }
+  .display-sm { font-size: clamp(1.4rem, 3vw, 1.6rem);  line-height: 1.08; letter-spacing: 0.03em; }
+
+  /* Script accent: Brother Signature (used in three places only) */
+  .script-accent {
+    font-family: 'Brother Signature', 'Snell Roundhand', cursive;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+}
