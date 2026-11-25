@@ -1,7 +1,7 @@
 import { BookOpen, CandlestickChart, PlayCircle, Users } from 'lucide-react'
 import { HeroVisual } from './HeroVisual'
 import { IntroText } from './Story'
-import { CheckoutButton, Reveal } from './ui'
+import { AnchorButton, CheckoutButton, Reveal } from './ui'
 
 const trust = [
   { icon: BookOpen, label: 'Beginner-Friendly Education' },
@@ -24,8 +24,9 @@ export function Hero() {
             Build your trading knowledge with structured forex and futures education that fits your real life.
           </p>
           <p className="mt-4 text-lg font-semibold text-gold md:text-xl">Your next chapter starts here.</p>
-          <div className="mx-auto mt-9 flex w-full flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-md lg:w-max lg:max-w-none lg:flex-row lg:items-center lg:[&>*]:whitespace-nowrap">
+          <div className="mx-auto mt-9 flex w-full flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-md">
             <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="hero" />
+            <AnchorButton href="founding.html" label="Join The Profit Penthouse Community" variant="gold" />
           </div>
         </Reveal>
 
