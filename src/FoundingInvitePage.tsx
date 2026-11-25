@@ -26,13 +26,13 @@ export default function FoundingInvitePage() {
       <main id="main" className="px-5 pb-24 pt-12 sm:px-8 md:pt-16">
         <Reveal className="mx-auto max-w-3xl text-center">
           <p className="inline-flex items-center gap-2 rounded-full border border-blush/40 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-blush">
-            <Lock size={13} aria-hidden /> Private invitation
+            <Lock size={13} aria-hidden /> Founding membership
           </p>
           <h1 id="top" className="display-xl mt-6 text-white">
             You’re Invited to Be a <span className="foil-text">Founding Member.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/75 [text-wrap:pretty]">
-            Before The Profit Penthouse Community opens to everyone, I’m opening the doors to the women on my list first. You’ve been here from the start, so you get the first invitation to join as a founding member.
+            The doors to The Profit Penthouse Community are open, and the women who join now are my founding members: the first ones in, helping shape what this becomes.
           </p>
         </Reveal>
 

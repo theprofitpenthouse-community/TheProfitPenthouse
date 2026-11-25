@@ -46,7 +46,7 @@ export function Hero() {
         </ul>
 
         <div className="mx-auto mt-10 flex w-full justify-center sm:max-w-md lg:w-max lg:max-w-none">
-          <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" location="hero_badges" className="w-full lg:w-auto lg:whitespace-nowrap" />
+          <CheckoutButton plan="waitlist" label="Join The Profit Penthouse Community" location="hero_badges" className="w-full lg:w-auto lg:whitespace-nowrap" />
         </div>
       </div>
     </section>

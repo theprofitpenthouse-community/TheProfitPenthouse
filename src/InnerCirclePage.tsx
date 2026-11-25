@@ -170,7 +170,7 @@ export default function InnerCirclePage() {
                   onClick={() => track('waitlist_cta_click', { location: 'inner_circle_not_member' })}
                   className="font-semibold text-blush underline-offset-4 hover:underline"
                 >
-                  Join the Community Waitlist
+                  Join the Community
                 </a>
               </p>
             </Reveal>

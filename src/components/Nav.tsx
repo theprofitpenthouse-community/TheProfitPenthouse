@@ -87,7 +87,7 @@ export function Nav() {
             </ul>
             <div className="flex flex-col gap-3">
               <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="mobile_menu" className="w-full" />
-              <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" variant="secondary" location="mobile_menu" className="w-full" />
+              <CheckoutButton plan="waitlist" label="Join The Profit Penthouse Community" variant="secondary" location="mobile_menu" className="w-full" />
             </div>
           </div>
         )}

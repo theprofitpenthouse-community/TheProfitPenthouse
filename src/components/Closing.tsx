@@ -1,7 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { ChevronDown, Globe, Mail } from 'lucide-react'
 import { AnchorButton, CheckoutButton, Heading, Reveal, Section } from './ui'
-import { WAITLIST_FAQS } from './waitlistCopy'
 import { Logo } from './Nav'
 import { siteConfig } from '../config'
 import { track } from '../lib/analytics'
@@ -50,7 +49,6 @@ export function Founder() {
 }
 
 const faqs: [string, ReactNode][] = [
-  ...WAITLIST_FAQS,
   [
     'Can men join this community?',
     <>
@@ -118,7 +116,7 @@ export function FinalCTA() {
         </p>
         <div className="mx-auto mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:mx-auto sm:max-w-md lg:w-max lg:max-w-none lg:flex-row lg:items-center lg:[&>*]:whitespace-nowrap">
           <CheckoutButton plan="roadmap" label="Get My Free Trading Roadmap" location="final" />
-          <CheckoutButton plan="waitlist" label="Join the Community Waitlist — Opening Soon" variant="secondary" location="final" />
+          <CheckoutButton plan="waitlist" label="Join The Profit Penthouse Community" variant="secondary" location="final" />
         </div>
         <p className="mt-12 text-2xl font-semibold leading-snug text-blush [text-wrap:balance] sm:text-3xl">Your seat at The Profit Penthouse is waiting.</p>
       </Reveal>

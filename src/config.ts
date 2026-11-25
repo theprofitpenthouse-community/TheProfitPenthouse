@@ -52,7 +52,7 @@ export const siteConfig = {
     waitlist: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
   },
 
-  /** Waitlist page (waitlist.html). The Community join buttons point here until doors open. */
+  /** Waitlist page (waitlist.html). No longer linked: the Community join buttons now go to the founding invite page (founding.html). */
   waitlist: {
     opening: '', // e.g. 'Doors open January 2027' — leave '' to just say "Opening soon"
   },
@@ -163,7 +163,7 @@ export type PlanId = 'roadmap' | 'waitlist' | 'community' | 'innerCircle'
 
 /** Where each button goes ('' = not set up yet → the button shows a setup note instead of a broken link). */
 export const destination = (plan: PlanId) =>
-  (plan === 'roadmap' ? './roadmap.html' : plan === 'waitlist' ? './waitlist.html' : siteConfig.checkout[plan]).trim()
+  (plan === 'roadmap' ? './roadmap.html' : plan === 'waitlist' ? './founding.html' : siteConfig.checkout[plan]).trim()
 
 /** True once the ThriveCart roadmap embed is configured. */
 export const isRoadmapConnected = () => siteConfig.forms.kitFormId.trim() !== '' || siteConfig.forms.roadmap.trim() !== '' || siteConfig.thrivecart.embeddable.trim() !== ''
