@@ -1,18 +1,19 @@
-import { ArrowRight, Check, Lock } from 'lucide-react'
+import { Check, Lock } from 'lucide-react'
 import { Shell } from './components/Shell'
 import { Footer } from './components/Closing'
 import { includes } from './components/Pricing'
 import { Reveal } from './components/ui'
 import { siteConfig } from './config'
-import { track } from './lib/analytics'
+import { KitForm } from './components/KitForm'
 
 /**
  * PRIVATE founding member invite page (founding.html). Send it by email only.
  * Not linked anywhere on the site, marked noindex/nofollow so search engines skip it.
- * The button goes straight to the Skool join page (siteConfig.checkout.community).
+ * Visitors enter first name + email (sent to Kit) and are then redirected to the Skool join page.
  */
 export default function FoundingInvitePage() {
   const join = siteConfig.checkout.community
+  const formId = siteConfig.forms.kitFoundingFormId || siteConfig.forms.kitFormId
 
   return (
     <Shell>
@@ -54,16 +55,18 @@ export default function FoundingInvitePage() {
               ))}
             </ul>
 
-            <a
-              href={join}
-              onClick={() => track('community_cta_click', { location: 'founding_invite', configured: true })}
-              className="group mt-9 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-full bg-rose px-6 py-4 text-sm font-extrabold uppercase tracking-[0.08em] text-ink shadow-glow transition duration-300 hover:shadow-glow-lg hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blush focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
-            >
-              Accept My Invitation
-              <ArrowRight size={18} aria-hidden className="shrink-0 transition-transform group-hover:translate-x-1" />
-            </a>
+            <div className="mt-9">
+              <p className="mb-4 text-center text-sm font-semibold text-white/80">Enter your name and email to accept your invitation.</p>
+              <KitForm
+                formId={formId}
+                button="Accept My Invitation"
+                success="Taking you to Skool to set up your membership…"
+                location="founding_invite"
+                redirectTo={join}
+              />
+            </div>
             <p className="mt-4 text-center text-xs leading-relaxed text-white/50">
-              You’ll go to Skool, where you’ll join and set up your membership. Self-paced education only. No trade signals or personalized investment advice.
+              After you submit, you’ll go to Skool to join and set up your membership. Self-paced education only. No trade signals or personalized investment advice.
             </p>
           </div>
         </Reveal>

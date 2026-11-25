@@ -43,6 +43,11 @@ export const siteConfig = {
      * (Kit → Automations → Rules: "Subscribes to form" → "Add tag"). Leave '' to use kitFormId above.
      */
     kitRoadmapFormId: '10234984',
+    /**
+     * Kit form for the private founding invite page (founding.html), so founding signups can get their
+     * own tag. Leave '' to use kitFormId above.
+     */
+    kitFoundingFormId: '',
     roadmap: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
     waitlist: `<script async data-uid="a479d6f483" src="https://theprofitpenthouse.kit.com/a479d6f483/index.js"></script>`,
   },

@@ -7,7 +7,7 @@ import { track } from '../lib/analytics'
  * Sends each signup straight to your Kit form, so Kit's own form never has to load on the page.
  * formId = the number in your Kit form's HTML embed: action="https://app.kit.com/forms/<formId>/subscriptions"
  */
-export function KitForm({ formId, button, success, location }: { formId: string; button: string; success: string; location: string }) {
+export function KitForm({ formId, button, success, location, redirectTo }: { formId: string; button: string; success: string; location: string; redirectTo?: string }) {
   const [state, setState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle')
 
   async function submit(e: FormEvent<HTMLFormElement>) {
@@ -25,6 +25,7 @@ export function KitForm({ formId, button, success, location }: { formId: string;
       await fetch(`https://app.kit.com/forms/${formId}/subscriptions`, { method: 'POST', mode: 'no-cors', body })
       setState('done')
       track('signup_submit', { location })
+      if (redirectTo) window.setTimeout(() => window.location.assign(redirectTo), 1200)
     } catch {
       setState('error')
     }
@@ -36,6 +37,11 @@ export function KitForm({ formId, button, success, location }: { formId: string;
         <CheckCircle2 size={28} className="foil-icon mx-auto" aria-hidden />
         <p className="mt-3 text-lg font-semibold text-white">You’re in!</p>
         <p className="mt-1 text-sm text-white/70">{success}</p>
+        {redirectTo && (
+          <a href={redirectTo} className="mt-4 inline-block text-sm font-semibold text-blush underline underline-offset-4">
+            Not redirected? Continue to Skool
+          </a>
+        )}
       </div>
     )
   }
