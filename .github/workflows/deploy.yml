@@ -1,8 +1,12 @@
 name: Deploy to GitHub Pages
 
+# Builds the site from source and publishes it to theprofitpenthouse.com.
+# Runs on every push to `new-site` (the source branch), or by hand from the Actions tab.
+# Requires Settings → Pages → Source = "GitHub Actions", and `new-site` allowed
+# under Settings → Environments → github-pages → Deployment branches.
 on:
   push:
-    branches: [main]
+    branches: [new-site]
   workflow_dispatch:
 
 permissions:
@@ -25,6 +29,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      # The Penthouse Suite (public/suite.html) has no source in this repo; it is copied
+      # into dist/ as-is. Fail the deploy rather than publish a site missing a page.
+      - name: Check every page made it into the build
+        run: |
+          for f in index.html tools.html inner-circle.html roadmap.html waitlist.html founding.html community.html suite.html CNAME; do
+            test -s "dist/$f" || { echo "::error::dist/$f is missing or empty"; exit 1; }
+          done
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

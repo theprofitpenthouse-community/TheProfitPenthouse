@@ -50,10 +50,11 @@ npm run build      # production build → dist/
 ## How the live site is published
 
 - Repo: `theprofitpenthouse-community/TheProfitPenthouse`
-- **`new-site` branch** = this source code.
-- **`main` branch** = the built website. GitHub Pages serves `main` (deploy from branch, root) at theprofitpenthouse.com.
-- To publish a change: edit the source here, run `npm run build`, then replace everything on `main` with the contents of `dist/` plus `.nojekyll` and a short README. `CNAME` comes along in `dist/`.
-- `.github/workflows/deploy.yml` is an alternative: if you ever switch **Settings → Pages → Source** to **GitHub Actions** and keep the source on `main`, every push builds and deploys automatically.
+- **`new-site` branch** = this source code. Every push to `new-site` builds and publishes the site automatically (`.github/workflows/deploy.yml`, GitHub Pages source = **GitHub Actions**).
+- To publish a change: edit the source here and push to `new-site`. Watch the run in the **Actions** tab; it takes a couple of minutes. You can also re-run it by hand there (**Deploy to GitHub Pages → Run workflow**).
+- The deploy fails, and the live site stays as it was, if the build breaks or any page (including `suite.html`) is missing from `dist/`.
+- **The Penthouse Suite** (`public/suite.html`) is a prebuilt single file with no source here. It is published exactly as committed; to change it, replace that file.
+- **`main` branch** = the old hand-copied build output. It is no longer updated. To roll back to it, set **Settings → Pages → Source** back to **Deploy from a branch** (`main`, root).
 
 ## Analytics events (ready, not active)
 
