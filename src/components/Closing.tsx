@@ -15,7 +15,7 @@ export function Founder() {
           <div className="relative mx-auto aspect-square w-full max-w-[15rem] sm:max-w-[18rem]">
             <div className="relative h-full overflow-hidden rounded-full foil-ring foil-ring-2 bg-gradient-to-b from-[#1c1519] to-ink shadow-gold">
               {siteConfig.founderImage ? (
-                <img src={siteConfig.founderImage} alt="Shantae, founder of The Profit Penthouse" loading="lazy" className="h-full w-full rounded-full object-cover object-[50%_22%]" width={900} height={1350} />
+                <img src={siteConfig.founderImage} alt="Shantae, founder of The Profit Penthouse" loading="lazy" className="h-full w-full rounded-full object-cover object-[50%_35%]" width={900} height={900} />
               ) : (
                 <div className="flex h-full flex-col items-center justify-center p-8 text-center">
                   <span className="script-accent text-[8rem] text-blush">S</span>
